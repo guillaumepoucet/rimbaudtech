@@ -13,39 +13,27 @@
 </head>
 
 <body>
-    <?php require_once "class/Joueur.php";
 
-        $horse = new Joueur("Cheval");
-        $horse->setIcon("<i class=\"fas fa-chess-knight\"></i>");
-        $icon = $horse->getIcon();
+    <form action="traitement.php" method="POST">
+            <div class="team-name-form">
+                <label for="team-name">Choisissez un nom d'équipe : </label>
+                <input type="text" name="team-name" id="team-name">
+            </div>
+            <div class="team-icon-form">
+                <p>Choisissez un pion : </p>
+                <div class="team-icon horse-icon">
+                    <input type="radio" for="horse-icon" name="team-icon" value="horse" id="">
+                    <label for="horse-icon"><img src="img/horse.svg" alt=""></label>
+                </div>
+                <div class="team-icon hat-icon">
+                    <input type="radio" for="hat-icon" name="team-icon" value="hat" id="">
+                    <label for="hat-icon"><img src="img/hat.svg" alt=""></label>
+                </div>
+            </div>
+            <input type="submit" value="C'est parti !">
+        </form>
 
-    ?>
-
-    <?= $icon ?>
-
-    <div id="plateau">
-
-        <?php
-        for ($i = 1; $i <= 14; $i++) {
-            echo "<div class=\"case case$i\">
-                    <div class=\"head $i\">$i</div>
-                    <div class=\"body $i\">";
-            if ($i == 3) {
-                echo "Défi";
-            } else if ($i == 9) {
-                echo "Quiz";
-            };
-            echo "</div>
-                    </div>";
-        }
-        ?>
-
-    </div>
-
-    <div id="de">
-        <p style="text-align:center"><img id="baliseImg" width="50" height="50" src="img/de/de6.jpg"></p>
-  <p style="text-align:center">Lancer le dé :&nbsp;<input type="button" id="btnGo" value="Go !"></p>
-    </div>
+    
 
 
         <!-- On definie les case action et verifie la position -->
@@ -57,7 +45,7 @@
         console.log(place);
     </script>
 
-        <!-- test objet js -->
+
     <script>
         var nbrcases = ['start', '1', '2', '3', '4', '5']; 
         var table = '';

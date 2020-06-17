@@ -8,11 +8,93 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+/* FORMULAIRE */
+.team-icon {
+    display: flex;
+    align-items: center;
+    height: 3em;
+}
+
+input[type="text"],
+input[type="submit"] {
+    padding: 0.5em;
+}
+
+input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+img {
+    width: 25px;
+    padding: 0.25em 0;
+}
+
+#baliseImg {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* PLATEAU */
 #plateau {
     display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     color: var(--gray);
     text-align: center;
+}
+
+.score-board {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 10;
+    height: 100vh;
+    line-height: 1em;
+    padding: 0 1.25em;
+}
+
+.score-board .team {
+    border: 2px solid var(--magenta);
+    border-radius: 20px;
+}
+
+.score-board h4 {
+    margin: 1em 0;
+    font-size: 1.25em;
+}
+
+.score-board .team-header {
+    background-color: var(--magenta);
+    border-radius: 17px 17px 0 0;
+}
+
+.score-board i {
+    color: white;
+    padding: 0.25em;
+}
+
+.score-board p {
+    font-size: 1.25em;
+}
+
+.score-board p span {
+    font-size: 1.50em;
+    font-weight: bold;
+}
+
+#start {
+    writing-mode: sideways-lr;
+    background-color: var(--gray);
+    color: white;
+    display: grid;
+    align-content: center;
+    font-size: 2em;
+}
+
+.start-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
 }
 
 #plateau .case {
@@ -23,18 +105,19 @@ body {
 #plateau .case .head {
     padding: 0.65em;
     border-bottom: 1px solid #bbb;
+    font-weight: bold;
 }
 
 #plateau .case .body {
     padding: 2em;
 }
 
-.defi .head  {
+.defi .head {
     background-color: var(--magenta);
     color: white;
 }
 
-.defi .body  {
+.defi .body {
     background-color: #ce0b5940;
 }
 
