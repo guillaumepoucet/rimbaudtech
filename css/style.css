@@ -88,8 +88,8 @@ img {
     font-size: 2em;
 }
 
-.start-container,
-.case {
+.start-container
+{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
