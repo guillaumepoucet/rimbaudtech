@@ -1,0 +1,158 @@
+:root {
+    --gray: #565454;
+    --blue: #25bae5;
+    --magenta: #ce0b59;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FORMULAIRE */
+.team-icon {
+    display: flex;
+    align-items: center;
+    height: 3em;
+}
+
+input[type="text"],
+input[type="submit"] {
+    padding: 0.5em;
+}
+
+input[type="radio"] {
+    margin-right: 0.5em;
+}
+
+img {
+    width: 25px;
+    padding: 0.25em 0;
+}
+
+#baliseImg {
+    width: 50px;;
+    height: 50px;;
+}
+
+
+/* PLATEAU */
+#plateau {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    color: var(--gray);
+    text-align: center;
+}
+
+.score-board {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 10;
+    line-height: 1em;
+    padding: 0 1.25em;
+}
+
+.score-board .team {
+    border: 2px solid var(--magenta);
+    border-radius: 20px;
+}
+
+.score-board h4 {
+    margin: 1em 0;
+    font-size: 1.25em;
+}
+
+.score-board .team-header {
+    background-color: var(--magenta);
+    border-radius: 17px 17px 0 0;
+}
+
+.score-board i {
+    color: white;
+    padding: 0.25em;
+}
+
+.score-board p {
+    font-size: 1.25em;
+}
+
+.score-board p span {
+    font-size: 1.50em;
+    font-weight: bold;
+}
+
+#start {
+    writing-mode: sideways-lr;
+    background-color: var(--gray);
+    color: white;
+    display: grid;
+    align-content: center;
+    font-size: 2em;
+}
+
+.start-container
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#plateau .case {
+    background-color: whitesmoke;
+    border: 1px solid #bbb;
+}
+
+#plateau .case .head {
+    padding: 0.65em;
+    border-bottom: 1px solid #bbb;
+    font-weight: bold;
+}
+
+#plateau .case .body {
+    padding: 2em;
+}
+
+.defi .head {
+    background-color: var(--magenta);
+    color: white;
+}
+
+.defi .body {
+    background-color: #ce0b5940;
+}
+
+.quiz .head {
+    background-color: var(--blue);
+    color: white;
+}
+
+.quiz .body {
+    background-color: #25bae54f;
+}
+
+/* QUESTION */
+#question {
+    max-width: 390px;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#question p {
+    margin: 0;
+}
+
+#question p:last-of-type {
+    padding: 1em;
+}
+
+.question {
+    background-color: var(--blue);
+    font-size: 0.75em;
+    color: white;
+    padding: 0.25em;
+    display: block;
+    border-radius: 15px 15px 0 0;
+    font-weight: bold;
+}
