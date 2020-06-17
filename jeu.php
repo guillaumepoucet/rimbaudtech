@@ -62,6 +62,14 @@
         <p style="text-align:center">Lancer le dé :&nbsp;<input type="button" id="btnGo" value="Go !"></p>
     </div>
 
+    <?php
+
+    require_once "class/Question.php";
+
+    $q = new Question;
+    $q->getQuestion(3); ?>
+
+
     <script>
         $('.case').eq(2).addClass('defi');
         $('.case').eq(8).addClass('quiz');
@@ -71,10 +79,6 @@
     </script>
 
     <script src="js/lancerDe.js"></script>
-    <script src="js/boardGame.js"></script>
-    <script src="js/Player.js"></script>
-    <script src="js/Token.js"></script>
-    <script src="js/Game.js"></script>
 
 </body>
 

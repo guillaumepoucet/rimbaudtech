@@ -30,8 +30,8 @@ img {
 }
 
 #baliseImg {
-    width: 50px;
-    height: 50px;
+    width: 50px;;
+    height: 50px;;
 }
 
 
@@ -46,7 +46,6 @@ img {
 .score-board {
     grid-column: 1 / span 3;
     grid-row: 1 / span 10;
-    height: 100vh;
     line-height: 1em;
     padding: 0 1.25em;
 }
@@ -89,7 +88,8 @@ img {
     font-size: 2em;
 }
 
-.start-container {
+.start-container,
+.case {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -128,4 +128,31 @@ img {
 
 .quiz .body {
     background-color: #25bae54f;
+}
+
+/* QUESTION */
+#question {
+    max-width: 390px;
+    border: 2px solid var(--blue);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#question p {
+    margin: 0;
+}
+
+#question p:last-of-type {
+    padding: 1em;
+}
+
+.question {
+    background-color: var(--blue);
+    font-size: 0.75em;
+    color: white;
+    padding: 0.25em;
+    display: block;
+    border-radius: 15px 15px 0 0;
+    font-weight: bold;
 }

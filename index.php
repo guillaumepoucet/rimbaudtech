@@ -46,20 +46,16 @@
     </script>
 
 
-    <script>
+    <!-- <script>
         var nbrcases = ['start', '1', '2', '3', '4', '5']; 
         var table = '';
         for(var i=0; i< nbrcases.length; i++) {
             table+= 'Case n°' + (i+1) + ' : ' + nbrcases[i] + '\n';
         }
         //alert (table);
-    </script>
+    </script> -->
     
-    <script src="js/lancerDe.js"></script>
-    <script src="js/boardGame.js"></script>
-    <script src="js/Player.js"></script>
-    <script src="js/Token.js"></script>
-    <script src="js/Game.js"></script>
+    
 
 </body>
 

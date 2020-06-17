@@ -7,7 +7,7 @@ class Question {
 
     public function getQuestion($id)
     {
-        echo "question n°$id";
+        echo "<div id=\"question\"><p class=\"question\">Question n°$id</p><p>Parmi ces choix, qu'est ce pour vous que l'innovation ?</p></div>";
     }
 
 }
