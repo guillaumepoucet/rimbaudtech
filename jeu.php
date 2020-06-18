@@ -66,24 +66,21 @@
     </div>
 
     <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Afiicher une question</button>
+    <button id="myBtn">Afficher une question</button>
 
-    <!-- The Modal -->
+
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <div id="question" class="modal-content">
             <span class="close">&times;</span>
-            <?php
-
-            require_once "class/Question.php";
-
-            $q = new Question;
-            $q->getQuestion(3); ?>
+            <div>
+                <p class="question">Question n°$id</p>
+                <p>Parmi ces choix, qu'est ce pour vous que l'innovation ?</p>
+            </div>
         </div>
 
     </div>
-
 
 
 
