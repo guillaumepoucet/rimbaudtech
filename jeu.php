@@ -26,12 +26,11 @@
             <p>Start !</p>
         </div>
         <div class="start-container case case0">
-            <div class="head">
-                <div class="body body0">
-                    <?php if (isset($_SESSION['teams']['team1'])) : ?>
-                        <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
-                    <?php endif ?>
-                </div>
+            <div class="head">Pions</div>
+            <div class="body body0">
+                <?php if (isset($_SESSION['teams']['team1'])) : ?>
+                    <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
+                <?php endif ?>
             </div>
         </div>
 
