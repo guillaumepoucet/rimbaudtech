@@ -14,7 +14,10 @@
 </head>
 
 <body>
-    <?php require_once "class/Team.php";
+
+<?php 
+    
+    require_once "class/Team.php";
     $team1 = new Team($_SESSION['teams']['team1']['team-name']);
     $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
     $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
@@ -25,23 +28,27 @@
         <div id="start">
             <p>Start !</p>
         </div>
-        <div class="start-container">
-            <?php if (isset($_SESSION['teams']['team1'])) :?>
-                <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
+        <div class="start-container case case0">
+            <div class="head">Pions</div>
+            <div class="body body0">
+                <?php if (isset($_SESSION['teams']['team1'])) : ?>
+                    <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
                 <?php endif ?>
+            </div>
         </div>
 
         <?php
+
         for ($i = 1; $i <= 14; $i++) {
             echo "<div class=\"case case$i\">
-                    <div class=\"head $i\">$i</div>
-                    <div class=\"body $i\">";
+                    <div class=\"head $i\">$i ";
             if ($i == 3) {
                 echo "Défi";
             } else if ($i == 9) {
                 echo "Quiz";
             };
             echo "</div>
+            <div class=\"body body$i\"></div>
                     </div>";
         }
         ?>
@@ -62,23 +69,53 @@
         <p style="text-align:center">Lancer le dé :&nbsp;<input type="button" id="btnGo" value="Go !"></p>
     </div>
 
-    <?php
+<!-- Trigger/Open The Modal -->
+    <button id="myBtn">Afiicher une question</button>
 
-    require_once "class/Question.php";
+    <!-- The Modal Question-->
+    <div id="myModal" class="modal">
 
-    $q = new Question;
-    $q->getQuestion(3); ?>
+        <!-- Modal content -->
+        <div id="question" class="modal-content">
+            <span class="close">&times;</span>
+            <?php
 
+            require_once "class/Question.php";
+
+            $q = new Question;
+            $q->getQuestion(3);
+            $q->setQuestion(3); ?>
+
+
+             <div id="reponse" class="modal-content">
+                <span class="close">&times;</span>
+                <?php
+
+                require_once "class/Reponse.php";
+
+                $r = new Reponse;
+                $r->getReponse(3);
+                $r->setReponse(3); ?>
+            </div>
+        </div>
+
+    </div>
 
     <script>
-        $('.case').eq(2).addClass('defi');
-        $('.case').eq(8).addClass('quiz');
+        $('.case').eq(3).addClass('defi');
+        $('.case').eq(9).addClass('quiz');
+    </script>
 
-        var place = $('.3').parent().prevAll().length;
-        console.log(place);
+    <script type="text/javascript">
+        var question =[
+            ["question n°1 ?", "Reponse 1a", "Reponse 1b", "Reponse 1c"],
+            ["question n°2 ?","Reponse 2a", "Reponse 2b", "Reponse 2c"]
+        ];
+        console.log(question);
     </script>
 
     <script src="js/lancerDe.js"></script>
+    <script src="js/modal.js"></script>
 
 </body>
 
