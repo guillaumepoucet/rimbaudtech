@@ -75,8 +75,17 @@
         <div id="question" class="modal-content">
             <span class="close">&times;</span>
             <div>
-                <p class="question">Question n°$id</p>
-                <p>Parmi ces choix, qu'est ce pour vous que l'innovation ?</p>
+                <p class="question">Question n°<span class="numero"></span></p>
+                <p class="n-question"></p>
+            </div>
+            <div class="reponse">
+                <input type="radio" name="" id="">
+                <p class="a"></p>
+                <input type="radio" name="" id="">
+                <p class="b"></p>
+                <input type="radio" name="" id="">
+                <p class="c"></p>
+
             </div>
         </div>
 
