@@ -30,8 +30,10 @@ img {
 }
 
 #baliseImg {
-    width: 50px;;
-    height: 50px;;
+    width: 50px;
+    ;
+    height: 50px;
+    ;
 }
 
 
@@ -88,8 +90,7 @@ img {
     font-size: 2em;
 }
 
-.start-container
-{
+.start-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -109,7 +110,12 @@ img {
 }
 
 #plateau .case .body {
-    padding: 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 120px;
+    align-items: center;
+    justify-items: center;
 }
 
 .defi .head {

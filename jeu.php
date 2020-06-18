@@ -25,23 +25,27 @@
         <div id="start">
             <p>Start !</p>
         </div>
-        <div class="start-container">
-            <?php if (isset($_SESSION['teams']['team1'])) :?>
-                <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
-                <?php endif ?>
+        <div class="start-container case case0">
+            <div class="head">
+                <div class="body body0">
+                    <?php if (isset($_SESSION['teams']['team1'])) : ?>
+                        <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon">
+                    <?php endif ?>
+                </div>
+            </div>
         </div>
 
         <?php
         for ($i = 1; $i <= 14; $i++) {
             echo "<div class=\"case case$i\">
-                    <div class=\"head $i\">$i</div>
-                    <div class=\"body $i\">";
+                    <div class=\"head $i\">$i ";
             if ($i == 3) {
                 echo "Défi";
             } else if ($i == 9) {
                 echo "Quiz";
             };
             echo "</div>
+            <div class=\"body body$i\"></div>
                     </div>";
         }
         ?>
@@ -73,9 +77,6 @@
     <script>
         $('.case').eq(2).addClass('defi');
         $('.case').eq(8).addClass('quiz');
-
-        var place = $('.3').parent().prevAll().length;
-        console.log(place);
     </script>
 
     <script src="js/lancerDe.js"></script>

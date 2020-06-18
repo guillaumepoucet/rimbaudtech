@@ -41,8 +41,6 @@
         $('.case').eq(2).addClass('defi');
         $('.case').eq(8).addClass('quiz');
 
-        var place = $('.3').parent().prevAll().length;
-        console.log(place);
     </script>
 
 
