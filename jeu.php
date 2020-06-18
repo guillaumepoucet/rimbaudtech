@@ -65,20 +65,35 @@
         <p style="text-align:center">Lancer le dé :&nbsp;<input type="button" id="btnGo" value="Go !"></p>
     </div>
 
-    <?php
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Afiicher une question</button>
 
-    require_once "class/Question.php";
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-    $q = new Question;
-    $q->getQuestion(3); ?>
+        <!-- Modal content -->
+        <div id="question" class="modal-content">
+            <span class="close">&times;</span>
+            <?php
+
+            require_once "class/Question.php";
+
+            $q = new Question;
+            $q->getQuestion(3); ?>
+        </div>
+
+    </div>
+
+
 
 
     <script>
-        $('.case').eq(2).addClass('defi');
-        $('.case').eq(8).addClass('quiz');
+        $('.case').eq(3).addClass('defi');
+        $('.case').eq(9).addClass('quiz');
     </script>
 
     <script src="js/lancerDe.js"></script>
+    <script src="js/modal.js"></script>
 
 </body>
 

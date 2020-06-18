@@ -16,7 +16,8 @@ body {
 }
 
 input[type="text"],
-input[type="submit"] {
+input[type="submit"],
+button {
     padding: 0.5em;
 }
 
@@ -128,9 +129,58 @@ img {
     background-color: #25bae54f;
 }
 
+/* MODAL */
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* QUESTION */
 #question {
-    max-width: 390px;
+    /* max-width: 390px; */
     border: 2px solid var(--blue);
     border-radius: 20px;
     text-align: center;
@@ -149,7 +199,7 @@ img {
     background-color: var(--blue);
     font-size: 0.75em;
     color: white;
-    padding: 0.25em;
+    padding: 0.50em;
     display: block;
     border-radius: 15px 15px 0 0;
     font-weight: bold;

@@ -10,14 +10,15 @@ document.querySelector('#btnGo').addEventListener('click', function () {
     document.querySelector('#baliseImg').src = 'img/de/de' + p + '.jpg';
 
     // On recupere la position de deux parents au-deussus donc le numero de case
-    var place = $(img).parent().parent(".case").prevAll().length;
+    var parent = $(img).parent().parent(".case");
+    var place = parent.prevAll().length;
     // On soustraie 1 pour recuperer la vraie valeur
     var x = place - 1;
     // console.log(x);
 
     // On calcule la nouvelle position et on recup l info
     var newposition = p + x;
-    console.log(newposition);
+    // console.log(newposition);
 
     // on attache l'icone joueur à la bonne case
     $((".body") + newposition).append(img);
@@ -25,5 +26,12 @@ document.querySelector('#btnGo').addEventListener('click', function () {
     // var place = $(img).parent().parent(".case").prevAll().length;
     // var x = place - 1;
     // console.log(x);
+    var parent = $(img).parent().parent(".case");
+    var defi = parent.hasClass('defi');
+    var quiz = parent.hasClass('quiz');
+    if (quiz) {
+        modal.style.display = "block";
+    }
+
 });
 
