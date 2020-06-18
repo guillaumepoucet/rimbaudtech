@@ -107,11 +107,19 @@
     </script>
 
     <script type="text/javascript">
+    var n = Math.floor(Math.random()*6)+1;
+
+
+        
         var question =[
             ["question n°1 ?", "Reponse 1a", "Reponse 1b", "Reponse 1c"],
-            ["question n°2 ?","Reponse 2a", "Reponse 2b", "Reponse 2c"]
+            ["question n°2 ?", "Reponse 2a", "Reponse 2b", "Reponse 2c"],
+            ["question n°3 ?", "Reponse 3a", "Reponse 3b", "Reponse 3c"],
+            ["question n°4 ?", "Reponse 4a", "Reponse 4b", "Reponse 4c"],
+            ["question n°5 ?", "Reponse 5a", "Reponse 5b", "Reponse 5c"],
+            ["question n°6 ?", "Reponse 6a", "Reponse 6b", "Reponse 6c"]
         ];
-        console.log(question);
+        console.log(question[n]);
     </script>
 
     <script src="js/lancerDe.js"></script>
