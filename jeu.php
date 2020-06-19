@@ -58,7 +58,7 @@
             <div class="team team-1">
                 <div class="team-header"><img src="<?= $team1->getScoreIcon() ?>" alt="" class="score-team-icon"></div>
                 <h4><?= $team1->getPseudo() ?></h4>
-                <p><span class="score">320</span> pts</p>
+                <p><span class="score"><?= $team1->getScore() ?></span> pts</p>
             </div>
         </div>
 
@@ -70,7 +70,7 @@
     </div>
 
 <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Afiicher une question</button>
+    <button id="myBtn">Afficher une question</button>
 
     <!-- The Modal Question-->
     <div id="myModal" class="modal">
@@ -78,24 +78,24 @@
         <!-- Modal content -->
         <div id="question" class="modal-content">
             <span class="close">&times;</span>
-            <?php
+            <div>
+                <p class="question">Question n°<span class="numero"></span></p>
+                <p class="n-question"></p>
+            </div>
+            <div class="reponse">
+                <div><input type="radio" name="" id="">
+                    <p class="a"></p>
+                </div>
+                <div><input type="radio" name="" id="">
+                    <p class="b"></p>
+                </div>
+                <div><input type="radio" name="" id="">
+                    <p class="c"></p>
+                </div>
 
-            require_once "class/Question.php";
-
-            $q = new Question;
-            $q->getQuestion(3);
-            $q->setQuestion(3); ?>
+                <input type="button" method="POST" id="" value="Repondre !"></p>
 
 
-             <div id="reponse" class="modal-content">
-                <span class="close">&times;</span>
-                <?php
-
-                require_once "class/Reponse.php";
-
-                $r = new Reponse;
-                $r->getReponse(3);
-                $r->setReponse(3); ?>
             </div>
         </div>
 
@@ -104,22 +104,6 @@
     <script>
         $('.case').eq(3).addClass('defi');
         $('.case').eq(9).addClass('quiz');
-    </script>
-
-    <script type="text/javascript">
-    var n = Math.floor(Math.random()*6)+1;
-
-
-        
-        var question =[
-            ["question n°1 ?", "Reponse 1a", "Reponse 1b", "Reponse 1c"],
-            ["question n°2 ?", "Reponse 2a", "Reponse 2b", "Reponse 2c"],
-            ["question n°3 ?", "Reponse 3a", "Reponse 3b", "Reponse 3c"],
-            ["question n°4 ?", "Reponse 4a", "Reponse 4b", "Reponse 4c"],
-            ["question n°5 ?", "Reponse 5a", "Reponse 5b", "Reponse 5c"],
-            ["question n°6 ?", "Reponse 6a", "Reponse 6b", "Reponse 6c"]
-        ];
-        console.log(question[n]);
     </script>
 
     <script src="js/lancerDe.js"></script>

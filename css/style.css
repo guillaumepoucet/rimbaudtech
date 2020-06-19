@@ -158,8 +158,38 @@ img {
     margin: 15% auto;
     /* 15% from the top and centered */
     border: 1px solid #888;
-    width: 80%;
+    width: 40%;
     /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
 }
 
 /* The Close Button */
@@ -168,7 +198,6 @@ img {
     float: right;
     font-size: 28px;
     font-weight: bold;
-    margin-right: 1em;
 }
 
 .close:hover,
@@ -185,14 +214,16 @@ img {
     border-radius: 20px;
     text-align: center;
     font-size: 1.5em;
+    position: relative;
 }
 
 #question p {
     margin: 0;
 }
 
-#question p:last-of-type {
+.n-question {
     padding: 1em;
+    border-bottom: 1px solid var(--blue);
 }
 
 .question {
@@ -205,29 +236,11 @@ img {
     font-weight: bold;
 }
 
-/* Reponse */
-#reponse {
-    /* max-width: 390px; */
-    border: 2px solid var(--blue);
-    border-radius: 20px;
-    text-align: center;
-    font-size: 1.5em;
-}
-
-#reponse p {
-    margin: 0;
-}
-
-#reponse p:last-of-type {
-    padding: 1em;
-}
-
 .reponse {
-    background-color: var(--blue);
-    font-size: 0.75em;
-    color: white;
-    padding: 0.50em;
-    display: block;
-    border-radius: 15px 15px 0 0;
-    font-weight: bold;
+    margin: 1em 0;
+}
+
+.reponse div {
+    display: flex;
+    padding: 0.5em 1em;
 }

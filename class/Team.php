@@ -8,14 +8,17 @@ class Team {
     private $_tampon;
     public $_icon;
     public $_scoreIcon;
+    public $_score;
 
-    //
+    // Constructeur
     public function __construct($pseudo) 
     {
         $this->_pseudo = $pseudo;
+        $this->_score = 0;
 
     }
 
+    // Getters
     public function getPseudo() {
         return $this->_pseudo;
     }
@@ -36,6 +39,11 @@ class Team {
         return $this->_scoreIcon;
     }
 
+    public function getScore() {
+        return $this->_score;
+    }
+
+    // Setters
     public function setIcon($icon) {
         $this->_icon = $icon;
         return $this;
@@ -46,6 +54,10 @@ class Team {
         return $this;
     }
 
+    public function setScore($score) {
+        $this->_score = $score;
+        return $this;
+    }
     public function rollDice() {
         $pseudo = $this->_pseudo;
         $dice = rand(1, 6);
@@ -53,8 +65,5 @@ class Team {
         return $dice;
     } 
 };
-
-
-
 
 ?>
