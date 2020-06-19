@@ -79,12 +79,16 @@
                 <p class="n-question"></p>
             </div>
             <div class="reponse">
-                <input type="radio" name="" id="">
-                <p class="a"></p>
-                <input type="radio" name="" id="">
-                <p class="b"></p>
-                <input type="radio" name="" id="">
-                <p class="c"></p>
+                <div><input type="radio" name="" id="">
+                    <p class="a"></p>
+                </div>
+                <div><input type="radio" name="" id="">
+                    <p class="b"></p>
+                </div>
+                <div><input type="radio" name="" id="">
+                    <p class="c"></p>
+                </div>
+
 
             </div>
         </div>
