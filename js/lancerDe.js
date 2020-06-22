@@ -48,13 +48,13 @@ document.querySelector('#btnGo').addEventListener('click', function () {
     var quiz = parent.hasClass('quiz');
     // Si quizz on ouvre la modal question
     if (quiz) {
-        var n = Math.floor(Math.random() * 5) + 1;
+        var n = Math.floor(Math.random() * 13) + 1;
         console.log(question[n]);
         $('.numero').text(n );
-        $('.n-question').text(question[n][0])
-        $('.a').text(question[n][1])
-        $('.b').text(question[n][2])
-        $('.c').text(question[n][3])
+        $('.n-question').text(questionnaire[n][0])
+        $('.a').text(questionnaire[n][2][0])
+        $('.b').text(questionnaire[n][2][1])
+        $('.c').text(questionnaire[n][2][2])
 
         modal.style.display = "block";
     }

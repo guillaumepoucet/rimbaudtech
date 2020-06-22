@@ -7,29 +7,22 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-var question = [
-    ["Parmi ces choix, qu'est ce pour vous que l'innovation ?", "Reponse 1a", "Reponse 1b", "Reponse 1c"],
-    ["question n°2 ?", "Reponse 2a", "Reponse 2b", "Reponse 2c"],
-    ["question n°3 ?", "Reponse 3a", "Reponse 3b", "Reponse 3c"],
-    ["question n°4 ?", "Reponse 4a", "Reponse 4b", "Reponse 4c"],
-    ["question n°5 ?", "Reponse 5a", "Reponse 5b", "Reponse 5c"],
-    ["question n°6 ?", "Reponse 6a", "Reponse 6b", "Reponse 6c"]
-];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
-    var n = Math.floor(Math.random() * 5) + 1;
+    var n = Math.floor(Math.random() * 13) + 1;
     console.log(n);
-    console.log(question[n+1]);
+    console.log(questionnaire[n]);
     $('.numero').text(n+1);
-    $('.n-question').text(question[n][0])
-    $('.a').text(question[n][1])
-    $('.b').text(question[n][2])
-    $('.c').text(question[n][3])
+    $('.n-question').text(questionnaire[n][0])
+    $('.a').text(questionnaire[n][1][0])
+    $('.b').text(questionnaire[n][1][1])
+    $('.c').text(questionnaire[n][1][2])
+    
 
     modal.style.display = "block";
 
-    modal.style.display = "block";
+  
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -43,3 +36,5 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+  

@@ -76,6 +76,8 @@
     <div id="myModal" class="modal">
 
         <!-- Modal content -->
+
+    <form action="POST">
         <div id="question" class="modal-content">
             <span class="close">&times;</span>
             <div>
@@ -83,21 +85,24 @@
                 <p class="n-question"></p>
             </div>
             <div class="reponse">
-                <div><input type="radio" name="" id="">
+                <div><input type="radio" name="list" value="1" id="">
                     <p class="a"></p>
                 </div>
-                <div><input type="radio" name="" id="">
+                <div><input type="radio" name="list" value="2" id="">
                     <p class="b"></p>
                 </div>
-                <div><input type="radio" name="" id="">
+                <div><input type="radio" name="list" value="3" id="">
                     <p class="c"></p>
                 </div>
 
-                <input type="button" method="POST" id="" value="Repondre !"></p>
+                <input type="button" id="rep" value="Repondre !"></p>
 
 
             </div>
         </div>
+    </form>
+
+    
 
     </div>
 
@@ -106,9 +111,46 @@
         $('.case').eq(9).addClass('quiz');
     </script>
 
-    <script src="js/lancerDe.js"></script>
+    
+
     <script src="js/modal.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/questionnaire.js"></script>
+    <script src="js/lancerDe.js"></script>
+    <script>
+
+    $(function () {
+        $('#rep').click(function () {
+            var n = ($('.numero').text() - 1);
+            console.log(n)
+        
+            var a = $("input[type=radio][name=list]:checked").attr("value");
+            var b = questionnaire[n][2];
+            console.log(b)
+            console.log(a)
+            if (a == b) {
+                //alert("Correct");
+                var score = $('.score').text();
+                var s = parseInt(score)
+                newScore = s + 100;
+                $('.score').text(newScore);
+                 modal.style.display = "none";
+      
+            
+            } else {
+                //alert("Incorrect");
+                var score = $('.score').text();
+                var s = parseInt(score)
+                newScore = s + 0;
+                
+            }
+        })
+})
+    </script>
 
 </body>
 
 </html>
+
+
+      
