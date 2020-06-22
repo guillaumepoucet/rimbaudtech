@@ -142,6 +142,9 @@
                 var score = $('.score').text();
                 var s = parseInt(score)
                 newScore = s + 0;
+                $('.reponse div').remove();
+                $('#rep').remove();
+                $('.reponse').append('<p>Vous etes le maillon faible. Au revoir !</p>');
                 
             }
         })
