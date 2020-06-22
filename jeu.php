@@ -102,6 +102,7 @@
         $('.case').eq(9).addClass('quiz');
     </script>
 
+    <script src="js/questionnaire.js"></script>
     <script src="js/lancerDe.js"></script>
     <script src="js/modal.js"></script>
 
