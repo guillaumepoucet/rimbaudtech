@@ -11,7 +11,7 @@ var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
     var n = Math.floor(Math.random() * 13) + 1;
     $('.numero').text(n + 1);
-    $('.n-question').text(questionnaire[n][0])
+    $('.n-question').html(questionnaire[n][0])
     // si pas de réponses, oinsertion d'un timer
     if (questionnaire[n][1] !== undefined) {
         $('.a').text(questionnaire[n][1][0])
