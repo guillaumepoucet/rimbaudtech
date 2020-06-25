@@ -115,6 +115,7 @@
         $('.case').eq(9).addClass('quiz');
     </script>
 
+    <!-- On alert de la perte des données si fermeture fenetre -->
     <script type="text/javascript">
         window.onbeforeunload = confirmExit;
         function confirmExit()
@@ -123,6 +124,16 @@
         }
 
     </script>
+
+    <!-- On bloque l input ENTRER -->
+    <script type="text/javascript">
+        noPressEnter(document.modal);
+        noPressEnter(document.myModal.modal)
+    </script>
+
+    <!-- On reactive l input ENTRER
+        noPressEnter(document.body, false); -->
+  
 
     <script src="js/modal.js"></script>
     <script src="js/score.js"></script>
@@ -135,6 +146,3 @@
 </body>
 
 </html>
-
-
-      

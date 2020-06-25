@@ -10,6 +10,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
+    reboot();
     var n = Math.floor(Math.random() * 13) + 1;
     //console.log(n);
     //console.log(questionnaire[n]);
@@ -59,11 +60,15 @@ btn.onclick = function () {
 
   
 }
+// Cacher la croix de fermeture de la modal 
+$('.close').hide();
 
-// When the user clicks ox)n <span> (, close the modal
+
+// When the user clicks on (x) <span> (, close the modal
 span.onclick = function () {
     modal.style.display = "none";
     $('#time').remove();
+    reboot();
     
 }
 
@@ -78,20 +83,17 @@ window.onclick = function (event) {
         reboot();
         
     }
-    
 }
+reboot();
+
 
 // Test function cacher afficher validation question sans rep timer et scroring 
-
 function reboot(){
     $('reponse div').show();
     $('.btnrep').show();
     //$('.validation').show();
     $('.reponseInput').show();
     $('#time').remove();
-
-
-
 }
 
 function baseReponse(){
@@ -104,5 +106,3 @@ function baseOuverte(){
     $('.btnrep').hide();
     $('.validation').show();
 }
-
-  
