@@ -85,19 +85,23 @@
                 <p class="n-question"></p>
             </div>
             <div class="reponse">
-                <div><input type="radio" name="list" value="1" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="1" id="">
                     <p class="a"></p>
                 </div>
-                <div><input type="radio" name="list" value="2" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="2" id="">
                     <p class="b"></p>
                 </div>
-                <div><input type="radio" name="list" value="3" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="3" id="">
                     <p class="c"></p>
                 </div>
 
-                <input type="button" id="rep" value="Repondre !"></p>
+                <input class="btnrep" type="button" id="rep" value="Repondre !"></p>
 
 
+            </div>
+            <div class="validation">
+                <input class="btnval" type="button" name="valider" id="val" value="Valider !"></p>
+                <input class="btnechec" type="button" name="echec" id="ech" value="Echec !"></p>
             </div>
         </div>
     </form>
@@ -111,13 +115,21 @@
         $('.case').eq(9).addClass('quiz');
     </script>
 
-    
+    <script type="text/javascript">
+        window.onbeforeunload = confirmExit;
+        function confirmExit()
+        { 
+            return 'En fermant, vous risquez de perdre la totalité de vos données. Etes-vous sûr(e) de vouloir quitter ?';
+        }
+
+    </script>
 
     <script src="js/modal.js"></script>
     <script src="js/score.js"></script>
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
+    
     
 
 </body>
