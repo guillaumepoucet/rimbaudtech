@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'simplicity';
+    src: url("../fonts/simplicity/simplicity.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'shaka';
+    src: url("../fonts/shakapow/shakapow.ttf") format("truetype");
+}
+
+$blue-dark : #0B4A5B;
+$blue : #25BAE5;
+$yellow : #F7D126;
+$purple : #CE0B59;
+$fade-black: (black, .61);
+
+body {
+    background-color: $blue-dark;
+    background-image: url("../img/groupe1.svg");
+    background-repeat: no-repeat;
+    background-position: 85% 10%;
+    background-size: 90%;
+    overflow: hidden;
+}
+
+#plateau {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 0.5em;
+
+    .cat-title {
+        font-family: simplicity;
+        color: white;
+        font-size: 7em;
+    }
+
+    #score {
+        grid-column: 1;
+        font-family: shaka;
+        text-align: center;
+        padding: 0 2em;
+
+        .team {
+            position: relative;
+        }
+
+        .team-purple {
+            background-color: $purple;
+            padding: 6px;
+            clip-path: polygon(0 0, 94% 14%, 100% 100%, 3% 89%);
+            width: fit-content;
+            position: relative;
+            z-index: 5;
+        }
+
+        .team-name {
+            clip-path: polygon(2px 1px, 94% 16.17%, 98.39% 99%, 4.23% 85.83%);
+            background-color: white;
+            padding: 15px 40px;
+            width: fit-content;
+        }
+
+        .team-yellow {
+            clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+            background-color: $yellow;
+            padding: 8px 8px;
+            width: fit-content;
+            position: relative;
+            bottom: 19px;
+            left: 30px;
+            z-index: 4;
+        }
+
+        .team-score {
+            clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+            background-color: $purple;
+            font-size: 3em;
+            padding: 19px 75px 25px 70px;
+            color: white;
+        }
+
+        .de-wrap-shadow {
+            filter: drop-shadow(6px 6px $yellow);
+        }
+
+        .de-wrap {
+            font-family: simplicity;
+            background-color: $yellow;
+            padding: 7px;
+            width: fit-content;
+            clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+            position: relative;
+
+            .de {
+                color: $yellow;
+                background-color: $blue-dark;
+                font-size: 4em;
+                display: flex;
+                padding: 20px 65px;
+                justify-content: center;
+                align-items: center;
+                clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.80%, 5.16% 83.03%);
+
+                img {
+                    margin-right: 10px;
+                    text-shadow: 3px 4px black;
+                }
+
+                p {
+                    text-shadow: 3px 4px black;
+                }
+            }
+        }
+    }
+
+    .right-side {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: minmax(min-content, max-content) repeat(4, 1fr);
+
+        p {
+            text-align: center;
+        }
+
+        .teams {
+            grid-column: 1;
+        }
+
+        .parcours {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    .splash-team {
+        background-image: url("../img/splash-team.svg"), url("../img/white-line.svg");
+        background-repeat: no-repeat;
+        background-size: 70%, auto;
+        background-position: center, right;
+        grid-column: 1;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        p {
+            font-family: shaka;
+            font-size: 5em;
+            color: $yellow;
+            -webkit-text-stroke: 2px black;
+            padding-bottom: 15px;
+        }
+    }
+
+
+    .cases-wrap {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        align-items: center;
+        background-image: url("../img/line3.svg");
+        background-size: auto;
+        background-position: center;
+        background-repeat: repeat-x;
+        overflow: hidden;
+
+        .cases-yellow {
+            background-color: $yellow;
+            clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
+            padding: 0.5em;
+            width: max-content;
+            margin-right: 1em;
+        }
+
+        .case {
+            background-color: $blue;
+            clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
+            padding: 2em;
+            width: 60px;
+            height: 60px;
+        }
+
+        .defi  {
+            background-color: $purple;
+        }
+    }
+
+    .wrap2 {
+        grid-row: 3;
+    }
+
+    .wrap3 {
+        grid-row: 4;
+    }
+
+    .wrap4 {
+        grid-row: 5;
+    }
+}
