@@ -28,4 +28,4 @@ $_SESSION['teams'] = $teams;
 
 var_dump($_SESSION);
 
-header('location:jeu.php');
+header('location:plateau.php');

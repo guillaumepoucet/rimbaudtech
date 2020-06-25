@@ -16,6 +16,14 @@
 
 <body>
 
+    <?php
+
+    require_once "class/Team.php";
+    $team1 = new Team($_SESSION['teams']['team1']['team-name']);
+    $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
+    $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
+    ?>
+
     <div id="plateau">
 
         <!-- score -->
@@ -26,12 +34,12 @@
                 <div class="team team1">
                     <div class="team-purple">
                         <div class="team-name">
-                            <p>#1 Perruches</p>
+                            <p><?= $team1->getPseudo() ?></p>
                         </div>
                     </div>
                     <div class="team-yellow">
                         <div class="team-score">
-                            <p>300</p>
+                            <p class="score"><?= $team1->getScore() ?></p>
                         </div>
                     </div>
                 </div>
@@ -119,60 +127,82 @@
 
             <!-- cases -->
             <p class="cat-title parcours">parcours</p>
-            <div class="cases-wrap">
+            <div class="cases-wrap wrap1">
 
-                <?php
-
-                for ($i = 1; $i <= 14; $i++) {
-                    echo "<div class=\"cases-yellow case$i\">
-                        <div class=\"case $i\">
-                            
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <?php if ($i == 4) : ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?>">
+                            </div>
                         </div>
-                    </div>";
-                }
-                ?>
+                    </div>
+                <?php endfor ?>
 
             </div>
             <div class="cases-wrap wrap2">
 
-                <?php
-
-                for ($i = 1; $i <= 14; $i++) {
-                    echo "<div class=\"cases-yellow case$i\">
-                        <div class=\"case $i\">
-                            
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <?php if ($i == 3) : ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?>">
+                            </div>
                         </div>
-                    </div>";
-                }
-                ?>
+                    </div>
+                <?php endfor ?>
 
             </div>
             <div class="cases-wrap wrap3">
 
-                <?php
-
-                for ($i = 1; $i <= 14; $i++) {
-                    echo "<div class=\"cases-yellow case$i\">
-                        <div class=\"case $i\">
-                            
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <?php if ($i == 5) : ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?>">
+                            </div>
                         </div>
-                    </div>";
-                }
-                ?>
+                    </div>
+                <?php endfor ?>
 
             </div>
             <div class="cases-wrap wrap4">
 
-                <?php
 
-                for ($i = 1; $i <= 14; $i++) {
-                    echo "<div class=\"cases-yellow case$i\">
-                        <div class=\"case $i\">
-                            
+
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <?php if ($i == 2) : ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?>">
+                            </div>
                         </div>
-                    </div>";
-                }
-                ?>
+                    </div>
+                <?php endfor ?>
 
             </div>
             <!-- /cases -->
@@ -181,9 +211,81 @@
 
     </div>
 
+    <button id="myBtn">Afficher une question</button>
+
+    <div id="myModal" class="modal">
+
+        <div class="yellow">
+
+            <div id="question" class="modal-content">
+
+                <span class="close">&times;</span>
+
+                <div>
+                    <p class="question">Question n°<span class="numero"></span></p>
+                    <p class="n-question"></p>
+                </div>
+
+                <div class="reponse">
+                    <div class="reponseInput"><input type="radio" name="list" value="1" id="">
+                        <p class="a"></p>
+                    </div>
+                    <div class="reponseInput"><input type="radio" name="list" value="2" id="">
+                        <p class="b"></p>
+                    </div>
+                    <div class="reponseInput"><input type="radio" name="list" value="3" id="">
+                        <p class="c"></p>
+                    </div>
+                </div>
+
+                <div id="rep" class="btnrep">
+                    <div>
+                        <span>Répondre !</span>
+                    </div>
+                </div>
+
+
+                <div class="validation">
+                    <input class="btnval" type="button" name="valider" id="val" value="Valider !"></p>
+                    <input class="btnechec" type="button" name="echec" id="ech" value="Echec !"></p>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
     <script>
-        $('.case').eq(3).addClass('defi');
+        $('.wrap1 .case').eq(3).addClass('defi');
+        $('.wrap2 .case').eq(2).addClass('defi');
+        $('.wrap3 .case').eq(4).addClass('defi');
+        $('.wrap4 .case').eq(1).addClass('defi');
     </script>
+
+
+    <!-- On alert de la perte des données si fermeture fenetre -->
+    <script type="text/javascript">
+        window.onbeforeunload = confirmExit;
+
+        function confirmExit() {
+            return 'En fermant, vous risquez de perdre la totalité de vos données. Etes-vous sûr(e) de vouloir quitter ?';
+        }
+    </script>
+
+    <!-- On bloque l input ENTRER -->
+    <script type="text/javascript">
+        noPressEnter(document.modal);
+        noPressEnter(document.myModal.modal)
+    </script>
+
+    <script src="js/modal.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/questionnaire.js"></script>
+    <script src="js/jeu.js"></script>
+    <script src="js/lancerDe.js"></script>
 
 </body>
 

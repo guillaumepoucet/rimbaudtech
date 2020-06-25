@@ -8,6 +8,11 @@
     src: url("../fonts/shakapow/shakapow.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: 'heroes';
+    src: url("../fonts/heroes/heroes.ttf") format("truetype");
+}
+
 $blue-dark : #0B4A5B;
 $blue : #25BAE5;
 $yellow : #F7D126;
@@ -18,8 +23,8 @@ body {
     background-color: $blue-dark;
     background-image: url("../img/groupe1.svg");
     background-repeat: no-repeat;
-    background-position: 85% 10%;
-    background-size: 90%;
+    background-position: 65% 24%;
+    background-size: 70%;
     overflow: hidden;
 }
 
@@ -32,6 +37,7 @@ body {
         font-family: simplicity;
         color: white;
         font-size: 7em;
+        text-shadow: 3px 4px black;
     }
 
     #score {
@@ -39,6 +45,10 @@ body {
         font-family: shaka;
         text-align: center;
         padding: 0 2em;
+
+        .cat-title {
+            text-align: left;
+        }
 
         .team {
             position: relative;
@@ -81,6 +91,8 @@ body {
 
         .de-wrap-shadow {
             filter: drop-shadow(6px 6px $yellow);
+            position: absolute;
+            bottom: 10px;
         }
 
         .de-wrap {
@@ -96,7 +108,7 @@ body {
                 background-color: $blue-dark;
                 font-size: 4em;
                 display: flex;
-                padding: 20px 65px;
+                padding: 20px 65px 20px 45px;
                 justify-content: center;
                 align-items: center;
                 clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.80%, 5.16% 83.03%);
@@ -135,7 +147,7 @@ body {
     .splash-team {
         background-image: url("../img/splash-team.svg"), url("../img/white-line.svg");
         background-repeat: no-repeat;
-        background-size: 70%, auto;
+        background-size: 60%, auto;
         background-position: center, right;
         grid-column: 1;
         display: grid;
@@ -162,6 +174,41 @@ body {
         background-position: center;
         background-repeat: repeat-x;
         overflow: hidden;
+        padding-left: 10px;
+
+        .relative {
+            position: relative;
+
+            img {
+                position: absolute;
+                z-index: 99;
+            }
+
+            .svgAction {
+                top: 20px;
+                left: -8px;
+            }
+
+            .svgBoom {
+                bottom: 100px;
+                right: 67px;
+            }
+
+            .svgBubble {
+                top: -9px;
+                left: -14px;
+                z-index: 98
+            }
+
+            span {
+                font-family: shaka;
+                position: absolute;
+                z-index: 99;
+                transform: rotate(-33deg);
+                top: 15px;
+                left: 15px;
+            }
+        }
 
         .cases-yellow {
             background-color: $yellow;
@@ -169,6 +216,7 @@ body {
             padding: 0.5em;
             width: max-content;
             margin-right: 1em;
+
         }
 
         .case {
@@ -179,7 +227,7 @@ body {
             height: 60px;
         }
 
-        .defi  {
+        .defi {
             background-color: $purple;
         }
     }
@@ -194,5 +242,110 @@ body {
 
     .wrap4 {
         grid-row: 5;
+    }
+}
+
+.modal {
+    position: fixed;
+    display: none;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    .yellow {
+        background-color: yellow;
+        margin: 15% auto;
+        width: 45%;
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+        padding: 1em;
+    }
+
+    .modal-content {
+        background-color: white;
+        clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+        padding: 2em;
+        font-family: heroes;
+        line-height: 2.3em;
+
+        .question {
+            text-align: center;
+            font-size: 0.8em;
+        }
+
+        .n-question {
+            font-size: 1.5em;
+            text-align: center;
+            margin: 0.2em 0.5em 1.5em;
+            white-space: break-spaces;
+        }
+
+        .reponse {
+            margin-bottom: 3em;
+
+            .reponseInput {
+                display: flex;
+            }
+
+            #time {
+                justify-content: center;
+            }
+
+            input[type="radio"] {
+                align-self: flex-start;
+                margin-top: 12px;
+            }
+
+        }
+
+        #rep {
+            cursor: pointer;
+            margin: 1em;
+
+            div {
+                text-align: center;
+                filter: drop-shadow(6px 6px $yellow);
+            }
+
+            span {
+                background-color: #CE0B59;
+                color: white;
+                text-shadow: 3px 4px black;
+                padding: 1em;
+                clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+            }
+        }
+    }
+
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes animatetop {
+        from {
+            top: -300px;
+            opacity: 0
+        }
+
+        to {
+            top: 0;
+            opacity: 1
+        }
     }
 }

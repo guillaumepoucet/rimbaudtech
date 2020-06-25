@@ -8,12 +8,17 @@
   src: url("../fonts/shakapow/shakapow.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'heroes';
+  src: url("../fonts/heroes/heroes.ttf") format("truetype");
+}
+
 body {
   background-color: #0B4A5B;
   background-image: url("../img/groupe1.svg");
   background-repeat: no-repeat;
-  background-position: 85% 10%;
-  background-size: 90%;
+  background-position: 65% 24%;
+  background-size: 70%;
   overflow: hidden;
 }
 
@@ -30,6 +35,7 @@ body {
   font-family: simplicity;
   color: white;
   font-size: 7em;
+  text-shadow: 3px 4px black;
 }
 
 #plateau #score {
@@ -38,6 +44,10 @@ body {
   font-family: shaka;
   text-align: center;
   padding: 0 2em;
+}
+
+#plateau #score .cat-title {
+  text-align: left;
 }
 
 #plateau #score .team {
@@ -92,6 +102,8 @@ body {
 #plateau #score .de-wrap-shadow {
   -webkit-filter: drop-shadow(6px 6px #F7D126);
           filter: drop-shadow(6px 6px #F7D126);
+  position: absolute;
+  bottom: 10px;
 }
 
 #plateau #score .de-wrap {
@@ -113,7 +125,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px 65px;
+  padding: 20px 65px 20px 45px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -162,7 +174,7 @@ body {
 #plateau .splash-team {
   background-image: url("../img/splash-team.svg"), url("../img/white-line.svg");
   background-repeat: no-repeat;
-  background-size: 70%, auto;
+  background-size: 60%, auto;
   background-position: center, right;
   -ms-grid-column: 1;
   grid-column: 1;
@@ -198,6 +210,42 @@ body {
   background-position: center;
   background-repeat: repeat-x;
   overflow: hidden;
+  padding-left: 10px;
+}
+
+#plateau .cases-wrap .relative {
+  position: relative;
+}
+
+#plateau .cases-wrap .relative img {
+  position: absolute;
+  z-index: 99;
+}
+
+#plateau .cases-wrap .relative .svgAction {
+  top: 20px;
+  left: -8px;
+}
+
+#plateau .cases-wrap .relative .svgBoom {
+  bottom: 100px;
+  right: 67px;
+}
+
+#plateau .cases-wrap .relative .svgBubble {
+  top: -9px;
+  left: -14px;
+  z-index: 98;
+}
+
+#plateau .cases-wrap .relative span {
+  font-family: shaka;
+  position: absolute;
+  z-index: 99;
+  -webkit-transform: rotate(-33deg);
+          transform: rotate(-33deg);
+  top: 15px;
+  left: 15px;
 }
 
 #plateau .cases-wrap .cases-yellow {
@@ -237,5 +285,116 @@ body {
 #plateau .wrap4 {
   -ms-grid-row: 5;
   grid-row: 5;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Add Animation */
+}
+
+.modal .yellow {
+  background-color: yellow;
+  margin: 15% auto;
+  width: 45%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+  padding: 1em;
+}
+
+.modal .modal-content {
+  background-color: white;
+  -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+  padding: 2em;
+  font-family: heroes;
+  line-height: 2.3em;
+}
+
+.modal .modal-content .question {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.modal .modal-content .n-question {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0.2em 0.5em 1.5em;
+  white-space: break-spaces;
+}
+
+.modal .modal-content .reponse {
+  margin-bottom: 3em;
+}
+
+.modal .modal-content .reponse .reponseInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.modal .modal-content .reponse #time {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal .modal-content .reponse input[type="radio"] {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: 12px;
+}
+
+.modal .modal-content #rep {
+  cursor: pointer;
+  margin: 1em;
+}
+
+.modal .modal-content #rep div {
+  text-align: center;
+  -webkit-filter: drop-shadow(6px 6px #F7D126);
+          filter: drop-shadow(6px 6px #F7D126);
+}
+
+.modal .modal-content #rep span {
+  background-color: #CE0B59;
+  color: white;
+  text-shadow: 3px 4px black;
+  padding: 1em;
+  -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=plateau.css.map */
