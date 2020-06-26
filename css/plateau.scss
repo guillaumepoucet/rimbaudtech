@@ -35,17 +35,55 @@ $fade-black: (black, .61);
 
     .launcher-wrapper {
         background-color: yellow;
-        padding: 1em;
+        padding: 0.5em;
+        font-family: simplicity;
+        font-size: 1.5em;
+        text-align: center;
+        color: white;
+        clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+        margin-top: 7em;
     }
 
     .wrapper {
-        background-image: radial-gradient(#1983A2 20%, $blue 20%);
-        background-position: 0 0;
-        background-size: 20px 20px;
-        height: 177px;
-        width: 100%;
+        background-image: radial-gradient(#00000078 20%, transparent 20%), radial-gradient(#00000078 20%, transparent 20%);
+        background-color: $blue;
+        background-position: 0px 0, 15px 15px;
+        background-size: 30px 30px;
+        padding: 3em 4em;
+        clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+    }
+
+    .launcher-menu {
+        filter: drop-shadow(6px 6px yellow);
+    }
+
+    .btn-wrap:first-of-type {
+        margin-bottom: 2em;
+    }
+
+    .btn-wrap {
+        background-color: yellow;
+        padding: 0.5rem;
+        clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+        width: max-content;
+        margin: 0.5em auto;
+        text-shadow: 3px 4px black;
+
+        .btn-start {
+            font-size: 3em;
+        }
+
+        .btn-btn {
+            background-color: $blue-dark;
+            padding: 10px 45px;
+            clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+        }
     }
 }
+
+// NEW GAME
+
+
 
 // PLATEAU
 
@@ -126,7 +164,7 @@ $fade-black: (black, .61);
     }
 
     #team-board {
-        display: grid; 
+        display: grid;
         align-items: center;
 
         .splash-team {
@@ -138,7 +176,7 @@ $fade-black: (black, .61);
             display: grid;
             align-items: center;
             justify-items: center;
-    
+
             p {
                 font-family: shaka;
                 font-size: 5em;
@@ -327,7 +365,7 @@ $fade-black: (black, .61);
 
 .de-wrap-shadow {
     filter: drop-shadow(6px 6px $yellow);
-grid-column: 1 / span 2;
+    grid-column: 1 / span 2;
 }
 
 .de-wrap {

@@ -34,15 +34,56 @@
 
 .launcher .launcher-wrapper {
   background-color: yellow;
-  padding: 1em;
+  padding: 0.5em;
+  font-family: simplicity;
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  margin-top: 7em;
 }
 
 .launcher .wrapper {
-  background-image: radial-gradient(#1983A2 20%, #25BAE5 20%);
-  background-position: 0 0;
-  background-size: 20px 20px;
-  height: 177px;
-  width: 100%;
+  background-image: radial-gradient(#00000078 20%, transparent 20%), radial-gradient(#00000078 20%, transparent 20%);
+  background-color: #25BAE5;
+  background-position: 0px 0, 15px 15px;
+  background-size: 30px 30px;
+  padding: 3em 4em;
+  -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+}
+
+.launcher .launcher-menu {
+  -webkit-filter: drop-shadow(6px 6px yellow);
+          filter: drop-shadow(6px 6px yellow);
+}
+
+.launcher .btn-wrap:first-of-type {
+  margin-bottom: 2em;
+}
+
+.launcher .btn-wrap {
+  background-color: yellow;
+  padding: 0.5rem;
+  -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0.5em auto;
+  text-shadow: 3px 4px black;
+}
+
+.launcher .btn-wrap .btn-start {
+  font-size: 3em;
+}
+
+.launcher .btn-wrap .btn-btn {
+  background-color: #0B4A5B;
+  padding: 10px 45px;
+  -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
 }
 
 .plateau-wrapper {

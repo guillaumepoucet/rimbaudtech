@@ -22,24 +22,19 @@
         <div class="wrapper">
 
             <div class="launcher-menu">
-                <div>
-                    <div>
+                <div class="btn-wrap">
+                    <div class="btn-btn btn-start">
                         <p>Commencer</p>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <p>Commencer</p>
+                <div class="btn-wrap">
+                    <div class="btn-btn">
+                        <p>Règles du jeu</p>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <p>Commencer</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <p>Commencer</p>
+                <div class="btn-wrap">
+                    <div class="btn-btn">
+                        <p>Crédits</p>
                     </div>
                 </div>
             </div>
