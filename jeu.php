@@ -58,7 +58,7 @@
             <div class="team team-1">
                 <div class="team-header"><img src="<?= $team1->getScoreIcon() ?>" alt="" class="score-team-icon"></div>
                 <h4><?= $team1->getPseudo() ?></h4>
-                <p><span class="score"><?= $team1->getScore() ?></span> pts</p>
+                <p><span class="score" id="scoring"><?= $team1->getScore() ?></span> pts</p>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
 
         <!-- Modal content -->
 
-    <form action="POST">
+    <form action="" method="POST">
         <div id="question" class="modal-content">
             <span class="close">&times;</span>
             <div>
@@ -85,13 +85,13 @@
                 <p class="n-question"></p>
             </div>
             <div class="reponse">
-                <div class="reponseInput"><input type="radio" name="list" value="1" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="1" id="radio1" checked="checked">
                     <p class="a"></p>
                 </div>
-                <div class="reponseInput"><input type="radio" name="list" value="2" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="2" id="radio2">
                     <p class="b"></p>
                 </div>
-                <div class="reponseInput"><input type="radio" name="list" value="3" id="">
+                <div class="reponseInput"><input type="radio" name="list" value="3" id="radio3">
                     <p class="c"></p>
                 </div>
 
@@ -105,6 +105,10 @@
             </div>
         </div>
     </form>
+
+    <!-- Test Save -->
+
+    <?= $team1->getScoreIcon() ?>
 
     
 
@@ -125,21 +129,24 @@
 
     </script>
 
-    <!-- On bloque l input ENTRER -->
+    <!-- On bloque l input ENTRER
     <script type="text/javascript">
         noPressEnter(document.modal);
         noPressEnter(document.myModal.modal)
     </script>
 
-    <!-- On reactive l input ENTRER
-        noPressEnter(document.body, false); -->
-  
+    On reactive l input ENTRER
+    <script type="text/javascript">
+        noPressEnter(document.body, false);
+    </script> -->
+
 
     <script src="js/modal.js"></script>
     <script src="js/score.js"></script>
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
+    <script src="js/localStorage.js"></script>
     
     
 
