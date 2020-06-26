@@ -11,7 +11,7 @@ $(function () {
             //alert("Correct");
             var score = $('.score').text();
             var s = parseInt(score)
-            newScore = s + 100;
+            newScore = s + parseInt(100);
             $('.score').text(newScore);
             modal.style.display = "none";
 
@@ -35,7 +35,7 @@ $(function () {
             //alert("Correct");
             var score = $('.score').text();
             var s = parseInt(score)
-            newScore = s + 100;
+            newScore = s + parseInt(100);
             $('.score').text(newScore);
             modal.style.display = "none";
             //$('#time').remove();

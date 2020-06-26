@@ -81,12 +81,12 @@
             <div class="team">
                 <div class="team-purple">
                     <div class="team-name">
-                        <p><?= $team1->getPseudo() ?></p>
+                        <p>team</p>
                     </div>
                 </div>
                 <div class="team-yellow">
                     <div class="team-score">
-                        <p class="score"><?= $team1->getScore() ?></p>
+                        <p>100</p>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
 
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
-                    <?php if ($i == 4) : ?>
+                    <?php if ($i == 3) : ?>
                         <img class="svgAction" src="img/action.svg" alt="">
                         <img class="svgBoom" src="img/boom.svg" alt="">
                     <?php else : ?>
@@ -125,12 +125,12 @@
             <div class="team">
                 <div class="team-purple">
                     <div class="team-name">
-                        <p><?= $team1->getPseudo() ?></p>
+                        <p>nom</p>
                     </div>
                 </div>
                 <div class="team-yellow">
                     <div class="team-score">
-                        <p class="score"><?= $team1->getScore() ?></p>
+                        <p>1500</p>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
 
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
-                    <?php if ($i == 4) : ?>
+                    <?php if ($i == 5) : ?>
                         <img class="svgAction" src="img/action.svg" alt="">
                         <img class="svgBoom" src="img/boom.svg" alt="">
                     <?php else : ?>
@@ -169,12 +169,12 @@
             <div class="team">
                 <div class="team-purple">
                     <div class="team-name">
-                        <p><?= $team1->getPseudo() ?></p>
+                        <p>nom</p>
                     </div>
                 </div>
                 <div class="team-yellow">
                     <div class="team-score">
-                        <p class="score"><?= $team1->getScore() ?></p>
+                        <p>200</p>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@
 
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
-                    <?php if ($i == 4) : ?>
+                    <?php if ($i == 2) : ?>
                         <img class="svgAction" src="img/action.svg" alt="">
                         <img class="svgBoom" src="img/boom.svg" alt="">
                     <?php else : ?>
