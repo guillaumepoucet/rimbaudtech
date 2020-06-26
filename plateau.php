@@ -24,194 +24,205 @@
     $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
     ?>
 
-    <div id="plateau">
 
-        <!-- score -->
-        <div id="score">
-            <p class="cat-title">scores</p>
-            <div>
-                <!-- team score -->
-                <div class="team team1">
-                    <div class="team-purple">
-                        <div class="team-name">
-                            <p><?= $team1->getPseudo() ?></p>
-                        </div>
-                    </div>
-                    <div class="team-yellow">
-                        <div class="team-score">
-                            <p class="score"><?= $team1->getScore() ?></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /team score -->
-                <!-- team score -->
-                <div class="team team1">
-                    <div class="team-purple">
-                        <div class="team-name">
-                            <p>#2 Equipe</p>
-                        </div>
-                    </div>
-                    <div class="team-yellow">
-                        <div class="team-score">
-                            <p>1500</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /team score -->
-                <!-- team score -->
-                <div class="team team1">
-                    <div class="team-purple">
-                        <div class="team-name">
-                            <p>#2 Equipe</p>
-                        </div>
-                    </div>
-                    <div class="team-yellow">
-                        <div class="team-score">
-                            <p>1500</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /team score -->
-                <!-- team score -->
-                <div class="team team1">
-                    <div class="team-purple">
-                        <div class="team-name">
-                            <p>#2 Equipe</p>
-                        </div>
-                    </div>
-                    <div class="team-yellow">
-                        <div class="team-score">
-                            <p>1500</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /team score -->
-                <!-- lancer de de -->
-                <div class="de-wrap-shadow">
-                    <div class="de-wrap">
-                        <div class="de">
-                            <img src="img/de.svg" alt="">
-                            <p>lancer le dé</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- /lancer de de -->
 
+    <div id="plateau" class="plateau-wrapper">
+
+        <p class="cat-title">scores</p>
+        <p class="cat-title teams">teams</p>
+        <p class="cat-title parcours">parcours</p>
+
+        <div id="score" class="team1">
+
+            <div class="team">
+                <div class="team-purple">
+                    <div class="team-name">
+                        <p><?= $team1->getPseudo() ?></p>
+                    </div>
+                </div>
+                <div class="team-yellow">
+                    <div class="team-score">
+                        <p class="score"><?= $team1->getScore() ?></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- /score -->
 
-        <!-- right side -->
-        <div class="right-side">
-            <!-- team -->
-
-            <p class="cat-title teams">teams</p>
+        <div id="team-board" class="team1">
 
             <div class="splash-team">
                 <!-- <img src="img/splash-team.svg" alt=""> -->
                 <p>#1</p>
             </div>
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#2</p>
-            </div>
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#3</p>
-            </div>
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#4</p>
-            </div>
-            <!-- /team -->
-
-            <!-- cases -->
-            <p class="cat-title parcours">parcours</p>
-            <div class="cases-wrap wrap1">
-
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
-                        <?php if ($i == 4) : ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span>#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
-                        <div class="cases-yellow case<?= $i ?>">
-                            <div class="case <?= $i ?>">
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor ?>
-
-            </div>
-            <div class="cases-wrap wrap2">
-
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
-                        <?php if ($i == 3) : ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span>#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
-                        <div class="cases-yellow case<?= $i ?>">
-                            <div class="case <?= $i ?>">
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor ?>
-
-            </div>
-            <div class="cases-wrap wrap3">
-
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
-                        <?php if ($i == 5) : ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span>#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
-                        <div class="cases-yellow case<?= $i ?>">
-                            <div class="case <?= $i ?>">
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor ?>
-
-            </div>
-            <div class="cases-wrap wrap4">
-
-
-
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
-                        <?php if ($i == 2) : ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span>#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
-                        <div class="cases-yellow case<?= $i ?>">
-                            <div class="case <?= $i ?>">
-                            </div>
-                        </div>
-                    </div>
-                <?php endfor ?>
-
-            </div>
-            <!-- /cases -->
         </div>
-        <!-- /right side -->
+
+        <div class="cases-wrap wrap1 team1">
+
+            <?php for ($i = 1; $i <= 14; $i++) : ?>
+                <div class="relative">
+                    <?php if ($i == 4) : ?>
+                        <img class="svgAction" src="img/action.svg" alt="">
+                        <img class="svgBoom" src="img/boom.svg" alt="">
+                    <?php else : ?>
+                        <span>#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+                    <?php endif ?>
+                    <div class="cases-yellow case<?= $i ?>">
+                        <div class="case <?= $i ?>">
+                        </div>
+                    </div>
+                </div>
+            <?php endfor ?>
+
+        </div>
+
+        <div id="score" class="team2">
+
+            <div class="team">
+                <div class="team-purple">
+                    <div class="team-name">
+                        <p><?= $team1->getPseudo() ?></p>
+                    </div>
+                </div>
+                <div class="team-yellow">
+                    <div class="team-score">
+                        <p class="score"><?= $team1->getScore() ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="team-board" class="team2">
+
+            <div class="splash-team">
+                <!-- <img src="img/splash-team.svg" alt=""> -->
+                <p>#1</p>
+            </div>
+        </div>
+
+        <div class="cases-wrap wrap2 team2">
+
+            <?php for ($i = 1; $i <= 14; $i++) : ?>
+                <div class="relative">
+                    <?php if ($i == 4) : ?>
+                        <img class="svgAction" src="img/action.svg" alt="">
+                        <img class="svgBoom" src="img/boom.svg" alt="">
+                    <?php else : ?>
+                        <span>#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+                    <?php endif ?>
+                    <div class="cases-yellow case<?= $i ?>">
+                        <div class="case <?= $i ?>">
+                        </div>
+                    </div>
+                </div>
+            <?php endfor ?>
+
+        </div>
+
+        <div id="score" class="team3">
+
+            <div class="team">
+                <div class="team-purple">
+                    <div class="team-name">
+                        <p><?= $team1->getPseudo() ?></p>
+                    </div>
+                </div>
+                <div class="team-yellow">
+                    <div class="team-score">
+                        <p class="score"><?= $team1->getScore() ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="team-board" class="team3">
+
+            <div class="splash-team">
+                <!-- <img src="img/splash-team.svg" alt=""> -->
+                <p>#1</p>
+            </div>
+        </div>
+
+        <div class="cases-wrap wrap3 team3">
+
+            <?php for ($i = 1; $i <= 14; $i++) : ?>
+                <div class="relative">
+                    <?php if ($i == 4) : ?>
+                        <img class="svgAction" src="img/action.svg" alt="">
+                        <img class="svgBoom" src="img/boom.svg" alt="">
+                    <?php else : ?>
+                        <span>#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+                    <?php endif ?>
+                    <div class="cases-yellow case<?= $i ?>">
+                        <div class="case <?= $i ?>">
+                        </div>
+                    </div>
+                </div>
+            <?php endfor ?>
+
+        </div>
+
+        <div id="score" class="team4">
+
+            <div class="team">
+                <div class="team-purple">
+                    <div class="team-name">
+                        <p><?= $team1->getPseudo() ?></p>
+                    </div>
+                </div>
+                <div class="team-yellow">
+                    <div class="team-score">
+                        <p class="score"><?= $team1->getScore() ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="team-board" class="team4">
+
+            <div class="splash-team">
+                <!-- <img src="img/splash-team.svg" alt=""> -->
+                <p>#1</p>
+            </div>
+        </div>
+
+        <div class="cases-wrap wrap4 team4">
+
+            <?php for ($i = 1; $i <= 14; $i++) : ?>
+                <div class="relative">
+                    <?php if ($i == 4) : ?>
+                        <img class="svgAction" src="img/action.svg" alt="">
+                        <img class="svgBoom" src="img/boom.svg" alt="">
+                    <?php else : ?>
+                        <span>#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+                    <?php endif ?>
+                    <div class="cases-yellow case<?= $i ?>">
+                        <div class="case <?= $i ?>">
+                        </div>
+                    </div>
+                </div>
+            <?php endfor ?>
+
+        </div>
+
+
+        <div class="de-wrap-shadow">
+            <div class="de-wrap">
+                <div class="de">
+                    <img src="img/de.svg" alt="">
+                    <p>lancer le dé</p>
+                </div>
+            </div>
+        </div>
+
+        <button id="myBtn">Afficher une question</button>
+
+
 
     </div>
-
-    <button id="myBtn">Afficher une question</button>
 
     <div id="myModal" class="modal">
 
