@@ -264,6 +264,11 @@ input[type="text"]:focus {
   text-align: center;
 }
 
+#plateau .parcours {
+  text-align: left;
+  margin-left: 10%;
+}
+
 #plateau .team {
   position: relative;
 }
@@ -373,17 +378,28 @@ input[type="text"]:focus {
   background-size: auto;
   background-position: center;
   background-repeat: repeat-x;
-  overflow: hidden;
   padding-left: 10px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: relative;
+}
+
+#plateau .cases-wrap img {
+  position: absolute;
+  z-index: 99;
+}
+
+#plateau .cases-wrap .icon {
+  width: 3rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  left: 4rem;
+  z-index: 999;
 }
 
 #plateau .cases-wrap .relative {
   position: relative;
-}
-
-#plateau .cases-wrap .relative img {
-  position: absolute;
-  z-index: 99;
 }
 
 #plateau .cases-wrap .relative .svgAction {
@@ -412,6 +428,16 @@ input[type="text"]:focus {
   left: 15px;
 }
 
+#plateau .cases-wrap .relative .start {
+  position: absolute;
+  font-family: shaka;
+  font-size: 2rem;
+  top: 10px;
+  z-index: 99;
+  width: 100%;
+  text-align: center;
+}
+
 #plateau .cases-wrap .cases-yellow {
   background-color: #F7D126;
   -webkit-clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
@@ -432,7 +458,7 @@ input[type="text"]:focus {
   height: 60px;
 }
 
-#plateau .cases-wrap .defi {
+#plateau .cases-wrap .action {
   background-color: #CE0B59;
 }
 
@@ -568,6 +594,7 @@ input[type="text"]:focus {
 }
 
 .de-wrap .de {
+  cursor: pointer;
   color: #F7D126;
   background-color: #0B4A5B;
   font-size: 4em;

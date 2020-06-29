@@ -226,6 +226,11 @@ input[type="text"]:focus {
         text-align: center;
     }
 
+    .parcours {
+        text-align: left;
+        margin-left: 10%;
+    }
+
 
     .team {
         position: relative;
@@ -314,16 +319,25 @@ input[type="text"]:focus {
         background-size: auto;
         background-position: center;
         background-repeat: repeat-x;
-        overflow: hidden;
         padding-left: 10px;
+        transition: .2s;
+        position: relative;
+
+        img {
+            position: absolute;
+            z-index: 99;
+        }
+
+        .icon {
+            width: 3rem;
+            align-self: center;
+            left: 4rem;
+            z-index: 999;
+        }
 
         .relative {
             position: relative;
 
-            img {
-                position: absolute;
-                z-index: 99;
-            }
 
             .svgAction {
                 top: 30px;
@@ -349,6 +363,16 @@ input[type="text"]:focus {
                 top: 15px;
                 left: 15px;
             }
+
+            .start {
+                position: absolute;
+                font-family: shaka;
+                font-size: 2rem;
+                top: 10px;
+                z-index: 99;
+                width: 100%;
+                text-align: center;
+            }
         }
 
         .cases-yellow {
@@ -368,7 +392,7 @@ input[type="text"]:focus {
             height: 60px;
         }
 
-        .defi {
+        .action {
             background-color: $purple;
         }
     }
@@ -493,6 +517,7 @@ input[type="text"]:focus {
     position: relative;
 
     .de {
+        cursor: pointer;
         color: $yellow;
         background-color: $blue-dark;
         font-size: 4em;

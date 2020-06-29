@@ -58,6 +58,17 @@
 
         <div class="cases-wrap wrap1 team1">
 
+            <?php if (isset($_SESSION['teams']['team1'])) : ?>
+                <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon icon">
+            <?php endif ?>
+            <div class="relative">
+                <p class="start">start</p>
+                <div class="cases-yellow">
+                    <div class="case">
+                    </div>
+                </div>
+            </div>
+
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
                     <?php if ($i == 4) : ?>
@@ -68,7 +79,7 @@
                         <img class="svgBubble" src="img/bubble.svg" alt="">
                     <?php endif ?>
                     <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?>">
+                        <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
                         </div>
                     </div>
                 </div>
@@ -102,6 +113,15 @@
 
         <div class="cases-wrap wrap2 team2">
 
+            <div class="relative">
+                <p class="start">start</p>
+                <div class="cases-yellow">
+                    <div class="case">
+
+                    </div>
+                </div>
+            </div>
+
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
                     <?php if ($i == 3) : ?>
@@ -112,7 +132,7 @@
                         <img class="svgBubble" src="img/bubble.svg" alt="">
                     <?php endif ?>
                     <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?>">
+                        <div class="case <?= $i ?> case-count">
                         </div>
                     </div>
                 </div>
@@ -146,6 +166,15 @@
 
         <div class="cases-wrap wrap3 team3">
 
+            <div class="relative">
+                <p class="start">start</p>
+                <div class="cases-yellow">
+                    <div class="case">
+
+                    </div>
+                </div>
+            </div>
+
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
                     <?php if ($i == 5) : ?>
@@ -156,7 +185,7 @@
                         <img class="svgBubble" src="img/bubble.svg" alt="">
                     <?php endif ?>
                     <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?>">
+                        <div class="case <?= $i ?> case-count">
                         </div>
                     </div>
                 </div>
@@ -190,6 +219,15 @@
 
         <div class="cases-wrap wrap4 team4">
 
+            <div class="relative">
+                <p class="start">start</p>
+                <div class="cases-yellow">
+                    <div class="case">
+
+                    </div>
+                </div>
+            </div>
+
             <?php for ($i = 1; $i <= 14; $i++) : ?>
                 <div class="relative">
                     <?php if ($i == 2) : ?>
@@ -200,7 +238,7 @@
                         <img class="svgBubble" src="img/bubble.svg" alt="">
                     <?php endif ?>
                     <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?>">
+                        <div class="case <?= $i ?> case-count">
                         </div>
                     </div>
                 </div>
@@ -270,10 +308,10 @@
     </div>
 
     <script>
-        $('.wrap1 .case').eq(3).addClass('defi');
-        $('.wrap2 .case').eq(2).addClass('defi');
-        $('.wrap3 .case').eq(4).addClass('defi');
-        $('.wrap4 .case').eq(1).addClass('defi');
+        $('.wrap1 .case-count').eq(3).addClass('action');
+        $('.wrap2 .case-count').eq(2).addClass('action');
+        $('.wrap3 .case-count').eq(4).addClass('action');
+        $('.wrap4 .case-count').eq(1).addClass('action');
     </script>
 
 
@@ -293,7 +331,7 @@
     </script>
 
     <script src="js/modal.js"></script>
-    <script src="js/score.js"></script>
+
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
