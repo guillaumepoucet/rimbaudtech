@@ -398,6 +398,10 @@ input[type="text"]:focus {
   z-index: 999;
 }
 
+#plateau .cases-wrap .hidden {
+  opacity: 0;
+}
+
 #plateau .cases-wrap .relative {
   position: relative;
 }

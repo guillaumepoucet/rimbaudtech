@@ -335,8 +335,13 @@ input[type="text"]:focus {
             z-index: 999;
         }
 
+        .hidden {
+            opacity: 0;
+        }
+
         .relative {
             position: relative;
+    
 
 
             .svgAction {

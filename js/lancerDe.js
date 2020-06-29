@@ -7,10 +7,17 @@ $('.de').click(function () {
     var de = Math.ceil(Math.random() * 6);
     target = position + de
     // fonction slidant le plateau
-    for (n = position; n < target; n++) {
+    function move() {
         $('.wrap1 .relative').animate({
             right: "+=" + distance
         })
+    }
+    // function hide(n) {
+    //     $('.wrap1 .relative').eq(n - 1).fadeOut()
+    // }
+    for (n = position; n < target; n++) {
+        move()
+        $('.wrap1 .relative').eq(n).addClass('hidden')
     }
     // on actualise la position pour le prochain tour
     // et le tracker en récupèrant la case
