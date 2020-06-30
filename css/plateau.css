@@ -17,6 +17,25 @@ body {
   background-color: #0B4A5B;
 }
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.f-j-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 .launcher {
   background-image: url("../img/logo.svg");
   background-repeat: no-repeat;
@@ -33,6 +52,18 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.launcher .modal .modal-content {
+  padding: 3rem;
+}
+
+.launcher .modal .team-nb {
+  margin: 0.5rem 0.5rem;
+}
+
+.launcher .modal input[type="submit"] {
+  text-shadow: 3px 4px black;
 }
 
 .launcher .launcher-wrapper {
@@ -67,6 +98,7 @@ body {
 }
 
 .launcher .btn-wrap {
+  cursor: pointer;
   background-color: yellow;
   padding: 0.5rem;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
@@ -395,7 +427,7 @@ input[type="text"]:focus {
       -ms-grid-row-align: center;
       align-self: center;
   left: 4rem;
-  z-index: 999;
+  z-index: 990;
 }
 
 #plateau .cases-wrap .hidden {
@@ -469,7 +501,7 @@ input[type="text"]:focus {
 .modal {
   position: fixed;
   display: none;
-  z-index: 999;
+  z-index: 990;
   left: 0;
   top: 0;
   width: 100%;
@@ -490,6 +522,11 @@ input[type="text"]:focus {
   -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
           clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
   padding: 1em;
+}
+
+.modal .add-teams {
+  width: 35%;
+  text-align: center;
 }
 
 .modal .modal-content {

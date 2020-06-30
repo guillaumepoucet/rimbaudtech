@@ -43,7 +43,47 @@
 
     </div>
 
+    <div id="start-launcher" class="modal">
 
+        <div class="yellow add-teams">
+
+            <div class="modal-content">
+
+                <p>Choisissez le nombre d'équipes : </p>
+                <div class="custom-radio">
+                    <form action="">
+                        <div class="f-j-center">
+                            <div class="team-nb">
+                                <input type="radio" name="teams-nb" id="">
+                                <label for="">1</label>
+                            </div>
+                            <div class="team-nb">
+                                <input type="radio" name="teams-nb" id="">
+                                <label for="">2</label>
+                            </div>
+                            <div class="team-nb">
+                                <input type="radio" name="teams-nb" id="">
+                                <label for="">3</label>
+                            </div>
+                            <div class="team-nb">
+                                <input type="radio" name="teams-nb" id="">
+                                <label for="">4</label>
+                            </div>
+                        </div>
+                  
+                            <button type="submit">Valider</button>
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('.btn-start').parent().click(function() {
+            $('#start-launcher').css('display', "block")
+        })
+    </script>
 
 </body>
 
