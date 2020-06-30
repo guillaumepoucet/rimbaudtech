@@ -468,10 +468,18 @@ input[type="text"]:focus {
   position: absolute;
   font-family: shaka;
   font-size: 2rem;
-  top: 10px;
+  top: 3px;
   z-index: 99;
   width: 100%;
   text-align: center;
+  color: #F7D126;
+  -webkit-text-stroke: 1px black;
+  background-image: url(../img/splash-team.svg);
+  background-size: 59%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px 0;
+  left: -5px;
 }
 
 #plateau .cases-wrap .cases-yellow {
