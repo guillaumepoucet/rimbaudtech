@@ -8,16 +8,18 @@ $('.de').click(function () {
     target = position + de
     // fonction slidant le plateau
     function move() {
-        $('.wrap1 .relative').animate({
-            right: "+=" + distance
-        })
+
     }
     // function hide(n) {
     //     $('.wrap1 .relative').eq(n - 1).fadeOut()
     // }
     for (n = position; n < target; n++) {
-        move()
-        $('.wrap1 .relative').eq(n).addClass('hidden')
+        $('.wrap1 .relative').eq(n).animate({
+            opacity: "0"
+        })
+        $('.wrap1 .relative').animate({
+            right: "+=" + distance,
+        })
     }
     // on actualise la position pour le prochain tour
     // et le tracker en récupèrant la case
