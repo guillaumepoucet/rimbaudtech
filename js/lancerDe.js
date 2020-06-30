@@ -1,63 +1,79 @@
-// Declaration variable
-var img = $('.team1-icon');
+// trackeur positionné en case start permettant de savoir sur quelle case le pion se trouve actuellement
+var position = 0;
+var target = null;
+// distance pour décaler une seule case
+var distance = 156;
+$('.de').click(function () {
+    var de = Math.ceil(Math.random() * 6);
+    target = position + de
+    // fonction slidant le plateau
+    function move() {
 
-// var place = $(img).parent().parent(".case").prevAll().length;
-// var x = place - 1;
-// console.log(x);
+    }
+    // function hide(n) {
+    //     $('.wrap1 .relative').eq(n - 1).fadeOut()
+    // }
+    for (n = position; n < target; n++) {
+        $('.wrap1 .relative').eq(n).animate({
+            opacity: "0"
+        })
+        $('.wrap1 .relative').animate({
+            right: "+=" + distance,
+        })
+    }
+    // on actualise la position pour le prochain tour
+    // et le tracker en récupèrant la case
+    position = target
+    console.log(position)
+    tracker = $('.case[data-index=' + target + ']')
+    // on vérifie si square est une case action
+    var action = tracker.hasClass('action')
 
-
-// Function Lancer de dé aleatoire et affichage
-document.querySelector('#btnGo').addEventListener('click', function () {
-            var p = Math.ceil(Math.random() * 6)
-    document.querySelector('#baliseImg').src = 'img/de/de' + p + '.jpg';
-
-    // Position initial
-    // On recupere la position de deux parents au-deussus donc le numero de case
-    var place = $(img).parent().parent(".case").prevAll().length;
-    // On soustraie 1 pour recuperer la vraie valeur
-    var x = place -1;
-    console.log(x);
-
-    // On recupere l info du dé
-    //console.log(p);
-
-    // On calcule la nouvelle position et on recup l info
-    var newposition = p + x;
-    console.log(newposition);
-
-    // On deplace le pion en le fixant a la bonne case
-    $((".body") + newposition).append(img);
-
-    // var place = $(img).parent().parent(".case").prevAll().length;
-    // var x = place - 1;
-    // console.log(x);
-
-    // On definis un tableau avec les questions/reponses
-    var question = [
-        ["Parmi ces choix, qu'est ce pour vous que l'innovation ?", "Reponse 1a", "Reponse 1b", "Reponse 1c"],
-        ["question n°2 ?", "Reponse 2a", "Reponse 2b", "Reponse 2c"],
-        ["question n°3 ?", "Reponse 3a", "Reponse 3b", "Reponse 3c"],
-        ["question n°4 ?", "Reponse 4a", "Reponse 4b", "Reponse 4c"],
-        ["question n°5 ?", "Reponse 5a", "Reponse 5b", "Reponse 5c"],
-        ["question n°6 ?", "Reponse 6a", "Reponse 6b", "Reponse 6c"]
-    ];
-
-    // On regarde si le point tombe sur une case action 
-    var parent = $(img).parent().parent(".case");
-    var defi = parent.hasClass('defi');
-    var quiz = parent.hasClass('quiz');
-    // Si quizz on ouvre la modal question
-    if (quiz) {
+    // si action, on choisit une question au hasard
+    if (action) {
         var n = Math.floor(Math.random() * 13) + 1;
-        console.log(question[n]);
-        $('.numero').text(n );
+        q = parseInt(n) + 1;
+        $('.numero').text(n);
         $('.n-question').text(questionnaire[n][0])
-        $('.a').text(questionnaire[n][2][0])
-        $('.b').text(questionnaire[n][2][1])
-        $('.c').text(questionnaire[n][2][2])
+        if (questionnaire[n][1] !== undefined) {
+            $('.a').text(questionnaire[n][1][0])
+            $('.b').text(questionnaire[n][1][1])
+            $('.c').text(questionnaire[n][1][2])
+            baseReponse();
+            //$('.validation').hide();
+        } else {
+            //$('.reponseInput').hide();
+            //$('.btnrep').hide();
+            baseOuverte();
+            $('.reponse').append('<div id="time"><div>');
+            //$('.validation').show();
+            // timer countdown
+            function startTimer(duration, display) {
+                var timer = duration,
+                    minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                    display.text(minutes + ":" + seconds);
+
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
+
+            jQuery(function ($) {
+                var fourMinutes = 60 * 4,
+                    display = $('#time');
+                startTimer(fourMinutes, display);
+            });
+
+        }
 
         modal.style.display = "block";
-    }
-    
-});
-
+    };
+})

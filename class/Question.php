@@ -19,5 +19,4 @@ class Question {
         $this->_question = $question;
         return $this;
     }
-
 }
