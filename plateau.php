@@ -19,9 +19,9 @@
     <?php
 
     require_once "class/Team.php";
-    $team1 = new Team($_SESSION['teams']['team1']['team-name']);
-    $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
-    $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
+    // $team1 = new Team($_SESSION['teams']['team1']['team-name']);
+    // $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
+    // $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
     ?>
 
 
@@ -32,220 +32,63 @@
         <p class="cat-title teams">teams</p>
         <p class="cat-title parcours">parcours</p>
 
-        <div id="score" class="team1">
+        <?php for ($n = 1; $n <= $_SESSION['teams-nb']; $n++) : ?>
+            <div id="score" class="team<?= $n ?>">
 
-            <div class="team">
-                <div class="team-purple">
-                    <div class="team-name">
-                        <p><?= $team1->getPseudo() ?></p>
+                <div class="team">
+                    <div class="team-purple">
+                        <div class="team-name">
+                            <p><?= $_SESSION['team-' . $n . '-name'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="team-yellow">
-                    <div class="team-score">
-                        <p class="score"><?= $team1->getScore() ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="team-board" class="team1">
-
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#1</p>
-            </div>
-        </div>
-
-        <div class="cases-wrap wrap1 team1">
-
-            <?php if (isset($_SESSION['teams']['team1'])) : ?>
-                <img src="<?= $team1->getIcon() ?>" alt="" class="team1-icon icon">
-            <?php endif ?>
-            <div class="relative">
-                <p class="start">start</p>
-                <div class="cases-yellow">
-                    <div class="case">
-                    </div>
-                </div>
-            </div>
-
-            <?php for ($i = 1; $i <= 14; $i++) : ?>
-                <div class="relative">
-                    <?php if ($i == 4) : ?>
-                        <img class="svgAction" src="img/action.svg" alt="">
-                        <img class="svgBoom" src="img/boom.svg" alt="">
-                    <?php else : ?>
-                        <span>#<?= $i ?></span>
-                        <img class="svgBubble" src="img/bubble.svg" alt="">
-                    <?php endif ?>
-                    <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
+                    <div class="team-yellow">
+                        <div class="team-score">
+                            <p class="score">0</p>
                         </div>
                     </div>
                 </div>
-            <?php endfor ?>
-
-        </div>
-
-        <div id="score" class="team2">
-
-            <div class="team">
-                <div class="team-purple">
-                    <div class="team-name">
-                        <p>team</p>
-                    </div>
-                </div>
-                <div class="team-yellow">
-                    <div class="team-score">
-                        <p>100</p>
-                    </div>
-                </div>
             </div>
-        </div>
 
-        <div id="team-board" class="team2">
+            <div id="team-board" class="team<?= $n ?>">
 
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#1</p>
-            </div>
-        </div>
-
-        <div class="cases-wrap wrap2 team2">
-
-            <div class="relative">
-                <p class="start">start</p>
-                <div class="cases-yellow">
-                    <div class="case">
-
-                    </div>
+                <div class="splash-team">
+                    <!-- <img src="img/splash-team.svg" alt=""> -->
+                    <p>#<?= $n ?></p>
                 </div>
             </div>
 
-            <?php for ($i = 1; $i <= 14; $i++) : ?>
+            <div class="cases-wrap wrap1 team<?= $n ?>">
+
+
+                <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
+
                 <div class="relative">
-                    <?php if ($i == 3) : ?>
-                        <img class="svgAction" src="img/action.svg" alt="">
-                        <img class="svgBoom" src="img/boom.svg" alt="">
-                    <?php else : ?>
-                        <span>#<?= $i ?></span>
-                        <img class="svgBubble" src="img/bubble.svg" alt="">
-                    <?php endif ?>
-                    <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?> case-count">
+                    <p class="start">start</p>
+                    <div class="cases-yellow">
+                        <div class="case">
                         </div>
                     </div>
                 </div>
-            <?php endfor ?>
 
-        </div>
-
-        <div id="score" class="team3">
-
-            <div class="team">
-                <div class="team-purple">
-                    <div class="team-name">
-                        <p>nom</p>
-                    </div>
-                </div>
-                <div class="team-yellow">
-                    <div class="team-score">
-                        <p>1500</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="team-board" class="team3">
-
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#1</p>
-            </div>
-        </div>
-
-        <div class="cases-wrap wrap3 team3">
-
-            <div class="relative">
-                <p class="start">start</p>
-                <div class="cases-yellow">
-                    <div class="case">
-
-                    </div>
-                </div>
-            </div>
-
-            <?php for ($i = 1; $i <= 14; $i++) : ?>
-                <div class="relative">
-                    <?php if ($i == 5) : ?>
-                        <img class="svgAction" src="img/action.svg" alt="">
-                        <img class="svgBoom" src="img/boom.svg" alt="">
-                    <?php else : ?>
-                        <span>#<?= $i ?></span>
-                        <img class="svgBubble" src="img/bubble.svg" alt="">
-                    <?php endif ?>
-                    <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?> case-count">
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <?php if ($i == 4) : ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endfor ?>
+                <?php endfor ?>
 
-        </div>
-
-        <div id="score" class="team4">
-
-            <div class="team">
-                <div class="team-purple">
-                    <div class="team-name">
-                        <p>nom</p>
-                    </div>
-                </div>
-                <div class="team-yellow">
-                    <div class="team-score">
-                        <p>200</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="team-board" class="team4">
-
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#1</p>
-            </div>
-        </div>
-
-        <div class="cases-wrap wrap4 team4">
-
-            <div class="relative">
-                <p class="start">start</p>
-                <div class="cases-yellow">
-                    <div class="case">
-
-                    </div>
-                </div>
             </div>
 
-            <?php for ($i = 1; $i <= 14; $i++) : ?>
-                <div class="relative">
-                    <?php if ($i == 2) : ?>
-                        <img class="svgAction" src="img/action.svg" alt="">
-                        <img class="svgBoom" src="img/boom.svg" alt="">
-                    <?php else : ?>
-                        <span>#<?= $i ?></span>
-                        <img class="svgBubble" src="img/bubble.svg" alt="">
-                    <?php endif ?>
-                    <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?> case-count">
-                        </div>
-                    </div>
-                </div>
-            <?php endfor ?>
-
-        </div>
-
+        <?php endfor ?>
 
         <div class="de-wrap-shadow">
             <div class="de-wrap">

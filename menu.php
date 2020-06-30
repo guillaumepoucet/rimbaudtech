@@ -51,22 +51,22 @@
 
                 <p>Choisissez le nombre d'équipes : </p>
                 <div class="custom-radio">
-                    <form action="">
+                    <form action="traitement-newgame.php" method="POST">
                         <div class="f-j-center">
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" id="">
+                                <input type="radio" name="teams-nb" value="1" id="">
                                 <label for="">1</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" id="">
+                                <input type="radio" name="teams-nb" value="2" id="">
                                 <label for="">2</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" id="">
+                                <input type="radio" name="teams-nb" value="3" id="">
                                 <label for="">3</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" id="">
+                                <input type="radio" name="teams-nb" value="4" id="">
                                 <label for="">4</label>
                             </div>
                         </div>

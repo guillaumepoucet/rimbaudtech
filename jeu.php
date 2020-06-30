@@ -15,8 +15,8 @@
 
 <body>
 
-<?php 
-    
+    <?php
+
     require_once "class/Team.php";
     $team1 = new Team($_SESSION['teams']['team1']['team-name']);
     $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
@@ -69,7 +69,7 @@
         <p style="text-align:center">Lancer le dé :&nbsp;<input type="button" id="btnGo" value="Go !"></p>
     </div>
 
-<!-- Trigger/Open The Modal -->
+    <!-- Trigger/Open The Modal -->
     <button id="myBtn">Afficher une question</button>
 
     <!-- The Modal Question-->
@@ -77,32 +77,32 @@
 
         <!-- Modal content -->
 
-    <form action="POST">
-        <div id="question" class="modal-content">
-            <span class="close">&times;</span>
-            <div>
-                <p class="question">Question n°<span class="numero"></span></p>
-                <p class="n-question"></p>
+        <form action="POST">
+            <div id="question" class="modal-content">
+                <span class="close">&times;</span>
+                <div>
+                    <p class="question">Question n°<span class="numero"></span></p>
+                    <p class="n-question"></p>
+                </div>
+                <div class="reponse">
+                    <div><input type="radio" name="list" value="1" id="">
+                        <p class="a"></p>
+                    </div>
+                    <div><input type="radio" name="list" value="2" id="">
+                        <p class="b"></p>
+                    </div>
+                    <div><input type="radio" name="list" value="3" id="">
+                        <p class="c"></p>
+                    </div>
+
+                    <input type="button" id="rep" value="Repondre !"></p>
+
+
+                </div>
             </div>
-            <div class="reponse">
-                <div><input type="radio" name="list" value="1" id="">
-                    <p class="a"></p>
-                </div>
-                <div><input type="radio" name="list" value="2" id="">
-                    <p class="b"></p>
-                </div>
-                <div><input type="radio" name="list" value="3" id="">
-                    <p class="c"></p>
-                </div>
-
-                <input type="button" id="rep" value="Repondre !"></p>
+        </form>
 
 
-            </div>
-        </div>
-    </form>
-
-    
 
     </div>
 
@@ -111,27 +111,24 @@
         $('.case').eq(9).addClass('quiz');
     </script>
 
-    
+
 
     <script src="js/modal.js"></script>
     <script src="js/score.js"></script>
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    
-    <script type='text/javascript'>
-    // $(window).on('beforeunload', function(){
-    //      alert("beforeUnload event!");
-    //  });
 
-     window.onbeforeunload = function(){
-  return 'Are you sure you want to leave?';
-};
-</script>
+    <script type='text/javascript'>
+        // $(window).on('beforeunload', function(){
+        //      alert("beforeUnload event!");
+        //  });
+
+        window.onbeforeunload = function() {
+            return 'Are you sure you want to leave?';
+        };
+    </script>
 
 </body>
 
 </html>
-
-
-      
