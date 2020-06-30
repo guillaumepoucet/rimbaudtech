@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="cases-wrap wrap1 team<?= $n ?>">
+            <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
 
 
                 <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
@@ -72,7 +72,12 @@
 
                 <?php for ($i = 1; $i <= 14; $i++) : ?>
                     <div class="relative">
-                        <?php if ($i == 4) : ?>
+                        <!-- Sont choisis les cases action ci-dessous -->
+                        <?php if    ((($n == 1) && ($i == 4)) || 
+                                    (($n == 2) && ($i == 3)) ||
+                                    (($n == 3) && ($i == 5)) ||
+                                    (($n == 4) && ($i == 2)))
+                        :  ?>
                             <img class="svgAction" src="img/action.svg" alt="">
                             <img class="svgBoom" src="img/boom.svg" alt="">
                         <?php else : ?>
