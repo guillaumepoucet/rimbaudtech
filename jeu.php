@@ -114,12 +114,14 @@
 
     </div>
 
+   
+
     <script>
         $('.case').eq(3).addClass('defi');
         $('.case').eq(9).addClass('quiz');
     </script>
 
-    <!-- On alert de la perte des données si fermeture fenetre -->
+    <!-- On alert de la perte des données si fermeture fenetre 
     <script type="text/javascript">
         window.onbeforeunload = confirmExit;
         function confirmExit()
@@ -127,7 +129,7 @@
             return 'En fermant, vous risquez de perdre la totalité de vos données. Etes-vous sûr(e) de vouloir quitter ?';
         }
 
-    </script>
+    </script> -->
 
     <!-- On bloque l input ENTRER
     <script type="text/javascript">
@@ -142,11 +144,21 @@
 
 
     <script src="js/modal.js"></script>
-    <script src="js/score.js"></script>
+    <!-- <script src="js/score.js"></script> -->
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    <script src="js/localStorage.js"></script>
+    <!-- <script src="js/localStorage.js"></script> -->
+
+    <script type='text/javascript'>
+        // $(window).on('beforeunload', function(){
+        //      alert("beforeUnload event!");
+        //  });
+
+        window.onbeforeunload = function() {
+            return 'Are you sure you want to leave?';
+        };
+    </script>
     
     
 

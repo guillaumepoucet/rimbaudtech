@@ -7,12 +7,6 @@ $('.de').click(function () {
     var de = Math.ceil(Math.random() * 6);
     target = position + de
     // fonction slidant le plateau
-    function move() {
-
-    }
-    // function hide(n) {
-    //     $('.wrap1 .relative').eq(n - 1).fadeOut()
-    // }
     for (n = position; n < target; n++) {
         $('.wrap1 .relative').eq(n).animate({
             opacity: "0"
@@ -24,7 +18,7 @@ $('.de').click(function () {
     // on actualise la position pour le prochain tour
     // et le tracker en récupèrant la case
     position = target
-    console.log(position)
+    //console.log(position)
     tracker = $('.case[data-index=' + target + ']')
     // on vérifie si square est une case action
     var action = tracker.hasClass('action')

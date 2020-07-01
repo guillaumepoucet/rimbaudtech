@@ -32,8 +32,9 @@ body {
     justify-content: center;
 }
 
-.pointer {
+.pointer:hover {
     cursor: pointer;
+
 }
 
 // LAUNCHER
@@ -123,11 +124,11 @@ body {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-gap: 30px;
     align-items: center;
     font-family: simplicity;
     text-align: center;
-    font-size: 2em;
+    font-size: 3rem;
 }
 
 .newteam-relative {
@@ -142,7 +143,6 @@ body {
     clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
     width: fit-content;
     margin: auto;
-    top: 85px;
 
     .newteam-nb {
         font-size: 4rem;
@@ -159,6 +159,8 @@ body {
     clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
     background-color: yellow;
     padding: 0.5rem;
+    bottom: 80px;
+    position: relative;
 }
 
 .new-team {
@@ -166,7 +168,7 @@ body {
     height: max-content;
     display: grid;
     background-color: white;
-    padding: 7rem 2rem 3rem 2rem;
+    padding: 7rem 1rem 3rem;
     position: relative;
 
     img {
@@ -174,31 +176,35 @@ body {
         padding: 0.25em 0;
     }
 
+    .newteam-form>* {
+        margin: 2rem 0;
+    }
+
 }
 
 
-
-form {
-
-    div {
-        margin: 1rem 0;
-    }
-
-    .btn-wrap {
-        filter: drop-shadow(6px 6px yellow);
-        margin-top: 1em;
-    }
-
-    button {
-        background-color: $purple;
-        color: white;
-        padding: 0.5rem 2.5rem;
-        border: none;
-        clip-path: polygon(4% 0, 100% 0%, 96% 97%, 0 100%);
-        font-family: simplicity;
-        font-size: 2rem;
-    }
+.fixed-center {
+    position: fixed;
+    bottom: 50px;
+    right: 50%;
 }
+
+
+.btn-wrap {
+    filter: drop-shadow(6px 6px yellow);
+    margin-top: 1em;
+}
+
+button {
+    background-color: $purple;
+    color: white;
+    padding: 0.5rem 2.5rem;
+    border: none;
+    clip-path: polygon(4% 0, 100% 0%, 96% 97%, 0 100%);
+    font-family: simplicity;
+    font-size: 2rem;
+}
+
 
 input[type="text"] {
     font-size: 1.25rem;
@@ -279,6 +285,8 @@ input[type="text"]:focus {
         text-align: center;
         padding: 0 2em;
         margin-right: 3em;
+        display: grid;
+        align-content: center;
 
         .team-purple {
             background-color: $purple;
@@ -355,6 +363,7 @@ input[type="text"]:focus {
         padding-left: 10px;
         transition: .2s;
         position: relative;
+        align-items: center;
 
         img {
             position: absolute;
@@ -364,7 +373,7 @@ input[type="text"]:focus {
         .icon {
             width: 3rem;
             align-self: center;
-            left: 4rem;
+            left: 59px;
             z-index: 990;
         }
 
@@ -406,7 +415,7 @@ input[type="text"]:focus {
                 position: absolute;
                 font-family: shaka;
                 font-size: 2rem;
-                top: 3px;
+                top: -6px;
                 z-index: 99;
                 width: 100%;
                 text-align: center;
@@ -557,6 +566,7 @@ input[type="text"]:focus {
 .de-wrap-shadow {
     filter: drop-shadow(6px 6px $yellow);
     grid-column: 1 / span 2;
+    align-self: end;
 }
 
 .de-wrap {
