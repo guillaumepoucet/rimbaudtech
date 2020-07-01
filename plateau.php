@@ -183,6 +183,7 @@
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
+    <script src="js/turn.js"></script>
 
 </body>
 
