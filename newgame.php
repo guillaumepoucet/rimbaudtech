@@ -36,7 +36,7 @@
                             <div class="newteam-form">
                                 <div class="team-name-form">
                                     <label for="team-name">Votre nom d'équipe : </label>
-                                    <input type="text" name="team-<?= $n ?>-name" id="team-name" placeholder="The Team" requ<<<<<ired>
+                                    <input type="text" name="team-<?= $n ?>-name" id="team-name" placeholder="The Team" required>
                                 </div>
                                 <div class="team-icon-form">
                                     <p>Choisissez un pion : </p>

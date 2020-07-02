@@ -5,7 +5,9 @@ var target = null;
 var distance = 156;
 $('.de').click(function () {
     var de = Math.ceil(Math.random() * 6);
+    console.log('Résultat du dé : ' + de)
     target = position + de
+    console.log('La case de destination est la : ' + target)
     // fonction slidant le plateau
     for (n = position; n < target; n++) {
         $('.wrap1 .relative').eq(n).animate({
@@ -21,7 +23,7 @@ $('.de').click(function () {
     tracker = $('.case[data-index=' + target + ']')
     // on vérifie si square est une case action
     var action = tracker.hasClass('action')
-
+    console.log('La case est-elle une action ? ' + action)
     // si action, on choisit une question au hasard
     if (action) {
         var n = Math.floor(Math.random() * 13) + 1;
