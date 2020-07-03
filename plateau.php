@@ -18,10 +18,10 @@
 
     <?php
 
-    require_once "class/Team.php";
-    $team1 = new Team($_SESSION['teams']['team1']['team-name']);
-    $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
-    $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
+    // require_once "class/Team.php";
+    // $team1 = new Team($_SESSION['teams']['team1']['team-name']);
+    // $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
+    // $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
     ?>
 
 
@@ -107,9 +107,16 @@
         <div class="button">
             <button id="myBtn">Afficher une question</button>
 
-            <!-- Capture de son -->
+            <!-- Capture de media video/son -->
+        <main>
             <p><button id="btnStart">START RECORDING</button><br>
             <button id="btnStop">STOP RECORDING</button></p>
+
+            <video controls></video>
+
+            <video id="vid2" controls></video>
+        </main>
+
 
 
         </div>
@@ -192,6 +199,7 @@
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
     <script src="js/turn.js"></script>
+    <script src="js/mediaCapture.js"></script>
 
 </body>
 
