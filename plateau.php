@@ -26,6 +26,7 @@
     ?>
 
 
+    <span class="nb-teams"><?= $_SESSION['teams-nb'] ?></span>
 
     <div id="plateau" class="plateau-wrapper">
 
@@ -107,6 +108,7 @@
 
         <div class="button">
             <button id="myBtn">Afficher une question</button>
+            <button id="myBtnVideo">Afficher la vidéo</button>
 
         </div>
         
@@ -139,24 +141,16 @@
                     </div>
                 </div>
 
+                 <!-- Capture de media video/son -->
+                <main>
+                   
+                </main>
+
                 <div id="rep" class="btnrep">
                     <div>
                         <span>Répondre !</span>
                     </div>
                 </div>
-
-                  <!-- Capture de media video/son -->
-                <main>
-                    <p><button id="btnStart">START RECORDING</button><br>
-                    <button id="btnStop">STOP RECORDING</button></p>
-
-                    <video controls></video>
-
-                    <video id="vid2" controls></video>
-                </main>
-
-
-
 
                 <div class="validation">
                     <input class="btnval" type="button" name="valider" id="val" value="Valider !"></p>
@@ -194,13 +188,36 @@
         noPressEnter(document.myModal.modal)
     </script>
 
+     <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
+    <script src="js/Team.js"></script>
 
-    <script src="js/modal.js"></script>
+    <script>
+        objs = [];
+
+        for (t = 1; t <= nbTeam; t++) {
+            name = $('.team' + t + ' .team-name p').text()
+            pawn = $('.team' + t + '-icon').attr('src')
+            objs[t] = new Team(name, pawn)
+        }
+        console.log(objs)
+        console.log(objs[1].position)
+    </script>
+
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    <script src="js/turn.js"></script>
-    <script src="js/mediaCapture.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script>
+        $('#myBtnVideo').click(function() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "js/mediaCapture.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            $('#myModal main').load("video.php");
+            modal.style.display = "block";
+        })
+    </script>
 
 </body>
 

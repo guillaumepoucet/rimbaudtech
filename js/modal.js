@@ -7,59 +7,59 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+usedQuestion = [];
+team = 1
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
     reboot();
-    var n = Math.floor(Math.random() * 13) + 1;
-    //console.log(n);
-    //console.log(questionnaire[n]);
-    $('.numero').text(n+1);
-    $('.n-question').html(questionnaire[n][0])
-    // si pas de réponses, insertion d'un timer
-    if (questionnaire[n][1] !== undefined) {
-    $('.a').text(questionnaire[n][1][0])
-    $('.b').text(questionnaire[n][1][1])
-    $('.c').text(questionnaire[n][1][2])
-    baseReponse();
-    //$('.validation').hide();
-    } else {
-        //$('.reponseInput').hide();
-        //$('.btnrep').hide();
-        baseOuverte();
-        $('.reponse').append('<div id="time"><div>');
-        //$('.validation').show();
-        // timer countdown
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+    // boucle qui vérifie si le numéro de question a déjà été tiré
+    do {
+        question = Math.floor(Math.random() * 13) + 1;
+        var isUsed = usedQuestion.includes(question)
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+    } while (isUsed)
+        // on insère le nouveau numéro de la question dans un tableau
+        usedQuestion.push(question)
 
-                display.text(minutes + ":" + seconds);
+        $('.numero').text(question + 1);
+        $('.n-question').html(questionnaire[question][0])
+        // si pas de réponses, insertion d'un timer
+        if (questionnaire[question][1] !== undefined) {
+            $('.a').text(questionnaire[question][1][0])
+            $('.b').text(questionnaire[question][1][1])
+            $('.c').text(questionnaire[question][1][2])
+            baseReponse();
+        } else {
+            baseOuverte();
+            $('.reponse').append('<div id="time"><div>');
+            // timer countdown
+            function startTimer(duration, display) {
+                var timer = duration,
+                    minutes, seconds;
+                setInterval(function () {
+                    minutes = parseInt(timer / 60, 10);
+                    seconds = parseInt(timer % 60, 10);
+                    minutes = minutes < 10 ? "0" + minutes : minutes;
+                    seconds = seconds < 10 ? "0" + seconds : seconds;
+                    display.text(minutes + ":" + seconds);
+                    if (--timer < 0) {
+                        timer = duration;
+                    }
+                }, 1000);
+            }
+            jQuery(function ($) {
+                var fourMinutes = 60 * 4,
+                    display = $('#time');
+                startTimer(fourMinutes, display);
+            });
 
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
         }
-
-        jQuery(function ($) {
-            var fourMinutes = 60 * 4,
-                display = $('#time');
-            startTimer(fourMinutes, display);
-        });
-
-    }
-
 
         modal.style.display = "block";
 
-  
-}
+        }
+
 // Cacher la croix de fermeture de la modal 
 $('.close').hide();
 
@@ -78,14 +78,10 @@ window.onclick = function (event) {
         modal.style.display = "none";
         $('#time').remove();
         $('.errormsg').remove();
-        //$('.reponse div').show();
-        //$('.btnrep').show();
-        reboot();
-        
+        reboot();    
     }
 }
 reboot();
-
 
 // Test function cacher afficher validation question sans rep timer et scroring 
 function reboot(){
