@@ -101,12 +101,17 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;
+            vidSave.src = videoURL;     
+            console.log(videoURL)
+            $('#video-dl').attr("href", videoURL)
+            $('#video-dl').show()
         }
     })
     .catch(function (err) {
         console.log(err.name, err.message);
     });
+
+    // window.URL.revokeObjectURL(objectURL);
 
 /*********************************
 getUserMedia returns a Promise
