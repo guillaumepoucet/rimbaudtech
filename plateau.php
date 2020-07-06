@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plateau.css">
+     <link rel="stylesheet" href="main.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
@@ -107,18 +108,6 @@
         <div class="button">
             <button id="myBtn">Afficher une question</button>
 
-            <!-- Capture de media video/son -->
-        <main>
-            <p><button id="btnStart">START RECORDING</button><br>
-            <button id="btnStop">STOP RECORDING</button></p>
-
-            <video controls></video>
-
-            <video id="vid2" controls></video>
-        </main>
-
-
-
         </div>
         
 
@@ -155,6 +144,18 @@
                         <span>Répondre !</span>
                     </div>
                 </div>
+
+                  <!-- Capture de media video/son -->
+                <main>
+                    <p><button id="btnStart">START RECORDING</button><br>
+                    <button id="btnStop">STOP RECORDING</button></p>
+
+                    <video controls></video>
+
+                    <video id="vid2" controls></video>
+                </main>
+
+
 
 
                 <div class="validation">
@@ -193,8 +194,8 @@
         noPressEnter(document.myModal.modal)
     </script>
 
-    <script src="js/modal.js"></script>
 
+    <script src="js/modal.js"></script>
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
