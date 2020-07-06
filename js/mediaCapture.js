@@ -84,7 +84,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             $(vidInput).hide()
             $(stop).hide()
             $(vidSave).show()
-            $('#btnClose').show()
+         
         });
         close.addEventListener('click', (ev) => {
             $('#myModalVideo .yellow').remove()
@@ -105,13 +105,13 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             console.log(videoURL)
             $('#video-dl').attr("href", videoURL)
             $('#video-dl').show()
+            window.URL.revokeObjectURL(objectURL);
         }
     })
     .catch(function (err) {
         console.log(err.name, err.message);
     });
 
-    // window.URL.revokeObjectURL(objectURL);
 
 /*********************************
 getUserMedia returns a Promise

@@ -16,7 +16,7 @@
 
 <body>
 
-    <span class="nb-teams"><?= $_SESSION['teams-nb'] ?></span>
+    <span class="nb-teams" style="display: none;"><?= $_SESSION['teams-nb'] ?></span>
 
     <div id="plateau" class="plateau-wrapper">
 
@@ -96,9 +96,10 @@
             </div>
         </div>
 
-        <button id="myBtn">Afficher une question</button>
-        <button id="myBtnVideo">Afficher la vidéo</button>
-
+        <div class="button">
+            <button id="myBtn">Afficher une question</button>
+            <button id="myBtnVideo">Afficher la vidéo</button>
+        </div>
 
 
     </div>
@@ -206,9 +207,9 @@
             script.type = "text/javascript";
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
-           
+
             $('#myModalVideo').load("video.php");
-            
+
             $('#myModalVideo').show();
         })
     </script>
