@@ -16,15 +16,7 @@
 
 <body>
 
-    <?php
-
-    require_once "class/Team.php";
-    // $team1 = new Team($_SESSION['teams']['team1']['team-name']);
-    // $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
-    // $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
-    ?>
-
-    <span class="nb-teams" style="display: none;"><?= $_SESSION['teams-nb'] ?></span>
+    <span class="nb-teams"><?= $_SESSION['teams-nb'] ?></span>
 
     <div id="plateau" class="plateau-wrapper">
 
@@ -43,7 +35,7 @@
                     </div>
                     <div class="team-yellow">
                         <div class="team-score">
-                            <p class="score">0</p>
+                            <p class="score score<?= $n ?>">0</p>
                         </div>
                     </div>
                 </div>
@@ -60,7 +52,7 @@
             <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
 
 
-                <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
+                <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team<?= $n ?>-icon icon">
 
                 <div class="relative">
                     <p class="start">start</p>
@@ -105,6 +97,7 @@
         </div>
 
         <button id="myBtn">Afficher une question</button>
+        <button id="myBtnVideo">Afficher la vidéo</button>
 
 
 
@@ -135,6 +128,11 @@
                     </div>
                 </div>
 
+                <!-- Capture de media video/son -->
+                <main>
+
+                </main>
+
                 <div id="rep" class="btnrep">
                     <div>
                         <span>Répondre !</span>
@@ -163,6 +161,8 @@
     </script>
 
 
+
+
     <!-- On alert de la perte des données si fermeture fenetre -->
     <script type="text/javascript">
         window.onbeforeunload = confirmExit;
@@ -178,12 +178,37 @@
         noPressEnter(document.myModal.modal)
     </script>
 
-    <script src="js/modal.js"></script>
+    <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
+    <script src="js/Team.js"></script>
+
+    <script>
+        objs = [];
+
+        for (t = 1; t <= nbTeam; t++) {
+            name = $('.team' + t + ' .team-name p').text()
+            pawn = $('.team' + t + '-icon').attr('src')
+            objs[t] = new Team(name, pawn)
+        }
+        console.log(objs)
+        console.log(objs[1].position)
+    </script>
 
     <script src="js/questionnaire.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    <script src="js/turn.js"></script>
+    <script src="js/modal.js"></script>
+
+    <script>
+        $('#myBtnVideo').click(function() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "js/mediaCapture.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            $('#myModal main').load("video.php");
+            modal.style.display = "block";
+        })
+    </script>
+
 
 </body>
 
