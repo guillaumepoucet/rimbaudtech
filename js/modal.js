@@ -19,46 +19,47 @@ btn.onclick = function () {
         var isUsed = usedQuestion.includes(question)
 
     } while (isUsed)
-        // on insère le nouveau numéro de la question dans un tableau
-        usedQuestion.push(question)
+    // on insère le nouveau numéro de la question dans un tableau
+    usedQuestion.push(question)
 
-        $('.numero').text(question + 1);
-        $('.n-question').html(questionnaire[question][0])
-        // si pas de réponses, insertion d'un timer
-        if (questionnaire[question][1] !== undefined) {
-            $('.a').text(questionnaire[question][1][0])
-            $('.b').text(questionnaire[question][1][1])
-            $('.c').text(questionnaire[question][1][2])
-            baseReponse();
-        } else {
-            baseOuverte();
-            $('.reponse').append('<div id="time"><div>');
-            // timer countdown
-            function startTimer(duration, display) {
-                var timer = duration,
-                    minutes, seconds;
-                setInterval(function () {
-                    minutes = parseInt(timer / 60, 10);
-                    seconds = parseInt(timer % 60, 10);
-                    minutes = minutes < 10 ? "0" + minutes : minutes;
-                    seconds = seconds < 10 ? "0" + seconds : seconds;
-                    display.text(minutes + ":" + seconds);
-                    if (--timer < 0) {
-                        timer = duration;
-                    }
-                }, 1000);
-            }
-            jQuery(function ($) {
-                var fourMinutes = 60 * 4,
-                    display = $('#time');
-                startTimer(fourMinutes, display);
-            });
-
+    $('.numero').text(question + 1);
+    $('.n-question').html(questionnaire[question][0])
+    // si pas de réponses, insertion d'un timer
+    if (questionnaire[question][1] !== undefined) {
+        $('.a').text(questionnaire[question][1][0])
+        $('.b').text(questionnaire[question][1][1])
+        $('.c').text(questionnaire[question][1][2])
+        baseReponse();
+    } else {
+        baseOuverte();
+        $('.reponse').append('<div id="time"><div>');
+        // timer countdown
+        function startTimer(duration, display) {
+            var timer = duration,
+                        minutes,
+                        seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.text(minutes + ":" + seconds);
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
         }
+        jQuery(function ($) {
+            var fourMinutes = 60 * 4,
+                display = $('#time');
+            startTimer(fourMinutes, display);
+        });
 
-        modal.style.display = "block";
+    }
 
-        }
+    modal.style.display = "block";
+
+}
 
 // Cacher la croix de fermeture de la modal 
 $('.close').hide();

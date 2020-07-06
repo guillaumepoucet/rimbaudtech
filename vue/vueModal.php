@@ -8,8 +8,4 @@
         <p><?= $question ?></p>
     </div>
 
-<!--On bloque l input ENTRER -->
-<script type="text/javascript">
-    noPressEnter(document.modal);
-</script>
 </div>

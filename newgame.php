@@ -21,7 +21,6 @@
 </head>
 
 <body class="plateau-wrapper">
-<?= $_SESSION['teams-nb'] ?>"
 
     <div class="create-a-team">
 

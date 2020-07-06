@@ -11,22 +11,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plateau.css">
-     <link rel="stylesheet" href="main.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <?php
-
-    // require_once "class/Team.php";
-    // $team1 = new Team($_SESSION['teams']['team1']['team-name']);
-    // $team1->setIcon($_SESSION['teams']['team1']['team-icon']);
-    // $team1->setScoreIcon($_SESSION['teams']['team1']['score-icon']);
-    ?>
-
-
-    <span class="nb-teams"><?= $_SESSION['teams-nb'] ?></span>
+    <span class="nb-teams" style="display: none;"><?= $_SESSION['teams-nb'] ?></span>
 
     <div id="plateau" class="plateau-wrapper">
 
@@ -46,7 +36,7 @@
                 </div>
                 <div class="team-yellow">
                     <div class="team-score">
-                        <p class="score">0</p>
+                        <p class="score <?= $n ?>">0</p>
                     </div>
                 </div>
             </div>
@@ -62,7 +52,8 @@
 
         <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
 
-                <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
+            <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
+            
             <div class="relative">
                 <p class="start">start</p>
                 <div class="cases-yellow">
@@ -77,22 +68,22 @@
                         <?php if    ((($n == 1) && ($i == 4)) || 
                                     (($n == 2) && ($i == 3)) ||
                                     (($n == 3) && ($i == 5)) ||
-                                    (($n == 4) && ($i == 2)))
-                        :  ?>
-                        <img class="svgAction" src="img/action.svg" alt="">
-                        <img class="svgBoom" src="img/boom.svg" alt="">
-                    <?php else : ?>
-                        <span>#<?= $i ?></span>
-                        <img class="svgBubble" src="img/bubble.svg" alt="">
-                    <?php endif ?>
-                    <div class="cases-yellow case<?= $i ?>">
-                        <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
+                                    (($n == 4) && ($i == 2))
+                                    ) :  ?>
+                                        <img class="svgAction" src="img/action.svg" alt="">
+                                        <img class="svgBoom" src="img/boom.svg" alt="">
+                        <?php else : ?>
+                            <span>#<?= $i ?></span>
+                            <img class="svgBubble" src="img/bubble.svg" alt="">
+                        <?php endif ?>
+                        <div class="cases-yellow case<?= $i ?>">
+                            <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
+                            </div>
                         </div>
                     </div>
-                </div>
-            <?php endfor ?>
+                <?php endfor ?>
 
-        </div>
+            </div>
 
         <?php endfor ?>
 
@@ -109,12 +100,13 @@
         <div class="button">
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
-
         </div>
         
 
 
     </div>
+
+     <div id="myModalVideo" class="modal"></div>
 
     <div id="myModal" class="modal">
 
@@ -214,8 +206,10 @@
             script.type = "text/javascript";
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
-            $('#myModal main').load("video.php");
-            modal.style.display = "block";
+
+            $('#myModalVideo').load("video.php");
+
+            $('#myModalVideo').show();
         })
     </script>
 

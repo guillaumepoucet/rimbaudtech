@@ -62,18 +62,33 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         //ajouter des écouteurs pour enregistrer la vidéo / l'audio
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
-        let vidSave = document.getElementById('vid2');
+        let close = document.getElementById('btnClose');
+        let vidSave = document.getElementById('vidOutput');
+        let vidInput = document.getElementById('vidInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
         start.addEventListener('click', (ev) => {
             mediaRecorder.start();
             console.log(mediaRecorder.state);
+            $(start).hide()
+            $(stop).show()
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
+            mediaStreamObj.getTracks().forEach(function (track) {
+                track.stop();
+            });
+            video.srcObject = null
             console.log(mediaRecorder.state);
+             $(vidInput).hide()
+             $(stop).hide()
+             $(vidSave).show()
         });
+        close.addEventListener('click', (ev) => {
+            $('#myModalVideo .yellow').remove()
+            $('#myModalVideo').hide()
+        })
         mediaRecorder.ondataavailable = function (ev) {
             chunks.push(ev.data);
         }
@@ -84,6 +99,10 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
             vidSave.src = videoURL;
+            console.log(videoURL)
+            $('#video-dl').attr("href", videoURL)
+            $('#video-dl').show()
+            window.URL.revokeObjectURL(objectURL);
         }
     })
     .catch(function (err) {

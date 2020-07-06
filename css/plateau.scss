@@ -527,7 +527,7 @@ input[type="text"]:focus {
                 filter: drop-shadow(6px 6px $yellow);
             }
 
-            span {
+            .rep-txt {
                 background-color: #CE0B59;
                 color: white;
                 text-shadow: 3px 4px black;
@@ -598,4 +598,56 @@ input[type="text"]:focus {
             color: $yellow;
         }
     }
+}
+
+#myModalVideo {
+
+    .yellow {
+        width: 55%;
+        margin: 5% auto;
+    }
+
+    main {
+        display: grid;
+        place-content: center;
+        padding: 2rem 0;
+
+        div {
+            display: inline-flex;
+            justify-content: center;
+            margin: 2rem;
+
+            button {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+            }
+        }
+
+        #btnStart .round {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: .5rem
+        }
+
+        #btnStop .square {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            display: inline-block;
+            margin-right: .5rem
+        }
+    }
+
+    video {
+        max-width: 40vw;
+        border: 10px solid black;
+        border-radius: 5px;
+    }
+
+
+
 }

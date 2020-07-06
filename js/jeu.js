@@ -32,6 +32,29 @@ var teamActuel = function (nbTeam) {
     }
 }
 
+//newTest determination de l equipe qui va jouer
+// var teamActuel = function (nbTeam) {
+//     if (team == 0) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     }
+//     if (team == 1) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else if (team == 2 ) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else if (team == 3) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else if (team == 4) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else {
+//         team = 0
+//     }
+// }
+
 // fonction lancer de dé
 var lancerDe = function () {
     de = Math.ceil(Math.random() * 6);
@@ -135,7 +158,7 @@ var score = function () {
             //console.log(a)
             if (a == b) {
                 //alert("Correct");
-                score();
+                score()
                 modal.style.display = "none";
             } else {
                 //alert("Incorrect");
@@ -150,10 +173,10 @@ var score = function () {
         $('#val').click(function () {
             var c = $("input[type=button][name=valider]").attr("value");
             //console.log(c)
-                //alert("Correct");
-                score();
-                modal.style.display = "none";
-                reboot();
+            //alert("Correct");
+            score();
+            modal.style.display = "none";
+            reboot();
         })
 
         //
