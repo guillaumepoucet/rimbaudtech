@@ -103,6 +103,8 @@
 
     </div>
 
+    <div id="myModalVideo" class="modal"></div>
+
     <div id="myModal" class="modal">
 
         <div class="yellow">
@@ -135,7 +137,7 @@
 
                 <div id="rep" class="btnrep">
                     <div>
-                        <span>Répondre !</span>
+                        <span class="rep-txt">Répondre !</span>
                     </div>
                 </div>
 
@@ -204,8 +206,10 @@
             script.type = "text/javascript";
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
-            $('#myModal main').load("video.php");
-            modal.style.display = "block";
+           
+            $('#myModalVideo').load("video.php");
+            
+            $('#myModalVideo').show();
         })
     </script>
 

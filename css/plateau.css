@@ -604,7 +604,7 @@ input[type="text"]:focus {
           filter: drop-shadow(6px 6px #F7D126);
 }
 
-.modal .modal-content #rep span {
+.modal .modal-content #rep .rep-txt {
   background-color: #CE0B59;
   color: white;
   text-shadow: 3px 4px black;
@@ -685,5 +685,60 @@ input[type="text"]:focus {
 .de-wrap .de p {
   text-shadow: 3px 4px black;
   color: #F7D126;
+}
+
+#myModalVideo .yellow {
+  width: 55%;
+  margin: 5% auto;
+}
+
+#myModalVideo main {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  padding: 2rem 0;
+}
+
+#myModalVideo main div {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 2rem;
+}
+
+#myModalVideo main div button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#myModalVideo main #btnStart .round {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: .5rem;
+}
+
+#myModalVideo main #btnStop .square {
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  display: inline-block;
+  margin-right: .5rem;
+}
+
+#myModalVideo video {
+  max-width: 40vw;
+  border: 10px solid black;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=plateau.css.map */

@@ -46,7 +46,7 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.querySelector('video');
+        let video = document.getElementById('vidInput');
         if ("srcObject" in video) {
             video.srcObject = mediaStreamObj;
         } else {
@@ -62,18 +62,36 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         //ajouter des écouteurs pour enregistrer la vidéo / l'audio
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
-        let vidSave = document.getElementById('vid2');
+        let close = document.getElementById('btnClose');
+        let vidSave = document.getElementById('vidOutput');
+        let vidInput = document.getElementById('vidInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
         start.addEventListener('click', (ev) => {
             mediaRecorder.start();
             console.log(mediaRecorder.state);
+            $(start).hide()
+            $(stop).show()
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
+            mediaStreamObj.getTracks().forEach(function(track) {
+                track.stop();
+              });
+            video.srcObject = null
             console.log(mediaRecorder.state);
+            $(vidInput).hide()
+            $(stop).hide()
+            $(vidSave).show()
+            $('#btnClose').show()
         });
+        close.addEventListener('click', (ev) => {
+            $('#myModalVideo .yellow').remove()
+            $('#myModalVideo').hide()
+        })
+
+
         mediaRecorder.ondataavailable = function (ev) {
             chunks.push(ev.data);
         }
