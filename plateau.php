@@ -105,7 +105,7 @@
 
     </div>
 
-    <div id="myModalVideo" class="modal"></div>
+    <div id="myModalMedia" class="modal"></div>
 
     <div id="myModal" class="modal">
 
@@ -210,9 +210,9 @@
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalVideo').load("video.php");
+            $('#myModalMedia').load("video.php");
 
-            $('#myModalVideo').show();
+            $('#myModalMedia').show();
         })
     </script>
     <script>
@@ -222,9 +222,9 @@
             script.src = "js/audioCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalVideo').load("audio.php");
+            $('#myModalMedia').load("audio.php");
 
-            $('#myModalVideo').show();
+            $('#myModalMedia').show();
         })
     </script>
 

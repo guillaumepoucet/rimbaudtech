@@ -687,19 +687,19 @@ input[type="text"]:focus {
   color: #F7D126;
 }
 
-#myModalVideo .yellow {
+#myModalMedia .yellow {
   width: 55%;
   margin: 5% auto;
 }
 
-#myModalVideo main {
+#myModalMedia main {
   display: -ms-grid;
   display: grid;
   place-content: center;
   padding: 2rem 0;
 }
 
-#myModalVideo main div {
+#myModalMedia main div {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -709,7 +709,7 @@ input[type="text"]:focus {
   margin: 2rem;
 }
 
-#myModalVideo main div button {
+#myModalMedia main div button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -719,7 +719,7 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 
-#myModalVideo main #btnStart .round {
+#myModalMedia main #btnStart .round {
   width: 20px;
   height: 20px;
   background-color: red;
@@ -728,7 +728,7 @@ input[type="text"]:focus {
   margin-right: .5rem;
 }
 
-#myModalVideo main #btnStop .square {
+#myModalMedia main #btnStop .square {
   width: 18px;
   height: 18px;
   background-color: black;
@@ -736,7 +736,7 @@ input[type="text"]:focus {
   margin-right: .5rem;
 }
 
-#myModalVideo video {
+#myModalMedia video {
   max-width: 40vw;
   border: 10px solid black;
   border-radius: 5px;

@@ -46,7 +46,7 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.getElementById('vidInput');
+        let video = document.getElementById('mediaInput');
         if ("srcObject" in video) {
             video.srcObject = mediaStreamObj;
         } else {
@@ -63,8 +63,8 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
         let close = document.getElementById('btnClose');
-        let vidSave = document.getElementById('vidOutput');
-        let vidInput = document.getElementById('vidInput');
+        let mediaSave = document.getElementById('mediaOutput');
+        let mediaInput = document.getElementById('mediaInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
@@ -81,14 +81,14 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             video.srcObject = null
             console.log(mediaRecorder.state);
-            $(vidInput).hide()
+            $(mediaInput).hide()
             $(stop).hide()
-            $(vidSave).show()
+            $(mediaSave).show()
 
         });
         close.addEventListener('click', (ev) => {
-            $('#myModalVideo .yellow').remove()
-            $('#myModalVideo').hide()
+            $('#myModalMedia .yellow').remove()
+            $('#myModalMedia').hide()
             mediaRecorder.stop();
             mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
@@ -105,10 +105,10 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;
-            console.log(videoURL)
-            $('#video-dl').attr("href", videoURL)
-            $('#video-dl').show()
+            mediaSave.src = videoURL;
+            // console.log(videoURL)
+            $('#media-dl').attr("href", videoURL)
+            $('#media-dl').show()
             window.URL.revokeObjectURL(objectURL);
         }
     })
