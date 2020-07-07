@@ -76,23 +76,23 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
             video.srcObject = null
             console.log(mediaRecorder.state);
             $(vidInput).hide()
             $(stop).hide()
             $(vidSave).show()
-         
+
         });
         close.addEventListener('click', (ev) => {
             $('#myModalVideo .yellow').remove()
             $('#myModalVideo').hide()
             mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
         })
 
 
@@ -105,7 +105,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;     
+            vidSave.src = videoURL;
             console.log(videoURL)
             $('#video-dl').attr("href", videoURL)
             $('#video-dl').show()

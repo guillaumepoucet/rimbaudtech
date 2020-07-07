@@ -18,13 +18,7 @@ $(document).ready(function () {
     $('.de').click(function () {
 
         lancerDe()
-        movePawn()
-        action()
-        if (objs[team].score > 500) {
-            alert("Léquipe " + objs[team].name + 'a gagné !')
-        }
-        teamActuel()
-
+        
     })
 })
 

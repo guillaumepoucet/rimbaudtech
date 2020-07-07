@@ -31,9 +31,9 @@ usedQuestion = [];
 //         team = 0
 //     }
 // }
-
 // déterminer quelle équipe va jouer
 var teamActuel = function (nbTeam) {
+
     if (team == 0) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
@@ -49,7 +49,7 @@ var teamActuel = function (nbTeam) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
     } else {
-        team = 0
+        team = 1
     }
 }
 
@@ -57,6 +57,7 @@ var teamActuel = function (nbTeam) {
 var lancerDe = function () {
     de = Math.ceil(Math.random() * 6);
     console.log('Résultat du dé : ' + de)
+    movePawn();
 }
 
 // fonction slidant le plateau et actualisant la position
@@ -77,6 +78,7 @@ var movePawn = function () {
     // et le tracker en récupèrant la case
     objs[team].position = target
     console.log(objs[team])
+    action();
 }
 
 // on vérifie si square est une case action en actualisant la trackeur
@@ -135,6 +137,7 @@ var action = function () {
 
         modal.style.display = "block";
     }
+    score();
 };
 
 var score = function () {
@@ -144,6 +147,10 @@ var score = function () {
     $('.score' + team).text(newScore);
     objs[team].score = newScore
     console.log(objs[team].score)
+    if (objs[team].score > 500) {
+        alert("Léquipe " + objs[team].name + 'a gagné !')
+    }
+    teamActuel(nbTeam)
 }
 
 // Récupérer réponse et vérifier si bonne ou non
