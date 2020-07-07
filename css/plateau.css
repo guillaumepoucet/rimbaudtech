@@ -28,8 +28,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .pointer:hover {
@@ -47,11 +47,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .launcher .modal .modal-content {
@@ -74,7 +74,7 @@ body {
   text-align: center;
   color: white;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
-          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
   margin-top: 7em;
 }
 
@@ -85,12 +85,12 @@ body {
   background-size: 30px 30px;
   padding: 3em 4em;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
-          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
 }
 
 .launcher .launcher-menu {
   -webkit-filter: drop-shadow(6px 6px yellow);
-          filter: drop-shadow(6px 6px yellow);
+  filter: drop-shadow(6px 6px yellow);
 }
 
 .launcher .btn-wrap:first-of-type {
@@ -102,7 +102,7 @@ body {
   background-color: yellow;
   padding: 0.5rem;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
-          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -118,7 +118,7 @@ body {
   background-color: #0B4A5B;
   padding: 10px 45px;
   -webkit-clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
-          clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
+  clip-path: polygon(0 5%, 100% 0%, 97% 100%, 4% 97%);
 }
 
 .create-a-team {
@@ -128,8 +128,8 @@ body {
   display: grid;
   grid-gap: 30px;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-family: simplicity;
   text-align: center;
   font-size: 3rem;
@@ -145,7 +145,7 @@ body {
   position: relative;
   z-index: 99;
   -webkit-clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
-          clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
+  clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -160,12 +160,12 @@ body {
   color: white;
   text-shadow: 3px 4px black;
   -webkit-clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
-          clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
+  clip-path: polygon(0 4%, 100% 0%, 95% 93%, 5% 98%);
 }
 
 .new-team-wrap {
   -webkit-clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
-          clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
   background-color: yellow;
   padding: 0.5rem;
   bottom: 80px;
@@ -174,7 +174,7 @@ body {
 
 .new-team {
   -webkit-clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
-          clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 6% 96%);
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
@@ -190,7 +190,7 @@ body {
   padding: 0.25em 0;
 }
 
-.new-team .newteam-form > * {
+.new-team .newteam-form>* {
   margin: 2rem 0;
 }
 
@@ -202,7 +202,7 @@ body {
 
 .btn-wrap {
   -webkit-filter: drop-shadow(6px 6px yellow);
-          filter: drop-shadow(6px 6px yellow);
+  filter: drop-shadow(6px 6px yellow);
   margin-top: 1em;
 }
 
@@ -212,7 +212,7 @@ button {
   padding: 0.5rem 2.5rem;
   border: none;
   -webkit-clip-path: polygon(4% 0, 100% 0%, 96% 97%, 0 100%);
-          clip-path: polygon(4% 0, 100% 0%, 96% 97%, 0 100%);
+  clip-path: polygon(4% 0, 100% 0%, 96% 97%, 0 100%);
   font-family: simplicity;
   font-size: 2rem;
 }
@@ -248,30 +248,30 @@ input[type="text"]:focus {
   border-color: #25BAE5;
 }
 
-.team-icon-form > div {
+.team-icon-form>div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.team-icon-form > div input[type="radio"] {
+.team-icon-form>div input[type="radio"] {
   margin-right: 0.5em;
 }
 
-.team-icon-form > div .team-icon {
+.team-icon-form>div .team-icon {
   margin: 0 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .plateau-wrapper {
@@ -287,11 +287,11 @@ input[type="text"]:focus {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 315px max-content 1fr;
-      grid-template-columns: 315px -webkit-max-content 1fr;
-      grid-template-columns: 315px max-content 1fr;
+  grid-template-columns: 315px -webkit-max-content 1fr;
+  grid-template-columns: 315px max-content 1fr;
   -ms-grid-rows: max-content (1fr)[5];
-      grid-template-rows: -webkit-max-content repeat(5 1fr);
-      grid-template-rows: max-content repeat(5 1fr);
+  grid-template-rows: -webkit-max-content repeat(5 1fr);
+  grid-template-rows: max-content repeat(5 1fr);
 }
 
 #plateau .cat-title {
@@ -326,14 +326,14 @@ input[type="text"]:focus {
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 #plateau #score .team-purple {
   background-color: #CE0B59;
   padding: 6px;
   -webkit-clip-path: polygon(0 0, 94% 14%, 100% 100%, 3% 89%);
-          clip-path: polygon(0 0, 94% 14%, 100% 100%, 3% 89%);
+  clip-path: polygon(0 0, 94% 14%, 100% 100%, 3% 89%);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -343,7 +343,7 @@ input[type="text"]:focus {
 
 #plateau #score .team-name {
   -webkit-clip-path: polygon(2px 1px, 94% 16.17%, 98.39% 99%, 4.23% 85.83%);
-          clip-path: polygon(2px 1px, 94% 16.17%, 98.39% 99%, 4.23% 85.83%);
+  clip-path: polygon(2px 1px, 94% 16.17%, 98.39% 99%, 4.23% 85.83%);
   background-color: white;
   padding: 15px 40px;
   width: -webkit-fit-content;
@@ -353,7 +353,7 @@ input[type="text"]:focus {
 
 #plateau #score .team-yellow {
   -webkit-clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-          clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+  clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
   background-color: #F7D126;
   padding: 8px 8px;
   width: -webkit-fit-content;
@@ -367,7 +367,7 @@ input[type="text"]:focus {
 
 #plateau #score .team-score {
   -webkit-clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-          clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+  clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
   background-color: #CE0B59;
   font-size: 3em;
   padding: 19px 75px 25px 70px;
@@ -378,8 +378,8 @@ input[type="text"]:focus {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #plateau #team-board .splash-team {
@@ -392,8 +392,8 @@ input[type="text"]:focus {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   justify-items: center;
 }
 
@@ -425,8 +425,8 @@ input[type="text"]:focus {
   transition: .2s;
   position: relative;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 #plateau .cases-wrap img {
@@ -437,8 +437,8 @@ input[type="text"]:focus {
 #plateau .cases-wrap .icon {
   width: 3rem;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
   left: 59px;
   z-index: 990;
 }
@@ -472,7 +472,7 @@ input[type="text"]:focus {
   position: absolute;
   z-index: 99;
   -webkit-transform: rotate(-33deg);
-          transform: rotate(-33deg);
+  transform: rotate(-33deg);
   top: 15px;
   left: 15px;
 }
@@ -498,7 +498,7 @@ input[type="text"]:focus {
 #plateau .cases-wrap .cases-yellow {
   background-color: #F7D126;
   -webkit-clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
-          clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
+  clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
   padding: 0.5em;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -509,7 +509,7 @@ input[type="text"]:focus {
 #plateau .cases-wrap .case {
   background-color: #25BAE5;
   -webkit-clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
-          clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
+  clip-path: polygon(0 0, 100% 6%, 96% 100%, 5% 100%);
   padding: 2em;
   width: 60px;
   height: 60px;
@@ -541,7 +541,7 @@ input[type="text"]:focus {
   animation-name: animatetop;
   animation-duration: 0.4s;
   -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
-          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+  clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
   padding: 1em;
 }
 
@@ -553,7 +553,7 @@ input[type="text"]:focus {
 .modal .modal-content {
   background-color: white;
   -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
-          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+  clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
   padding: 2em;
   font-family: heroes;
   line-height: 2.3em;
@@ -583,13 +583,13 @@ input[type="text"]:focus {
 
 .modal .modal-content .reponse #time {
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .modal .modal-content .reponse input[type="radio"] {
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   margin-top: 12px;
 }
 
@@ -601,7 +601,7 @@ input[type="text"]:focus {
 .modal .modal-content #rep div {
   text-align: center;
   -webkit-filter: drop-shadow(6px 6px #F7D126);
-          filter: drop-shadow(6px 6px #F7D126);
+  filter: drop-shadow(6px 6px #F7D126);
 }
 
 .modal .modal-content #rep .rep-txt {
@@ -610,7 +610,7 @@ input[type="text"]:focus {
   text-shadow: 3px 4px black;
   padding: 1em;
   -webkit-clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
-          clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
+  clip-path: polygon(0 8%, 100% 0%, 96% 100%, 5% 92%);
 }
 
 @-webkit-keyframes animatetop {
@@ -618,6 +618,7 @@ input[type="text"]:focus {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -629,6 +630,7 @@ input[type="text"]:focus {
     top: -300px;
     opacity: 0;
   }
+
   to {
     top: 0;
     opacity: 1;
@@ -637,13 +639,13 @@ input[type="text"]:focus {
 
 .de-wrap-shadow {
   -webkit-filter: drop-shadow(6px 6px #F7D126);
-          filter: drop-shadow(6px 6px #F7D126);
+  filter: drop-shadow(6px 6px #F7D126);
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
   -ms-flex-item-align: end;
-      -ms-grid-row-align: end;
-      align-self: end;
+  -ms-grid-row-align: end;
+  align-self: end;
 }
 
 .de-wrap {
@@ -654,7 +656,7 @@ input[type="text"]:focus {
   width: -moz-fit-content;
   width: fit-content;
   -webkit-clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-          clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
+  clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
   position: relative;
 }
 
@@ -668,13 +670,13 @@ input[type="text"]:focus {
   display: flex;
   padding: 20px 65px 20px 45px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.8%, 5.16% 83.03%);
-          clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.8%, 5.16% 83.03%);
+  clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.8%, 5.16% 83.03%);
 }
 
 .de-wrap .de img {
@@ -687,39 +689,39 @@ input[type="text"]:focus {
   color: #F7D126;
 }
 
-#myModalVideo .yellow {
+#myModalMedia .yellow {
   width: 55%;
   margin: 5% auto;
 }
 
-#myModalVideo main {
+#myModalMedia main {
   display: -ms-grid;
   display: grid;
   place-content: center;
   padding: 2rem 0;
 }
 
-#myModalVideo main div {
+#myModalMedia main div {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 2rem;
 }
 
-#myModalVideo main div button {
+#myModalMedia main div button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   cursor: pointer;
 }
 
-#myModalVideo main #btnStart .round {
+#myModalMedia main #btnStart .round {
   width: 20px;
   height: 20px;
   background-color: red;
@@ -728,7 +730,7 @@ input[type="text"]:focus {
   margin-right: .5rem;
 }
 
-#myModalVideo main #btnStop .square {
+#myModalMedia main #btnStop .square {
   width: 18px;
   height: 18px;
   background-color: black;
@@ -736,7 +738,7 @@ input[type="text"]:focus {
   margin-right: .5rem;
 }
 
-#myModalVideo video {
+#myModalMedia video {
   max-width: 40vw;
   border: 10px solid black;
   border-radius: 5px;

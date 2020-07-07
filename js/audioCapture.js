@@ -1,18 +1,5 @@
 let constraintObj = {
-    audio: true,
-    video: {
-        facingMode: "user",
-        width: {
-            min: 640,
-            ideal: 1280,
-            max: 1920
-        },
-        height: {
-            min: 480,
-            ideal: 720,
-            max: 1080
-        }
-    }
+    audio: true
 };
 // width: 1280, height: 720  -- preference only
 // facingMode: {exact: "user"}
@@ -46,17 +33,17 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.querySelector('mediaInput');
-        if ("srcObject" in video) {
-            video.srcObject = mediaStreamObj;
+        let audio = document.getElementById('mediaInput');
+        if ("srcObject" in audio) {
+            audio.srcObject = mediaStreamObj;
         } else {
             //ancienne version
-            video.src = window.URL.createObjectURL(mediaStreamObj);
+            audio.src = window.URL.createObjectURL(mediaStreamObj);
         }
 
-        video.onloadedmetadata = function (ev) {
+        audio.onloadedmetadata = function (ev) {
             //montrer dans l'élément vidéo ce qui est capturé par la webcam
-            video.play();
+            audio.play();
         };
 
         //ajouter des écouteurs pour enregistrer la vidéo / l'audio
@@ -79,11 +66,12 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
             });
-            video.srcObject = null
+            audio.srcObject = null
             console.log(mediaRecorder.state);
-             $(mediaInput).hide()
-             $(stop).hide()
-             $(mediaSave).show()
+            $(mediaInput).hide()
+            $(stop).hide()
+            $(mediaSave).show()
+
         });
         close.addEventListener('click', (ev) => {
             $('#myModalMedia .yellow').remove()
@@ -93,18 +81,20 @@ navigator.mediaDevices.getUserMedia(constraintObj)
                 track.stop();
             });
         })
+
+
         mediaRecorder.ondataavailable = function (ev) {
             chunks.push(ev.data);
         }
         mediaRecorder.onstop = (ev) => {
             let blob = new Blob(chunks, {
-                'type': 'video/mp4;'
+                'type': 'audio/mp3;'
             });
             chunks = [];
-            let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;
-            //console.log(videoURL)
-            $('#media-dl').attr("href", videoURL)
+            let mediaURL = window.URL.createObjectURL(blob);
+            mediaSave.src = mediaURL;
+            console.log(mediaURL)
+            $('#media-dl').attr("href", mediaURL)
             $('#media-dl').show()
             window.URL.revokeObjectURL(objectURL);
         }
@@ -112,6 +102,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
     .catch(function (err) {
         console.log(err.name, err.message);
     });
+
 
 /*********************************
 getUserMedia returns a Promise

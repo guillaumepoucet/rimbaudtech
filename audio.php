@@ -5,9 +5,9 @@
         <!-- Capture de media video/son -->
         <main>
 
-            <video id="mediaInput" controls></video>
+            <audio id="mediaInput" controls></audio>
 
-            <video id="mediaOutput" controls style="display: none;"></video>
+            <audio id="mediaOutput" controls style="display: none;"></audio>
 
             <div id="rep" class="btnrep">
                 <button id="btnStart"><span class="round"></span>Enregistrer</button>

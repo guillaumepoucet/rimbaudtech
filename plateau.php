@@ -52,7 +52,7 @@
 
         <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
 
-            <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team1-icon icon">
+            <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team<?= $n ?>-icon icon">
             
             <div class="relative">
                 <p class="start">start</p>
@@ -100,13 +100,12 @@
         <div class="button">
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
+            <button id="myBtnAudio">Afficher l'audio</button>
         </div>
         
-
-
     </div>
 
-     <div id="myModalVideo" class="modal"></div>
+     <div id="myModalMedia" class="modal"></div>
 
     <div id="myModal" class="modal">
 
@@ -140,7 +139,7 @@
 
                 <div id="rep" class="btnrep">
                     <div>
-                        <span>Répondre !</span>
+                        <span class="rep-txt">Répondre !</span>
                     </div>
                 </div>
 
@@ -148,8 +147,6 @@
                     <input class="btnval" type="button" name="valider" id="val" value="Valider !"></p>
                     <input class="btnechec" type="button" name="echec" id="ech" value="Echec !"></p>
                 </div>
-
-
 
             </div>
 
@@ -192,7 +189,7 @@
             objs[t] = new Team(name, pawn)
         }
         console.log(objs)
-        console.log(objs[1].position)
+        //console.log(objs[1].position)
     </script>
 
     <script src="js/questionnaire.js"></script>
@@ -207,9 +204,22 @@
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalVideo').load("video.php");
+            $('#myModalMedia').load("video.php");
 
-            $('#myModalVideo').show();
+            $('#myModalMedia').show();
+        })
+    </script>
+
+    <script>
+        $('#myBtnAudio').click(function() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "js/audioCapture.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
+
+            $('#myModalMedia').load("audio.php");
+
+            $('#myModalMedia').show();
         })
     </script>
 

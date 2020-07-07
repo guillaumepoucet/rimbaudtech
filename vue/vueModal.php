@@ -1,4 +1,4 @@
-!-- The defi Modal -->
+<!-- The defi Modal -->
 <div id="quizModal" class="modal">
 
     <!-- Modal content -->
