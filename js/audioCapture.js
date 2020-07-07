@@ -1,18 +1,5 @@
 let constraintObj = {
-    audio: true,
-    video: {
-        facingMode: "user",
-        width: {
-            min: 640,
-            ideal: 1280,
-            max: 1920
-        },
-        height: {
-            min: 480,
-            ideal: 720,
-            max: 1080
-        }
-    }
+    audio: true
 };
 // width: 1280, height: 720  -- preference only
 // facingMode: {exact: "user"}
@@ -46,25 +33,25 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.getElementById('vidInput');
-        if ("srcObject" in video) {
-            video.srcObject = mediaStreamObj;
+        let audio = document.getElementById('audInput');
+        if ("srcObject" in audio) {
+            audio.srcObject = mediaStreamObj;
         } else {
             //ancienne version
-            video.src = window.URL.createObjectURL(mediaStreamObj);
+            audio.src = window.URL.createObjectURL(mediaStreamObj);
         }
 
-        video.onloadedmetadata = function (ev) {
+        audio.onloadedmetadata = function (ev) {
             //montrer dans l'élément vidéo ce qui est capturé par la webcam
-            video.play();
+            audio.play();
         };
 
         //ajouter des écouteurs pour enregistrer la vidéo / l'audio
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
         let close = document.getElementById('btnClose');
-        let vidSave = document.getElementById('vidOutput');
-        let vidInput = document.getElementById('vidInput');
+        let audSave = document.getElementById('audOutput');
+        let audInput = document.getElementById('audInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
@@ -79,11 +66,11 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             mediaStreamObj.getTracks().forEach(function(track) {
                 track.stop();
               });
-            video.srcObject = null
+            audio.srcObject = null
             console.log(mediaRecorder.state);
-            $(vidInput).hide()
+            $(audInput).hide()
             $(stop).hide()
-            $(vidSave).show()
+            $(audSave).show()
          
         });
         close.addEventListener('click', (ev) => {
@@ -101,11 +88,11 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         }
         mediaRecorder.onstop = (ev) => {
             let blob = new Blob(chunks, {
-                'type': 'video/mp4;'
+                'type': 'audio/mp3;'
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;     
+            audSave.src = videoURL;     
             console.log(videoURL)
             $('#video-dl').attr("href", videoURL)
             $('#video-dl').show()

@@ -5,7 +5,7 @@ var btn = $('#myBtn')
 // récupérer le span qui ferme la modal
 span = $('.close')
 // On intialise l'équipe actuelle
-var team = 1;
+team = 0;
 // trackeur positionné en case start permettant de savoir sur quelle case le pion se trouve actuellement
 team.position = 0;
 target = null;
@@ -17,6 +17,22 @@ turn = 0;
 usedQuestion = [];
 
 // déterminer quelle équipe va jouer
+// var teamActuel = function (nbTeam) {
+//     if (team == 0) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else if (team == 1) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else if ((team == 2 && (nbTeam == 3 || nbTeam == 4))) {
+//         team += 1
+//         console.log('C\'est au tour de l\'équipe n°' + team)
+//     } else {
+//         team = 0
+//     }
+// }
+
+// déterminer quelle équipe va jouer
 var teamActuel = function (nbTeam) {
     if (team == 0) {
         team += 1
@@ -24,7 +40,12 @@ var teamActuel = function (nbTeam) {
     } else if (team == 1) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
-    } else if ((team == 2 && (nbTeam == 3 || nbTeam == 4))) {
+
+    } else if ((team == 2) && (nbTeam > 2)) {
+        team += 1
+        console.log('C\'est au tour de l\'équipe n°' + team)
+
+    } else if ((team == 3) && (nbTeam == 4)) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
     } else {
@@ -160,3 +181,7 @@ $('#ech').click(function () {
     $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
     reboot();
 })
+
+// for (n = 1; n < 8; n++) {
+//     teamActuel(3)
+// }

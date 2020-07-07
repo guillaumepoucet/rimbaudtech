@@ -99,6 +99,7 @@
         <div class="button">
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
+            <button id="myBtnAudio">Afficher l'audio</button>
         </div>
 
 
@@ -193,7 +194,8 @@
             objs[t] = new Team(name, pawn)
         }
         console.log(objs)
-        console.log(objs[1].position)
+
+        
     </script>
 
     <script src="js/questionnaire.js"></script>
@@ -213,7 +215,18 @@
             $('#myModalVideo').show();
         })
     </script>
+    <script>
+        $('#myBtnAudio').click(function() {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "js/audioCapture.js";
+            document.getElementsByTagName("head")[0].appendChild(script);
 
+            $('#myModalVideo').load("audio.php");
+
+            $('#myModalVideo').show();
+        })
+    </script>
 
 </body>
 
