@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plateau.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -65,7 +66,8 @@
                 <?php for ($i = 1; $i <= 14; $i++) : ?>
                     <div class="relative">
                         <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if ((($n == 1) && ($i == 4)) ||
+                        <?php if ((($n == 1) && ($i == 4)) || 
+                            (($n == 1) && ($i == 8)) ||
                             (($n == 2) && ($i == 3)) ||
                             (($n == 3) && ($i == 5)) ||
                             (($n == 4) && ($i == 2))
@@ -130,8 +132,10 @@
                     <div class="reponseInput"><input type="radio" name="list" value="3" id="">
                         <p class="c"></p>
                     </div>
-         
-                    <div id="time" style="display: none;"><p>04:00</p></div>
+
+                    <div id="time" style="display: none;">
+                        <p>04:00</p>
+                    </div>
                 </div>
 
 
@@ -197,8 +201,6 @@
             objs[t] = new Team(name, pawn)
         }
         console.log(objs)
-
-        
     </script>
 
     <script src="js/questionnaire.js"></script>

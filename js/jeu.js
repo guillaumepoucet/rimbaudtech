@@ -71,8 +71,10 @@ var movePawn = function () {
             opacity: "0"
         })
         $('.wrap' + team + ' .relative').animate({
-            right: "+=" + distance,
+            right: "+=" + distance
         })
+        $('.team' + team + '-icon').effect("bounce", {times:1}, 400)
+
     }
     // on actualise la position pour le prochain tour
     // et le tracker en récupèrant la case
@@ -171,6 +173,7 @@ $('#rep').click(function () {
         $('.reponse div').remove();
         $('#rep').remove();
         $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
+        teamActuel(nbTeam)
 
     }
 
@@ -193,6 +196,8 @@ $('#ech').click(function () {
     $('.validation').hide();
     $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
     reboot();
+    teamActuel(nbTeam)
+
 })
 
 // for (n = 1; n < 8; n++) {
