@@ -104,8 +104,6 @@ var action = function () {
             $('.c').text(questionnaire[question][1][2])
             baseReponse();
 
-
-
         } else {
 
             baseOuverte();
@@ -138,6 +136,8 @@ var action = function () {
         }
 
         modal.style.display = "grid";
+    } else {
+        teamActuel(nbTeam)
     }
     // score();
 
@@ -153,7 +153,7 @@ var score = function () {
     if (objs[team].score > 500) {
         alert("Léquipe " + objs[team].name + 'a gagné !')
     }
-
+    teamActuel(nbTeam)
 }
 
 // Récupérer réponse et vérifier si bonne ou non
@@ -165,13 +165,13 @@ $('#rep').click(function () {
         //alert("Correct");
         score()
         modal.style.display = "none";
-        teamActuel(nbTeam)
+
     } else {
         //alert("Incorrect");
         $('.reponse div').remove();
         $('#rep').remove();
         $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
-        teamActuel(nbTeam)
+
     }
 
     reboot();
@@ -184,8 +184,6 @@ $('#val').click(function () {
     score()
     modal.style.display = "none";
     reboot();
-    teamActuel(nbTeam)
-
 })
 
 // 
@@ -195,7 +193,6 @@ $('#ech').click(function () {
     $('.validation').hide();
     $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
     reboot();
-    teamActuel(nbTeam)
 })
 
 // for (n = 1; n < 8; n++) {
