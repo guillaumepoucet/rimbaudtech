@@ -121,6 +121,7 @@
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
             <button id="myBtnAudio">Afficher l'audio</button>
+            <button id="myBtnDefis">Afficher un defis</button>
         </div>
 
 
@@ -260,6 +261,7 @@
             $('#myModalMedia').show();
         })
     </script>
+
     <script>
         $('#myBtnAudio').click(function() {
             var script = document.createElement("script");

@@ -50,6 +50,7 @@ var teamActuel = function (nbTeam) {
         console.log('C\'est au tour de l\'équipe n°' + team)
     } else {
         team = 1
+        console.log('C\'est au tour de l\'équipe n°' + team)
     }
 }
 

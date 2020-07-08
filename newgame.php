@@ -80,6 +80,14 @@
     })
 </script>
 
+<script>
+    var pawnValided = $('.btn-wrap-yellow')
+    truc.notclick(function(){
+        
+    })
+
+</script>
+
 </body>
 
 </html>
