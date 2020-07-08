@@ -104,10 +104,12 @@ var action = function () {
             $('.c').text(questionnaire[question][1][2])
             baseReponse();
 
+
+
         } else {
 
             baseOuverte();
-            $('.reponse').append('<div id="time"><div>');
+            $('.reponse #time').show();
 
             function startTimer(duration, display) {
                 var timer = duration,
@@ -135,7 +137,7 @@ var action = function () {
 
         }
 
-        modal.style.display = "block";
+        modal.style.display = "grid";
     }
     // score();
 

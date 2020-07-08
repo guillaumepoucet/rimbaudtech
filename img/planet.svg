@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="103.144" height="76.631" viewBox="0 0 103.144 76.631">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke-linejoin: round;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #f7d126;
+      }
+
+      .cls-3 {
+        filter: url(#Tracé_37);
+      }
+
+      .cls-4 {
+        filter: url(#Tracé_36);
+      }
+    </style>
+    <filter id="Tracé_36" x="34.271" y="8.363" width="51.465" height="47.498" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Tracé_37" x="12.583" y="0.526" width="88.172" height="72.112" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_25" data-name="Groupe 25" transform="translate(-1229.231 -913.88)">
+    <path id="Tracé_48" data-name="Tracé 48" class="cls-1" d="M73.7,105.922l17.733,5.726c3.284-3.088,6.316-6.433,9.6-8.749,4.295,1.287,15.411,4.117,17.179,4.889l-4.295-14.666,6.568-11.836-6.568-11.322L116.948,53.5l-16.674,4.631L86.885,49.122,70.211,60.7,54.548,50.151,42.674,60.958,25.242,57.87l7.326,14.924-8.59,13.895,8.59,9.006-5.305,17.754L43.432,106.5l9.853,10.55Z" transform="matrix(0.998, -0.07, 0.07, 0.998, 1202.951, 874.35)"/>
+    <g id="Icon_ionic-md-planet" data-name="Icon ionic-md-planet" transform="translate(1242.938 915.526)">
+      <g class="cls-4" transform="matrix(1, 0, 0, 1, -13.71, -1.65)">
+        <path id="Tracé_36-2" data-name="Tracé 36" class="cls-2" d="M10.163,15.429c-.391.47-.767.939-1.127,1.441a146.776,146.776,0,0,0,19.448,17.8A151.823,151.823,0,0,0,45.926,46.432c.924.517,1.832,1.018,2.709,1.472.391-.47.767-.939,1.127-1.441a23.447,23.447,0,0,0,3.648-8.393c.125-.5.235-1,.329-1.488a25.165,25.165,0,0,0-35.2-27.59A23.37,23.37,0,0,0,10.163,15.429Z" transform="translate(26.51 2.7)"/>
+      </g>
+      <g class="cls-3" transform="matrix(1, 0, 0, 1, -13.71, -1.65)">
+        <path id="Tracé_37-2" data-name="Tracé 37" class="cls-2" d="M73.054,51.32A34.159,34.159,0,0,1,71.7,54.529a45.826,45.826,0,0,1,5.849,8.507c.44.752,1.357,2.4.165,2.273a8.746,8.746,0,0,1-1.008-.238c-3.905-.99-9.387-3.429-15.456-6.857A182.032,182.032,0,0,1,40.473,44.225,171.309,171.309,0,0,1,16.528,22.132,62.93,62.93,0,0,1,9.983,13.35a13.85,13.85,0,0,1-1.027-1.907c-.458-1.137.917-.935,1.283-.843A38.417,38.417,0,0,1,20.91,14.963a15.409,15.409,0,0,1,2.548-2.09A59.909,59.909,0,0,0,11.5,6.364C7.269,4.751,3.969,5.117,2.8,7.043.559,10.691,5.363,20.3,14.768,31.244a29.464,29.464,0,0,0,42.774,33,104.566,104.566,0,0,0,17.766,6.4c4.382,1.118,7.407,1.008,8.581-.9C85.924,66.41,81.671,60.249,73.054,51.32Z" transform="translate(11.46 -3.7)"/>
+      </g>
+    </g>
+  </g>
+</svg>

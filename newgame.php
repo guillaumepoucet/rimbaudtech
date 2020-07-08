@@ -22,7 +22,7 @@
 
 <body class="plateau-wrapper">
 
-    <div class="create-a-team">
+    <div>
 
         <form class="create-a-team" action="traitement.php" method="POST">
             <?php for ($n = 1; $n <= $_SESSION['teams-nb']; $n++) : ?>
@@ -41,13 +41,21 @@
                                 <div class="team-icon-form">
                                     <p>Choisissez un pion : </p>
                                     <div>
-                                        <div class="team-icon horse-icon">
-                                            <input type="radio" for="horse-icon" name="team-<?= $n ?>-icon" value="img/horse.svg" id="">
-                                            <label for="horse-icon"><img src="img/horse.svg" alt=""></label>
+                                        <div class="team-icon choixCheval">
+                                            <input type="radio" for="choixCheval" name="team-<?= $n ?>-icon" value="img/cheval.svg" id="team<?= $n ?>icon1">
+                                            <label for="team<?= $n ?>icon1"><img src="img/choixCheval.svg" alt=""></label>
                                         </div>
-                                        <div class="team-icon hat-icon">
-                                            <input type="radio" for="hat-icon" name="team-<?= $n ?>-icon" value="img/hat.svg" id="">
-                                            <label for="hat-icon"><img src="img/hat.svg" alt=""></label>
+                                        <div class="team-icon choixPlanet">
+                                            <input type="radio" for="choixPlanet" name="team-<?= $n ?>-icon" value="img/planet.svg" id="team<?= $n ?>icon2">
+                                            <label for="team<?= $n ?>icon2"><img src="img/choixPlanet.svg" alt=""></label>
+                                        </div>
+                                        <div class="team-icon choixVoiture">
+                                            <input type="radio" for="choixVoiture" name="team-<?= $n ?>-icon" value="img/voiture.svg" id="team<?= $n ?>icon3">
+                                            <label for="team<?= $n ?>icon3"><img src="img/choixVoiture.svg" alt=""></label>
+                                        </div>
+                                        <div class="team-icon choixRobot">
+                                            <input type="radio" for="choixRobot" name="team-<?= $n ?>-icon" value="img/robot.svg" id="team<?= $n ?>icon4">
+                                            <label for="team<?= $n ?>icon4"><img src="img/choixRobot.svg" alt=""></label>
                                         </div>
                                     </div>
                                 </div>
@@ -58,13 +66,19 @@
                 </div>
 
             <?php endfor ?>
-            <div class="btn-wrap pointer fixed-center">
+            <div class="btn-wrap-yellow pointer fixed-center">
                 <button type="submit">Valider</button>
             </div>
         </form>
 
     </div>
 
+<script>
+    var label = $('.team-icon label')
+    label.click(function () {
+
+    })
+</script>
 
 </body>
 

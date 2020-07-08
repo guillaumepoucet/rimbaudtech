@@ -130,7 +130,10 @@
                     <div class="reponseInput"><input type="radio" name="list" value="3" id="">
                         <p class="c"></p>
                     </div>
+         
+                    <div id="time" style="display: none;"><p>04:00</p></div>
                 </div>
+
 
                 <!-- Capture de media video/son -->
                 <main>

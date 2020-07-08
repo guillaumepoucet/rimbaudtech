@@ -122,7 +122,7 @@ body {
 }
 
 .create-a-team {
-  width: 100vw;
+  width: 97vw;
   height: 100vh;
   display: -ms-grid;
   display: grid;
@@ -133,6 +133,7 @@ body {
   font-family: simplicity;
   text-align: center;
   font-size: 3rem;
+  margin: 1rem;
 }
 
 .newteam-relative {
@@ -185,9 +186,13 @@ body {
   position: relative;
 }
 
+.new-team label {
+  padding-top: 1rem;
+  white-space: nowrap;
+}
+
 .new-team img {
-  width: 25px;
-  padding: 0.25em 0;
+  width: 50px;
 }
 
 .new-team .newteam-form > * {
@@ -197,13 +202,16 @@ body {
 .fixed-center {
   position: fixed;
   bottom: 50px;
-  right: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
-.btn-wrap {
+.btn-wrap-yellow {
   -webkit-filter: drop-shadow(6px 6px yellow);
           filter: drop-shadow(6px 6px yellow);
   margin-top: 1em;
+  text-shadow: 3px 4px black;
 }
 
 button {
@@ -249,12 +257,13 @@ input[type="text"]:focus {
 }
 
 .team-icon-form > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
 }
 
 .team-icon-form > div input[type="radio"] {
@@ -424,9 +433,6 @@ input[type="text"]:focus {
   -webkit-transition: .2s;
   transition: .2s;
   position: relative;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 #plateau .cases-wrap img {
@@ -435,11 +441,9 @@ input[type="text"]:focus {
 }
 
 #plateau .cases-wrap .icon {
-  width: 3rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  left: 59px;
+  width: 5rem;
+  top: calc(50% - 21%);
+  left: 40px;
   z-index: 990;
 }
 
@@ -457,7 +461,7 @@ input[type="text"]:focus {
 }
 
 #plateau .cases-wrap .relative .svgBoom {
-  top: -7px;
+  top: -13px;
   right: 67px;
 }
 
@@ -529,6 +533,7 @@ input[type="text"]:focus {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  place-content: center;
   /* Add Animation */
 }
 
@@ -571,6 +576,10 @@ input[type="text"]:focus {
   white-space: break-spaces;
 }
 
+.modal .modal-content .n-question span {
+  font-size: 0.8rem;
+}
+
 .modal .modal-content .reponse {
   margin-bottom: 3em;
 }
@@ -582,9 +591,10 @@ input[type="text"]:focus {
 }
 
 .modal .modal-content .reponse #time {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  min-height: 40px;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
 }
 
 .modal .modal-content .reponse input[type="radio"] {
