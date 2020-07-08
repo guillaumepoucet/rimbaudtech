@@ -1,13 +1,15 @@
+var constraintObj = {
+    audio: true
+};
+// width: 1280, height: 720  -- preference only
+// facingMode: {exact: "user"}
+// facingMode: "environment"
+
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
     navigator.mediaDevices.getUserMedia = function () {
-        let constraintObj = {
-            audio: true
-        };
-        // width: 1280, height: 720  -- preference only
-        // facingMode: {exact: "user"}
-        // facingMode: "environment"
+
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
@@ -62,23 +64,24 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
             audio.srcObject = null
             console.log(mediaRecorder.state);
             $(mediaInput).hide()
             $(stop).hide()
             $(mediaSave).show()
-         
+
         });
         close.addEventListener('click', (ev) => {
             $('#myModalMedia .yellow').remove()
             $('#myModalMedia').hide()
-            mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            //mediaRecorder.stop();
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+                delete (constraintObj);
+            });
         })
 
 
@@ -91,7 +94,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let mediaURL = window.URL.createObjectURL(blob);
-            mediaSave.src = mediaURL;     
+            mediaSave.src = mediaURL;
             console.log(mediaURL)
             $('#media-dl').attr("href", mediaURL)
             $('#media-dl').show()
