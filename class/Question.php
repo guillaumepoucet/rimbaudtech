@@ -1,6 +1,6 @@
 <?php
 
- require_once "Modal.php";
+require_once "Modal.php";
 
 class Question extends Modal {
 

@@ -1,27 +1,27 @@
-let constraintObj = {
-    audio: true,
-    video: {
-        facingMode: "user",
-        width: {
-            min: 640,
-            ideal: 1280,
-            max: 1920
-        },
-        height: {
-            min: 480,
-            ideal: 720,
-            max: 1080
-        }
-    }
-};
-// width: 1280, height: 720  -- preference only
-// facingMode: {exact: "user"}
-// facingMode: "environment"
-
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
-    navigator.mediaDevices.getUserMedia = function (constraintObj) {
+    navigator.mediaDevices.getUserMedia = function () {
+        var constraintObj = {
+            audio: true,
+            video: {
+                facingMode: "user",
+                width: {
+                    min: 640,
+                    ideal: 1280,
+                    max: 1920
+                },
+                height: {
+                    min: 480,
+                    ideal:,
+                    max: 1080
+                }
+            }
+        };
+        // width: 1280, height: 720  -- preference only
+        // facingMode: {exact: "user"}
+        // facingMode: "environment"
+
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
@@ -46,7 +46,7 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.querySelector('mediaInput');
+        let video = document.getElementById('mediaInput');
         if ("srcObject" in video) {
             video.srcObject = mediaStreamObj;
         } else {
@@ -81,18 +81,21 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             video.srcObject = null
             console.log(mediaRecorder.state);
-             $(mediaInput).hide()
-             $(stop).hide()
-             $(mediaSave).show()
+            $(mediaInput).hide()
+            $(stop).hide()
+            $(mediaSave).show()
+
         });
         close.addEventListener('click', (ev) => {
             $('#myModalMedia .yellow').remove()
             $('#myModalMedia').hide()
-            mediaRecorder.stop();
+            //mediaRecorder.stop();
             mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
             });
         })
+
+
         mediaRecorder.ondataavailable = function (ev) {
             chunks.push(ev.data);
         }
@@ -102,8 +105,8 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;
-            //console.log(videoURL)
+            mediaSave.src = videoURL;
+            // console.log(videoURL)
             $('#media-dl').attr("href", videoURL)
             $('#media-dl').show()
             window.URL.revokeObjectURL(objectURL);
@@ -112,6 +115,7 @@ navigator.mediaDevices.getUserMedia(constraintObj)
     .catch(function (err) {
         console.log(err.name, err.message);
     });
+
 
 /*********************************
 getUserMedia returns a Promise

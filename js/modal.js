@@ -35,9 +35,7 @@ btn.onclick = function () {
         $('.reponse').append('<div id="time"><div>');
         // timer countdown
         function startTimer(duration, display) {
-            var timer = duration,
-                        minutes,
-                        seconds;
+            var timer = duration, minutes, seconds;
             setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
@@ -60,7 +58,6 @@ btn.onclick = function () {
     modal.style.display = "block";
 
 }
-
 // Cacher la croix de fermeture de la modal 
 $('.close').hide();
 
@@ -70,7 +67,7 @@ span.onclick = function () {
     modal.style.display = "none";
     $('#time').remove();
     reboot();
-    
+
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -79,13 +76,13 @@ window.onclick = function (event) {
         modal.style.display = "none";
         $('#time').remove();
         $('.errormsg').remove();
-        reboot();    
+        reboot();
     }
 }
 reboot();
-
 // Test function cacher afficher validation question sans rep timer et scroring 
-function reboot(){
+
+function reboot() {
     $('reponse div').show();
     $('.btnrep').show();
     //$('.validation').show();
@@ -93,12 +90,12 @@ function reboot(){
     $('#time').remove();
 }
 
-function baseReponse(){
+function baseReponse() {
     $('.validation').hide();
     $('#time').remove();
 }
 
-function baseOuverte(){
+function baseOuverte() {
     $('.reponseInput').hide();
     $('.btnrep').hide();
     $('.validation').show();

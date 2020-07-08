@@ -25,53 +25,53 @@
         <p class="cat-title parcours">parcours</p>
 
         <?php for ($n = 1; $n <= $_SESSION['teams-nb']; $n++) : ?>
+            <div id="score" class="team<?= $n ?>">
 
-        <div id="score" class="team<?= $n ?>">
-
-            <div class="team">
-                <div class="team-purple">
-                    <div class="team-name">
-                        <p><?= $_SESSION['team-' . $n . '-name'] ?></p>
+                <div class="team">
+                    <div class="team-purple">
+                        <div class="team-name">
+                            <p><?= $_SESSION['team-' . $n . '-name'] ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="team-yellow">
-                    <div class="team-score">
-                        <p class="score <?= $n ?>">0</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="team-board" class="team<?= $n ?>">
-
-            <div class="splash-team">
-                <!-- <img src="img/splash-team.svg" alt=""> -->
-                <p>#<?= $n ?></p>
-            </div>
-        </div>
-
-        <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
-
-            <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team<?= $n ?>-icon icon">
-            
-            <div class="relative">
-                <p class="start">start</p>
-                <div class="cases-yellow">
-                    <div class="case">
+                    <div class="team-yellow">
+                        <div class="team-score">
+                            <p class="score score<?= $n ?>">0</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <?php for ($i = 1; $i <= 14; $i++) : ?>
+            <div id="team-board" class="team<?= $n ?>">
+
+                <div class="splash-team">
+                    <!-- <img src="img/splash-team.svg" alt=""> -->
+                    <p>#<?= $n ?></p>
+                </div>
+            </div>
+
+            <div class="cases-wrap wrap<?= $n ?> team<?= $n ?>">
+
+
+                <img src="<?= $_SESSION['team-' . $n . '-icon'] ?>" alt="" class="team<?= $n ?>-icon icon">
+
                 <div class="relative">
-                    <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if    ((($n == 1) && ($i == 4)) || 
-                                    (($n == 2) && ($i == 3)) ||
-                                    (($n == 3) && ($i == 5)) ||
-                                    (($n == 4) && ($i == 2))
-                                    ) :  ?>
-                                        <img class="svgAction" src="img/action.svg" alt="">
-                                        <img class="svgBoom" src="img/boom.svg" alt="">
+                    <p class="start">start</p>
+                    <div class="cases-yellow">
+                        <div class="case">
+                        </div>
+                    </div>
+                </div>
+
+                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                    <div class="relative">
+                        <!-- Sont choisis les cases action ci-dessous -->
+                        <?php if ((($n == 1) && ($i == 4)) ||
+                            (($n == 2) && ($i == 3)) ||
+                            (($n == 3) && ($i == 5)) ||
+                            (($n == 4) && ($i == 2))
+                        ) :  ?>
+                            <img class="svgAction" src="img/action.svg" alt="">
+                            <img class="svgBoom" src="img/boom.svg" alt="">
                         <?php else : ?>
                             <span>#<?= $i ?></span>
                             <img class="svgBubble" src="img/bubble.svg" alt="">
@@ -96,16 +96,16 @@
             </div>
         </div>
 
-
         <div class="button">
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
             <button id="myBtnAudio">Afficher l'audio</button>
         </div>
-        
+
+
     </div>
 
-     <div id="myModalMedia" class="modal"></div>
+    <div id="myModalMedia" class="modal"></div>
 
     <div id="myModal" class="modal">
 
@@ -132,9 +132,9 @@
                     </div>
                 </div>
 
-                 <!-- Capture de media video/son -->
+                <!-- Capture de media video/son -->
                 <main>
-                   
+
                 </main>
 
                 <div id="rep" class="btnrep">
@@ -143,10 +143,13 @@
                     </div>
                 </div>
 
+
                 <div class="validation">
                     <input class="btnval" type="button" name="valider" id="val" value="Valider !"></p>
                     <input class="btnechec" type="button" name="echec" id="ech" value="Echec !"></p>
                 </div>
+
+
 
             </div>
 
@@ -160,6 +163,8 @@
         $('.wrap3 .case-count').eq(4).addClass('action');
         $('.wrap4 .case-count').eq(1).addClass('action');
     </script>
+
+
 
 
     <!-- On alert de la perte des données si fermeture fenetre -->
@@ -177,7 +182,7 @@
         noPressEnter(document.myModal.modal)
     </script>
 
-     <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
+    <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
     <script src="js/Team.js"></script>
 
     <script>
@@ -189,7 +194,8 @@
             objs[t] = new Team(name, pawn)
         }
         console.log(objs)
-        //console.log(objs[1].position)
+
+        
     </script>
 
     <script src="js/questionnaire.js"></script>
@@ -209,7 +215,6 @@
             $('#myModalMedia').show();
         })
     </script>
-
     <script>
         $('#myBtnAudio').click(function() {
             var script = document.createElement("script");

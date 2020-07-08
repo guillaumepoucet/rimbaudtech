@@ -1,6 +1,6 @@
 <?php
 
-var_dump($_POST);
+var_dump($_POST); 
 
 // team 1
 $teamName1 = !empty($_POST['team-1-name']) ? $_POST['team-1-name'] : NULL;
@@ -14,6 +14,9 @@ $teamIcon3 = !empty($_POST['team-3-icon']) ? $_POST['team-3-icon'] : NULL;
 // team 4
 $teamName4 = !empty($_POST['team-4-name']) ? $_POST['team-4-name'] : NULL;
 $teamIcon4 = !empty($_POST['team-4-icon']) ? $_POST['team-4-icon'] : NULL;
+
+
+
 
 // $teams = array(
 //     'team1' => $team1
