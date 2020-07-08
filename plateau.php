@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plateau.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -62,13 +63,33 @@
                     </div>
                 </div>
 
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
+                <?php for ($i = 1; $i <= 34; $i++) : ?>
                     <div class="relative">
                         <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if ((($n == 1) && ($i == 4)) ||
+                        <?php if ((($n == 1) && ($i == 4)) || 
+                            (($n == 1) && ($i == 8)) ||
+                            (($n == 1) && ($i == 16)) ||
+                            (($n == 1) && ($i == 20)) ||
+                            (($n == 1) && ($i == 24)) ||
+                            (($n == 1) && ($i == 28)) ||
                             (($n == 2) && ($i == 3)) ||
+                            (($n == 2) && ($i == 6)) ||
+                            (($n == 2) && ($i == 9)) ||
+                            (($n == 2) && ($i == 12)) ||
+                            (($n == 2) && ($i == 15)) ||
+                            (($n == 2) && ($i == 18)) ||
                             (($n == 3) && ($i == 5)) ||
-                            (($n == 4) && ($i == 2))
+                            (($n == 3) && ($i == 10)) ||
+                            (($n == 3) && ($i == 15)) ||
+                            (($n == 3) && ($i == 20)) ||
+                            (($n == 3) && ($i == 25)) ||
+                            (($n == 3) && ($i == 30)) ||
+                            (($n == 4) && ($i == 2)) ||
+                            (($n == 4) && ($i == 4)) ||
+                            (($n == 4) && ($i == 6)) ||
+                            (($n == 4) && ($i == 8)) ||
+                            (($n == 4) && ($i == 10)) ||
+                            (($n == 4) && ($i == 12))
                         ) :  ?>
                             <img class="svgAction" src="img/action.svg" alt="">
                             <img class="svgBoom" src="img/boom.svg" alt="">
@@ -130,8 +151,10 @@
                     <div class="reponseInput"><input type="radio" name="list" value="3" id="">
                         <p class="c"></p>
                     </div>
-         
-                    <div id="time" style="display: none;"><p>04:00</p></div>
+
+                    <div id="time" style="display: none;">
+                        <p>04:00</p>
+                    </div>
                 </div>
 
 
@@ -162,9 +185,29 @@
 
     <script>
         $('.wrap1 .case-count').eq(3).addClass('action');
+        $('.wrap1 .case-count').eq(7).addClass('action');
+        $('.wrap1 .case-count').eq(15).addClass('action');
+        $('.wrap1 .case-count').eq(19).addClass('action');
+        $('.wrap1 .case-count').eq(23).addClass('action');
+        $('.wrap1 .case-count').eq(27).addClass('action');
         $('.wrap2 .case-count').eq(2).addClass('action');
+        $('.wrap2 .case-count').eq(5).addClass('action');
+        $('.wrap2 .case-count').eq(8).addClass('action');
+        $('.wrap2 .case-count').eq(11).addClass('action');
+        $('.wrap2 .case-count').eq(14).addClass('action');
+        $('.wrap2 .case-count').eq(17).addClass('action');
         $('.wrap3 .case-count').eq(4).addClass('action');
+        $('.wrap3 .case-count').eq(9).addClass('action');
+        $('.wrap3 .case-count').eq(14).addClass('action');
+        $('.wrap3 .case-count').eq(19).addClass('action');
+        $('.wrap3 .case-count').eq(24).addClass('action');
+        $('.wrap3 .case-count').eq(29).addClass('action');
         $('.wrap4 .case-count').eq(1).addClass('action');
+        $('.wrap4 .case-count').eq(3).addClass('action');
+        $('.wrap4 .case-count').eq(5).addClass('action');
+        $('.wrap4 .case-count').eq(7).addClass('action');
+        $('.wrap4 .case-count').eq(9).addClass('action');
+        $('.wrap4 .case-count').eq(11).addClass('action');
     </script>
 
 
@@ -197,11 +240,10 @@
             objs[t] = new Team(name, pawn)
         }
         console.log(objs)
-
-        
     </script>
 
     <script src="js/questionnaire.js"></script>
+    <script src="js/defis.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
     <script src="js/modal.js"></script>
