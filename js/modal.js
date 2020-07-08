@@ -55,7 +55,7 @@ btn.onclick = function () {
 
     }
 
-    modal.style.display = "block";
+    modal.style.display = "grid";
 
 }
 // Cacher la croix de fermeture de la modal 

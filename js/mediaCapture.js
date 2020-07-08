@@ -1,26 +1,26 @@
+var constraintObj = {
+    audio: true,
+    video: {
+        facingMode: "user",
+        width: {
+            min: 640,
+            ideal: 1280,
+            max: 1920
+        },
+        height: {
+            min: 480,
+            ideal: 720,
+            max: 1080
+        }
+    }
+};
+// width: 1280, height: 720  -- preference only
+// facingMode: {exact: "user"}
+// facingMode: "environment"
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
     navigator.mediaDevices.getUserMedia = function () {
-        var constraintObj = {
-            audio: true,
-            video: {
-                facingMode: "user",
-                width: {
-                    min: 640,
-                    ideal: 1280,
-                    max: 1920
-                },
-                height: {
-                    min: 480,
-                    ideal:,
-                    max: 1080
-                }
-            }
-        };
-        // width: 1280, height: 720  -- preference only
-        // facingMode: {exact: "user"}
-        // facingMode: "environment"
 
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
