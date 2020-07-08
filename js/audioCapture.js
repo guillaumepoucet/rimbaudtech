@@ -1,14 +1,13 @@
-let constraintObj = {
-    audio: true
-};
-// width: 1280, height: 720  -- preference only
-// facingMode: {exact: "user"}
-// facingMode: "environment"
-
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
-    navigator.mediaDevices.getUserMedia = function (constraintObj) {
+    navigator.mediaDevices.getUserMedia = function () {
+        let constraintObj = {
+            audio: true
+        };
+        // width: 1280, height: 720  -- preference only
+        // facingMode: {exact: "user"}
+        // facingMode: "environment"
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
