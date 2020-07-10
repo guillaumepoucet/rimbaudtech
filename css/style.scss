@@ -275,7 +275,7 @@ input[type="text"]:focus {
 
     .parcours {
         text-align: left;
-        margin-left: 2%;
+        margin-left: 10%;
     }
 
 
@@ -476,7 +476,7 @@ input[type="text"]:focus {
     .yellow {
         background-color: yellow;
         margin: 15% auto;
-        width: 45vw;
+        width: 45%;
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
         animation-name: animatetop;
@@ -531,9 +531,6 @@ input[type="text"]:focus {
                 margin-top: 12px;
             }
 
-            .errormsg {
-                text-align: center;
-            }
         }
 
         #rep {
@@ -584,14 +581,12 @@ input[type="text"]:focus {
 .de-wrap-shadow {
     grid-column: 1 / span 2;
     align-self: end;
-    cursor: pointer;
 
-    img {
-        text-shadow: 3px 4px black;
-        padding: 1rem;
+
+    .de {
+        cursor: pointer;
     }
 }
-
 
 #myModalMedia {
 
