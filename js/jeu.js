@@ -17,21 +17,6 @@ turn = 0;
 usedQuestion = [];
 
 // déterminer quelle équipe va jouer
-// var teamActuel = function (nbTeam) {
-//     if (team == 0) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else if (team == 1) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else if ((team == 2 && (nbTeam == 3 || nbTeam == 4))) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else {
-//         team = 0
-//     }
-// }
-// déterminer quelle équipe va jouer
 var teamActuel = function (nbTeam) {
 
     if (team == 0) {

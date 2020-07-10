@@ -248,6 +248,7 @@
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/test.js"></script>
 
     <script>
         $('#myBtnVideo').click(function() {
