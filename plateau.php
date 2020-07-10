@@ -85,8 +85,8 @@
 
         <div class="button">
             <button id="myBtn">Afficher une question</button>
-            <button id="myBtnVideo">Afficher la vidéo</button>
-            <button id="myBtnAudio">Afficher l'audio</button>
+            <button id="video" onclick="modalMedia(this.id)">Afficher la vidéo</button>
+            <button id="audio" onclick="modalMedia(this.id)">Afficher l'audio</button>
             <button id="myBtnDefis">Afficher un defi</button>
         </div>
 
@@ -172,31 +172,6 @@
     <script src="js/lancerDe.js"></script>
     <script src="js/modalQuestion.js"></script>
     <script src="js/modalDefi.js"></script>
-
-    <script>
-        $('#myBtnVideo').click(function() {
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "js/mediaCapture.js";
-            document.getElementsByTagName("head")[0].appendChild(script);
-
-            $('#myModalMedia').load("include/video.php");
-
-            $('#myModalMedia').show();
-        })
-    </script>
-    <script>
-        $('#myBtnAudio').click(function() {
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = "js/audioCapture.js";
-            document.getElementsByTagName("head")[0].appendChild(script);
-
-            $('#myModalMedia').load("include/audio.php");
-
-            $('#myModalMedia').show();
-        })
-    </script>
 
 </body>
 

@@ -37,3 +37,17 @@ for (t = 1; t <= nbTeam; t++) {
     // transformation des cases en case action
     actionCases();
 }
+
+// lancer la modal de capture audio ou video
+var modalMedia = function(param) {
+    // param = video || audio, récupérer avec l'id du bouton
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "js/" + param + "Capture.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+
+    $('#myModalMedia').load("include/" + param + ".php");
+
+    $('#myModalMedia').show();
+
+}
