@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="798.644" height="614.351" viewBox="0 0 798.644 614.351">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,249,0.69);
+        font-size: 133px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: ShakaPow, Shaka Pow;
+      }
+
+      .cls-2 {
+        fill: rgba(255,255,255,0.24);
+        font-size: 545px;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_1" data-name="Groupe 1" transform="translate(-36.975 87.623)">
+    <text id="Rimbaud_Tech_" data-name="Rimbaud Tech&apos;" class="cls-1" transform="translate(56.06 242.704) rotate(-9)"><tspan x="0" y="0">Rimbaud Tech&apos;</tspan></text>
+    <text id="simplon" class="cls-1" transform="translate(122.06 389.704) rotate(-9)"><tspan x="0" y="0">simplon</tspan></text>
+    <text id="X" class="cls-2" transform="translate(231 416) rotate(-9)"><tspan x="0" y="0">X</tspan></text>
+  </g>
+</svg>

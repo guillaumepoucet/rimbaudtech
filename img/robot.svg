@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="112.345" height="90.151" viewBox="0 0 112.345 90.151">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke-linejoin: round;
+        fill-rule: evenodd;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-2 {
+        fill: #f7d126;
+      }
+
+      .cls-3 {
+        filter: url(#Icon_awesome-robot);
+      }
+    </style>
+    <filter id="Icon_awesome-robot" x="8.574" y="0" width="95.744" height="82.833" filterUnits="userSpaceOnUse">
+      <feOffset dx="4" dy="4" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.271"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_23" data-name="Groupe 23" transform="translate(-1005.381 -421.36)">
+    <path id="Tracé_49" data-name="Tracé 49" class="cls-1" d="M78.529,104.116l19.455,5.544c3.6-2.989,6.929-6.228,10.533-8.47,4.712,1.246,16.908,3.986,18.848,4.733l-4.712-14.2,7.206-11.46L122.653,69.3l3.326-15.944-18.293,4.484L93,49.122,74.7,60.333,57.517,50.119,44.49,60.582l-19.125-2.99L33.4,72.042,23.979,85.495,33.4,94.214,27.582,111.4l17.739-6.726,10.81,10.214Z" transform="matrix(0.998, -0.07, 0.07, 0.998, 979.102, 397.504)"/>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 1005.38, 421.36)">
+      <path id="Icon_awesome-robot-2" data-name="Icon awesome-robot" class="cls-2" d="M0,31.832V47.748a3.975,3.975,0,0,0,3.979,3.979H7.958V27.853H3.979A3.975,3.975,0,0,0,0,31.832Zm57.7-19.9H43.769V3.979a3.979,3.979,0,1,0-7.958,0v7.958H21.885a9.945,9.945,0,0,0-9.948,9.948V55.706A7.965,7.965,0,0,0,19.9,63.664h39.79a7.965,7.965,0,0,0,7.958-7.958V21.885A9.945,9.945,0,0,0,57.7,11.937ZM31.832,51.727H23.874V47.748h7.958ZM27.853,36.806a4.974,4.974,0,1,1,4.974-4.974A4.972,4.972,0,0,1,27.853,36.806ZM43.769,51.727H35.811V47.748h7.958Zm11.937,0H47.748V47.748h7.958ZM51.727,36.806A4.974,4.974,0,1,1,56.7,31.832,4.972,4.972,0,0,1,51.727,36.806ZM75.6,27.853H71.622V51.727H75.6a3.975,3.975,0,0,0,3.979-3.979V31.832A3.975,3.975,0,0,0,75.6,27.853Z" transform="translate(9.73 14.98) rotate(-10)"/>
+    </g>
+  </g>
+</svg>
