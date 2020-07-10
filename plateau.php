@@ -65,17 +65,9 @@
 
                 <?php for ($i = 1; $i <= 31; $i++) : ?>
                     <div class="relative bis">
-                        <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if (
-                            (($n == 3) && ($i == 5)) ||
-                            (($n == 4) && ($i == 2))
-                        ) :  ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span class="span">#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
+                        <span class="span">#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+
                         <div class="cases-yellow case<?= $i ?>">
                             <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
                             </div>
@@ -163,14 +155,6 @@
 
     </div>
 
-    <script>
-        $('.wrap3 .case-count').eq(4).addClass('action');
-        $('.wrap4 .case-count').eq(1).addClass('action');
-    </script>
-
-
-
-
     <!-- On alert de la perte des données si fermeture fenetre -->
     <script type="text/javascript">
         window.onbeforeunload = confirmExit;
@@ -188,7 +172,7 @@
 
     <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
     <script src="js/Team.js"></script>
-    <script src="init.js"></script>
+    <script src="js/init.js"></script>
 
     <script src="js/questionnaire.js"></script>
     <script src="js/defis.js"></script>
