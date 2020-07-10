@@ -63,19 +63,17 @@
                     </div>
                 </div>
 
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
+                <?php for ($i = 1; $i <= 31; $i++) : ?>
+                    <div class="relative bis">
                         <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if ((($n == 1) && ($i == 4)) || 
-                            (($n == 1) && ($i == 8)) ||
-                            (($n == 2) && ($i == 3)) ||
+                        <?php if (
                             (($n == 3) && ($i == 5)) ||
                             (($n == 4) && ($i == 2))
                         ) :  ?>
                             <img class="svgAction" src="img/action.svg" alt="">
                             <img class="svgBoom" src="img/boom.svg" alt="">
                         <?php else : ?>
-                            <span>#<?= $i ?></span>
+                            <span class="span">#<?= $i ?></span>
                             <img class="svgBubble" src="img/bubble.svg" alt="">
                         <?php endif ?>
                         <div class="cases-yellow case<?= $i ?>">
@@ -102,6 +100,7 @@
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
             <button id="myBtnAudio">Afficher l'audio</button>
+            <button id="myBtnDefis">Afficher un defis</button>
         </div>
 
 
@@ -165,8 +164,6 @@
     </div>
 
     <script>
-        $('.wrap1 .case-count').eq(3).addClass('action');
-        $('.wrap2 .case-count').eq(2).addClass('action');
         $('.wrap3 .case-count').eq(4).addClass('action');
         $('.wrap4 .case-count').eq(1).addClass('action');
     </script>
@@ -195,15 +192,46 @@
     <script>
         objs = [];
 
+
+        // construit un tableau composée de chiffres aléatoires pour la sélection des cases Actions
+        var caseRand = function() {
+            for (y = 1; y <= 18; y++) {
+                do {
+                    nb = Math.floor(Math.random() * 30) + 1;
+                    var nbUsed = caseAction.includes(nb);
+                } while (nbUsed);
+                caseAction.push(nb)
+            }
+            caseAction.sort()
+        }
+
+        var actionCases = function() {
+            for (z = 0; z <= 18; z++) {
+                console.log(caseAction[z]);
+                $('.wrap' + t + ' .case-count').eq(caseAction[z] - 1).addClass('action');
+                $('.wrap' + t + ' .bis .span').eq(caseAction[z] - 1).hide();
+                $('.wrap' + t + ' .bis .svgBubble').eq(caseAction[z] - 1).hide();
+                $('.wrap' + t + ' .bis').eq(caseAction[z] - 1).append("<img class=\"svgAction\" src=\"img/action.svg\" alt=\"\">");
+                $('.wrap' + t + ' .bis').eq(caseAction[z] - 1).append("<img class=\"svgBoom\" src=\"img/boom.svg\" alt=\"\">");
+            }
+        }
+
         for (t = 1; t <= nbTeam; t++) {
             name = $('.team' + t + ' .team-name p').text()
             pawn = $('.team' + t + '-icon').attr('src')
             objs[t] = new Team(name, pawn)
+
+            caseAction = [];
+
+            // détermination des cases actions
+            caseRand()
+            // transformation des cases en case action
+            actionCases();
         }
-        console.log(objs)
     </script>
 
     <script src="js/questionnaire.js"></script>
+    <script src="js/defis.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
     <script src="js/modal.js"></script>

@@ -136,8 +136,7 @@ var action = function () {
             });
 
         }
-
-        modal.style.display = "grid";
+        $('#myModal').delay(5000).css('display', 'grid')
     } else {
         teamActuel(nbTeam)
     }
