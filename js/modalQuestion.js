@@ -101,8 +101,5 @@ function baseOuverte() {
     $('.validation').show();
 }
 
-//  On bloque l input ENTRER
-noPressEnter(document.body);
-
 // On reactive l input ENTRER
 //noPressEnter(document.body, false);

@@ -24,7 +24,7 @@
 
     <div>
 
-        <form class="create-a-team" action="traitement.php" method="POST">
+        <form class="create-a-team" action="traitement/traitement.php" method="POST">
             <?php for ($n = 1; $n <= $_SESSION['teams-nb']; $n++) : ?>
 
                 <div class="newteam-relative">

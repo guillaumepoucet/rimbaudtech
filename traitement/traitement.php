@@ -34,4 +34,4 @@ $_SESSION['team-4-icon'] = $teamIcon4;
 
 var_dump($_SESSION);
 
-header('location:plateau.php');
+header('location:../plateau.php');

@@ -8,6 +8,7 @@ span = $('.close')
 team = 0;
 // trackeur positionné en case start permettant de savoir sur quelle case le pion se trouve actuellement
 team.position = 0;
+position = 0
 target = null;
 // distance pour décaler une seule case
 distance = 156;
@@ -59,7 +60,7 @@ var movePawn = function () {
         $('.wrap' + team + ' .relative').animate({
             right: "+=" + distance
         })
-        $('.team' + team + '-icon').effect("bounce", {times:1}, 400)
+        $('.team' + team + '-icon').effect("bounce", { times: 1 }, 400)
 
     }
     // on actualise la position pour le prochain tour
@@ -91,24 +92,18 @@ var action = function () {
             $('.b').text(questionnaire[question][1][1])
             $('.c').text(questionnaire[question][1][2])
             baseReponse();
-
         } else {
-
             baseOuverte();
-            $('.reponse #time').show();
-
+            $('.reponse').append('<div id="time"><div>');
             function startTimer(duration, display) {
                 var timer = duration,
                     minutes, seconds;
                 setInterval(function () {
                     minutes = parseInt(timer / 60, 10);
                     seconds = parseInt(timer % 60, 10);
-
                     minutes = minutes < 10 ? "0" + minutes : minutes;
                     seconds = seconds < 10 ? "0" + seconds : seconds;
-
                     display.text(minutes + ":" + seconds);
-
                     if (--timer < 0) {
                         timer = duration;
                     }
@@ -121,9 +116,9 @@ var action = function () {
                 startTimer(fourMinutes, display);
             });
 
+            $('#time').show();
         }
-
-        modal.style.display = "grid";
+        $('#myModal').delay(5000).css('display', 'grid')
     } else {
         teamActuel(nbTeam)
     }
@@ -186,6 +181,3 @@ $('#ech').click(function () {
 
 })
 
-// for (n = 1; n < 8; n++) {
-//     teamActuel(3)
-// }
