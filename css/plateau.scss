@@ -275,7 +275,7 @@ input[type="text"]:focus {
 
     .parcours {
         text-align: left;
-        margin-left: 10%;
+        margin-left: 2%;
     }
 
 
@@ -476,7 +476,7 @@ input[type="text"]:focus {
     .yellow {
         background-color: yellow;
         margin: 15% auto;
-        width: 45%;
+        width: 45vw;
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
         animation-name: animatetop;
@@ -531,6 +531,9 @@ input[type="text"]:focus {
                 margin-top: 12px;
             }
 
+            .errormsg {
+                text-align: center;
+            }
         }
 
         #rep {
@@ -579,41 +582,16 @@ input[type="text"]:focus {
 }
 
 .de-wrap-shadow {
-    filter: drop-shadow(6px 6px $yellow);
     grid-column: 1 / span 2;
     align-self: end;
-}
+    cursor: pointer;
 
-.de-wrap {
-    font-family: simplicity;
-    background-color: $yellow;
-    padding: 7px;
-    width: fit-content;
-    clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-    position: relative;
-
-    .de {
-        cursor: pointer;
-        color: $yellow;
-        background-color: $blue-dark;
-        font-size: 4em;
-        display: flex;
-        padding: 20px 65px 20px 45px;
-        justify-content: center;
-        align-items: center;
-        clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.80%, 5.16% 83.03%);
-
-        img {
-            margin-right: 10px;
-            text-shadow: 3px 4px black;
-        }
-
-        p {
-            text-shadow: 3px 4px black;
-            color: $yellow;
-        }
+    img {
+        text-shadow: 3px 4px black;
+        padding: 1rem;
     }
 }
+
 
 #myModalMedia {
 

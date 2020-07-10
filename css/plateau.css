@@ -313,7 +313,7 @@ input[type="text"]:focus {
 
 #plateau .parcours {
   text-align: left;
-  margin-left: 10%;
+  margin-left: 2%;
 }
 
 #plateau .team {
@@ -540,7 +540,7 @@ input[type="text"]:focus {
 .modal .yellow {
   background-color: yellow;
   margin: 15% auto;
-  width: 45%;
+  width: 45vw;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -603,6 +603,10 @@ input[type="text"]:focus {
   margin-top: 12px;
 }
 
+.modal .modal-content .reponse .errormsg {
+  text-align: center;
+}
+
 .modal .modal-content #rep {
   cursor: pointer;
   margin: 1em;
@@ -646,55 +650,18 @@ input[type="text"]:focus {
 }
 
 .de-wrap-shadow {
-  -webkit-filter: drop-shadow(6px 6px #F7D126);
-          filter: drop-shadow(6px 6px #F7D126);
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-column: 1 / span 2;
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
-}
-
-.de-wrap {
-  font-family: simplicity;
-  background-color: #F7D126;
-  padding: 7px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  -webkit-clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-          clip-path: polygon(2px 4px, 95.86% 0%, 88.13% 86.72%, 5.16% 84.95%);
-  position: relative;
-}
-
-.de-wrap .de {
   cursor: pointer;
-  color: #F7D126;
-  background-color: #0B4A5B;
-  font-size: 4em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 20px 65px 20px 45px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.8%, 5.16% 83.03%);
-          clip-path: polygon(4px 5px, 94.89% 0.96%, 88.38% 84.8%, 5.16% 83.03%);
 }
 
-.de-wrap .de img {
-  margin-right: 10px;
+.de-wrap-shadow img {
   text-shadow: 3px 4px black;
-}
-
-.de-wrap .de p {
-  text-shadow: 3px 4px black;
-  color: #F7D126;
+  padding: 1rem;
 }
 
 #myModalMedia .yellow {

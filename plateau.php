@@ -80,12 +80,7 @@
         <?php endfor ?>
 
         <div class="de-wrap-shadow">
-            <div class="de-wrap">
-                <div class="de">
-                    <img src="img/de.svg" alt="">
-                    <p>lancer le dé</p>
-                </div>
-            </div>
+            <img class="de" src="img/de.svg" alt="">
         </div>
 
         <div class="button">
@@ -126,7 +121,7 @@
                         <input type="radio" name="list" value="3" id="3">
                         <label for="3" class="c"></label>
                     </div>
-<!-- 
+                    <!-- 
                     <div id="time" style="display: none;">
                         <p>04:00</p>
                     </div> -->
