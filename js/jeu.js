@@ -116,9 +116,15 @@ var action = function () {
                 startTimer(fourMinutes, display);
             });
 
-            $('#time').show();
+            $('#time').show()
         }
-        $('#myModal').delay(5000).css('display', 'grid')
+
+        // calcul de délai pour afficher la question en fonction de nombre de cases à parcourir
+        timeout = de * 400
+        // console.log('le delai ' + timeout)
+        setTimeout(function () {
+            $('#myModal').css('display', 'grid');
+        }, timeout);
     } else {
         teamActuel(nbTeam)
     }
