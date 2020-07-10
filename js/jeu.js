@@ -8,6 +8,7 @@ span = $('.close')
 team = 0;
 // trackeur positionné en case start permettant de savoir sur quelle case le pion se trouve actuellement
 team.position = 0;
+position = 0
 target = null;
 // distance pour décaler une seule case
 distance = 156;
@@ -17,23 +18,8 @@ turn = 0;
 usedQuestion = [];
 
 // déterminer quelle équipe va jouer
-// var teamActuel = function (nbTeam) {
-//     if (team == 0) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else if (team == 1) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else if ((team == 2 && (nbTeam == 3 || nbTeam == 4))) {
-//         team += 1
-//         console.log('C\'est au tour de l\'équipe n°' + team)
-//     } else {
-//         team = 0
-//     }
-// }
-
-// déterminer quelle équipe va jouer
 var teamActuel = function (nbTeam) {
+
     if (team == 0) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
@@ -49,7 +35,8 @@ var teamActuel = function (nbTeam) {
         team += 1
         console.log('C\'est au tour de l\'équipe n°' + team)
     } else {
-        team = 0
+        team = 1
+        console.log('C\'est au tour de l\'équipe n°' + team)
     }
 }
 
@@ -57,6 +44,7 @@ var teamActuel = function (nbTeam) {
 var lancerDe = function () {
     de = Math.ceil(Math.random() * 6);
     console.log('Résultat du dé : ' + de)
+    movePawn();
 }
 
 // fonction slidant le plateau et actualisant la position
@@ -70,13 +58,16 @@ var movePawn = function () {
             opacity: "0"
         })
         $('.wrap' + team + ' .relative').animate({
-            right: "+=" + distance,
+            right: "+=" + distance
         })
+        $('.team' + team + '-icon').effect("bounce", { times: 1 }, 400)
+
     }
     // on actualise la position pour le prochain tour
     // et le tracker en récupèrant la case
     objs[team].position = target
     console.log(objs[team])
+    action();
 }
 
 // on vérifie si square est une case action en actualisant la trackeur
@@ -101,24 +92,18 @@ var action = function () {
             $('.b').text(questionnaire[question][1][1])
             $('.c').text(questionnaire[question][1][2])
             baseReponse();
-
         } else {
-
             baseOuverte();
             $('.reponse').append('<div id="time"><div>');
-
             function startTimer(duration, display) {
                 var timer = duration,
                     minutes, seconds;
                 setInterval(function () {
                     minutes = parseInt(timer / 60, 10);
                     seconds = parseInt(timer % 60, 10);
-
                     minutes = minutes < 10 ? "0" + minutes : minutes;
                     seconds = seconds < 10 ? "0" + seconds : seconds;
-
                     display.text(minutes + ":" + seconds);
-
                     if (--timer < 0) {
                         timer = duration;
                     }
@@ -131,10 +116,14 @@ var action = function () {
                 startTimer(fourMinutes, display);
             });
 
+            $('#time').show();
         }
-
-        modal.style.display = "block";
+        $('#myModal').delay(5000).css('display', 'grid')
+    } else {
+        teamActuel(nbTeam)
     }
+    // score();
+
 };
 
 var score = function () {
@@ -144,6 +133,10 @@ var score = function () {
     $('.score' + team).text(newScore);
     objs[team].score = newScore
     console.log(objs[team].score)
+    if (objs[team].score > 500) {
+        alert("Léquipe " + objs[team].name + 'a gagné !')
+    }
+    teamActuel(nbTeam)
 }
 
 // Récupérer réponse et vérifier si bonne ou non
@@ -155,12 +148,16 @@ $('#rep').click(function () {
         //alert("Correct");
         score()
         modal.style.display = "none";
+
     } else {
         //alert("Incorrect");
         $('.reponse div').remove();
         $('#rep').remove();
         $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
+        teamActuel(nbTeam)
+
     }
+
     reboot();
 })
 
@@ -180,8 +177,7 @@ $('#ech').click(function () {
     $('.validation').hide();
     $('.reponse').append('<p class="errormsg">Vous etes le maillon faible. Au revoir !</p>');
     reboot();
+    teamActuel(nbTeam)
+
 })
 
-// for (n = 1; n < 8; n++) {
-//     teamActuel(3)
-// }

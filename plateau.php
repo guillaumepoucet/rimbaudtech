@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/plateau.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="js/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -62,20 +63,11 @@
                     </div>
                 </div>
 
-                <?php for ($i = 1; $i <= 14; $i++) : ?>
-                    <div class="relative">
-                        <!-- Sont choisis les cases action ci-dessous -->
-                        <?php if ((($n == 1) && ($i == 4)) ||
-                            (($n == 2) && ($i == 3)) ||
-                            (($n == 3) && ($i == 5)) ||
-                            (($n == 4) && ($i == 2))
-                        ) :  ?>
-                            <img class="svgAction" src="img/action.svg" alt="">
-                            <img class="svgBoom" src="img/boom.svg" alt="">
-                        <?php else : ?>
-                            <span>#<?= $i ?></span>
-                            <img class="svgBubble" src="img/bubble.svg" alt="">
-                        <?php endif ?>
+                <?php for ($i = 1; $i <= 108; $i++) : ?>
+                    <div class="relative bis">
+                        <span class="span">#<?= $i ?></span>
+                        <img class="svgBubble" src="img/bubble.svg" alt="">
+
                         <div class="cases-yellow case<?= $i ?>">
                             <div class="case <?= $i ?> case-count" data-index="<?= $i ?>">
                             </div>
@@ -100,12 +92,13 @@
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
             <button id="myBtnAudio">Afficher l'audio</button>
+            <button id="myBtnDefis">Afficher un defi</button>
         </div>
 
 
     </div>
 
-    <div id="myModalVideo" class="modal"></div>
+    <div id="myModalMedia" class="modal"></div>
 
     <div id="myModal" class="modal">
 
@@ -121,16 +114,24 @@
                 </div>
 
                 <div class="reponse">
-                    <div class="reponseInput"><input type="radio" name="list" value="1" id="">
-                        <p class="a"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="1" id="1">
+                        <label for="1" class="a"></label>
                     </div>
-                    <div class="reponseInput"><input type="radio" name="list" value="2" id="">
-                        <p class="b"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="2" id="2">
+                        <label for="2" class="b"></label>
                     </div>
-                    <div class="reponseInput"><input type="radio" name="list" value="3" id="">
-                        <p class="c"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="3" id="3">
+                        <label for="3" class="c"></label>
                     </div>
+<!-- 
+                    <div id="time" style="display: none;">
+                        <p>04:00</p>
+                    </div> -->
                 </div>
+
 
                 <!-- Capture de media video/son -->
                 <main>
@@ -157,16 +158,6 @@
 
     </div>
 
-    <script>
-        $('.wrap1 .case-count').eq(3).addClass('action');
-        $('.wrap2 .case-count').eq(2).addClass('action');
-        $('.wrap3 .case-count').eq(4).addClass('action');
-        $('.wrap4 .case-count').eq(1).addClass('action');
-    </script>
-
-
-
-
     <!-- On alert de la perte des données si fermeture fenetre -->
     <script type="text/javascript">
         window.onbeforeunload = confirmExit;
@@ -176,32 +167,16 @@
         }
     </script>
 
-    <!-- On bloque l input ENTRER -->
-    <script type="text/javascript">
-        noPressEnter(document.modal);
-        noPressEnter(document.myModal.modal)
-    </script>
-
     <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
     <script src="js/Team.js"></script>
-
-    <script>
-        objs = [];
-
-        for (t = 1; t <= nbTeam; t++) {
-            name = $('.team' + t + ' .team-name p').text()
-            pawn = $('.team' + t + '-icon').attr('src')
-            objs[t] = new Team(name, pawn)
-        }
-        console.log(objs)
-
-        
-    </script>
+    <script src="js/init.js"></script>
 
     <script src="js/questionnaire.js"></script>
+    <script src="js/defis.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="js/modalQuestion.js"></script>
+    <script src="js/modalDefi.js"></script>
 
     <script>
         $('#myBtnVideo').click(function() {
@@ -210,9 +185,9 @@
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalVideo').load("video.php");
+            $('#myModalMedia').load("include/video.php");
 
-            $('#myModalVideo').show();
+            $('#myModalMedia').show();
         })
     </script>
     <script>
@@ -222,9 +197,9 @@
             script.src = "js/audioCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalVideo').load("audio.php");
+            $('#myModalMedia').load("include/audio.php");
 
-            $('#myModalVideo').show();
+            $('#myModalMedia').show();
         })
     </script>
 

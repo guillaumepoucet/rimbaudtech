@@ -2,12 +2,13 @@
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+var btn = document.getElementById("myBtnDefis");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-usedQuestion = [];
+//Defis
+usedDefis = [];
 team = 1
 
 // When the user clicks on the button, open the modal
@@ -15,27 +16,29 @@ btn.onclick = function () {
     reboot();
     // boucle qui vérifie si le numéro de question a déjà été tiré
     do {
-        question = Math.floor(Math.random() * 13) + 1;
-        var isUsed = usedQuestion.includes(question)
+        defi = Math.floor(Math.random() * 11) + 1;
+        var isUsed = usedDefis.includes(defi)
 
     } while (isUsed)
     // on insère le nouveau numéro de la question dans un tableau
-    usedQuestion.push(question)
+    usedDefis.push(defi)
+console.log(defi)
+console.log(defis[defi][0])
 
-    $('.numero').text(question + 1);
-    $('.n-question').html(questionnaire[question][0])
+    $('.numero').text(defi + 1);
+    $('.n-question').html(defis[defi][0])
     // si pas de réponses, insertion d'un timer
-    if (questionnaire[question][1] !== undefined) {
-        $('.a').text(questionnaire[question][1][0])
-        $('.b').text(questionnaire[question][1][1])
-        $('.c').text(questionnaire[question][1][2])
+    if (defis[defi][1] !== undefined) {
+        $('.a').text(defis[defi][1][0])
+        $('.b').text(defis[defi][1][1])
         baseReponse();
     } else {
         baseOuverte();
         $('.reponse').append('<div id="time"><div>');
         // timer countdown
         function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
+            var timer = duration,
+                minutes, seconds;
             setInterval(function () {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
@@ -52,12 +55,13 @@ btn.onclick = function () {
                 display = $('#time');
             startTimer(fourMinutes, display);
         });
-
     }
 
-    modal.style.display = "block";
+
+    modal.style.display = "grid";
 
 }
+
 // Cacher la croix de fermeture de la modal 
 $('.close').hide();
 
@@ -100,9 +104,6 @@ function baseOuverte() {
     $('.btnrep').hide();
     $('.validation').show();
 }
-
-//  On bloque l input ENTRER
-noPressEnter(document.body);
 
 // On reactive l input ENTRER
 //noPressEnter(document.body, false);

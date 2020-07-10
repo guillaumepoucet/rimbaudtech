@@ -51,28 +51,28 @@
 
                 <p>Choisissez le nombre d'équipes : </p>
                 <div class="custom-radio">
-                    <form action="traitement-newgame.php" method="POST">
+                    <form action="traitement/traitement-newgame.php" method="POST">
                         <div class="f-j-center">
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" value="1" id="">
-                                <label for="">1</label>
+                                <input type="radio" name="teams-nb" value="1" id="1">
+                                <label for="1">1</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" value="2" id="">
-                                <label for="">2</label>
+                                <input type="radio" name="teams-nb" value="2" id="2">
+                                <label for="2">2</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" value="3" id="">
-                                <label for="">3</label>
+                                <input type="radio" name="teams-nb" value="3" id="3">
+                                <label for="3">3</label>
                             </div>
                             <div class="team-nb">
-                                <input type="radio" name="teams-nb" value="4" id="">
-                                <label for="">4</label>
+                                <input type="radio" name="teams-nb" value="4" id="4">
+                                <label for="4">4</label>
                             </div>
                         </div>
-                  
+                        <div class="btn-wrap-yellow">
                             <button type="submit">Valider</button>
-                    
+                        </div>
                     </form>
                 </div>
             </div>

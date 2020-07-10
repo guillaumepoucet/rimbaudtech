@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92.923" height="103.983" viewBox="0 0 92.923 103.983">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ce0b59;
+      }
+
+      .cls-2 {
+        fill: #25bae5;
+      }
+
+      .cls-3 {
+        fill: #f7d126;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-4, .cls-5 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: #111103;
+      }
+
+      .cls-6 {
+        filter: url(#Icon_awesome-horse-head);
+      }
+    </style>
+    <filter id="Icon_awesome-horse-head" x="8.575" y="0" width="84.348" height="84.298" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_21" data-name="Groupe 21" transform="translate(-6354.532 174.531)">
+    <path id="Tracé_27" data-name="Tracé 27" class="cls-1" d="M1.21,1.974l80.666,8.77L72.251,46.167,2.831,44.95Z" transform="translate(6363.357 -130.23) rotate(10)"/>
+    <g id="Tracé_26" data-name="Tracé 26" class="cls-2" transform="translate(6361.357 -134.23) rotate(10)">
+      <path class="cls-4" d="M 71.10980987548828 44.64671325683594 L 4.276302814483643 43.47498321533203 L 2.774455308914185 3.65245509147644 L 79.96829986572266 12.04455661773682 L 71.10980987548828 44.64671325683594 Z"/>
+      <path class="cls-5" d="M 4.338829040527344 5.331356048583984 L 5.721748352050781 42.00008392333984 L 69.96848297119141 43.12646102905273 L 78.06028747558594 13.34597015380859 L 4.338829040527344 5.331356048583984 M 1.210060119628906 1.973533630371094 L 81.87628936767578 10.74314880371094 L 72.25111389160156 46.16693496704102 L 2.830863952636719 44.94985580444336 L 1.210060119628906 1.973533630371094 Z"/>
+    </g>
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, 6354.53, -174.53)">
+      <path id="Icon_awesome-horse-head-2" data-name="Icon awesome-horse-head" class="cls-3" d="M67.876,44.266,58.569,22.39A16.446,16.446,0,0,0,46.187,11.846,9.308,9.308,0,0,0,50.74.888a1.237,1.237,0,0,0-1.6-.812L22.221,10.155C4.78,16.426,0,31.8,0,53.093L35.709,68.165A4.254,4.254,0,0,0,39.516,62L34.084,51.122v-.093A17.015,17.015,0,0,1,20.2,41.763a1.054,1.054,0,0,1,.213-1.238l1.611-1.611a1.064,1.064,0,0,1,1.718.32,12.711,12.711,0,0,0,11.637,7.642,12.25,12.25,0,0,0,6.231-1.757l6.125,8.508A4.247,4.247,0,0,0,51.193,55.4h6.7A4.253,4.253,0,0,0,60.9,54.145l6.031-5.3a4.321,4.321,0,0,0,.945-4.58ZM43.67,29.82a3.2,3.2,0,1,1,3.2-3.2A3.188,3.188,0,0,1,43.67,29.82Z" transform="translate(9.73 13.01) rotate(-10)"/>
+    </g>
+  </g>
+</svg>

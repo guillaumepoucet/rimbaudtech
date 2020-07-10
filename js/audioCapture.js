@@ -1,4 +1,4 @@
-let constraintObj = {
+var constraintObj = {
     audio: true
 };
 // width: 1280, height: 720  -- preference only
@@ -8,7 +8,8 @@ let constraintObj = {
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
-    navigator.mediaDevices.getUserMedia = function (constraintObj) {
+    navigator.mediaDevices.getUserMedia = function () {
+
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
@@ -33,7 +34,7 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let audio = document.getElementById('audInput');
+        let audio = document.getElementById('mediaInput');
         if ("srcObject" in audio) {
             audio.srcObject = mediaStreamObj;
         } else {
@@ -50,8 +51,8 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
         let close = document.getElementById('btnClose');
-        let audSave = document.getElementById('audOutput');
-        let audInput = document.getElementById('audInput');
+        let mediaSave = document.getElementById('mediaOutput');
+        let mediaInput = document.getElementById('mediaInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
@@ -63,23 +64,24 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
             audio.srcObject = null
             console.log(mediaRecorder.state);
-            $(audInput).hide()
+            $(mediaInput).hide()
             $(stop).hide()
-            $(audSave).show()
-         
+            $(mediaSave).show()
+
         });
         close.addEventListener('click', (ev) => {
-            $('#myModalVideo .yellow').remove()
-            $('#myModalVideo').hide()
-            mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            $('#myModalMedia .yellow').remove()
+            $('#myModalMedia').hide()
+            //mediaRecorder.stop();
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+                delete (constraintObj);
+            });
         })
 
 
@@ -91,11 +93,11 @@ navigator.mediaDevices.getUserMedia(constraintObj)
                 'type': 'audio/mp3;'
             });
             chunks = [];
-            let videoURL = window.URL.createObjectURL(blob);
-            audSave.src = videoURL;     
-            console.log(videoURL)
-            $('#video-dl').attr("href", videoURL)
-            $('#video-dl').show()
+            let mediaURL = window.URL.createObjectURL(blob);
+            mediaSave.src = mediaURL;
+            console.log(mediaURL)
+            $('#media-dl').attr("href", mediaURL)
+            $('#media-dl').show()
             window.URL.revokeObjectURL(objectURL);
         }
     })

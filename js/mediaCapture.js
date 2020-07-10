@@ -1,4 +1,4 @@
-let constraintObj = {
+var constraintObj = {
     audio: true,
     video: {
         facingMode: "user",
@@ -17,11 +17,11 @@ let constraintObj = {
 // width: 1280, height: 720  -- preference only
 // facingMode: {exact: "user"}
 // facingMode: "environment"
-
 //gérer les anciens navigateurs qui pourraient implémenter getUserMedia d'une manière ou d'une autre
 if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
-    navigator.mediaDevices.getUserMedia = function (constraintObj) {
+    navigator.mediaDevices.getUserMedia = function () {
+
         let getUserMedia = navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         if (!getUserMedia) {
             return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
@@ -46,7 +46,7 @@ if (navigator.mediaDevices === undefined) {
 navigator.mediaDevices.getUserMedia(constraintObj)
     .then(function (mediaStreamObj) {
         //connecter le flux multimédia au premier élément vidéo
-        let video = document.getElementById('vidInput');
+        let video = document.getElementById('mediaInput');
         if ("srcObject" in video) {
             video.srcObject = mediaStreamObj;
         } else {
@@ -63,8 +63,8 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         let start = document.getElementById('btnStart');
         let stop = document.getElementById('btnStop');
         let close = document.getElementById('btnClose');
-        let vidSave = document.getElementById('vidOutput');
-        let vidInput = document.getElementById('vidInput');
+        let mediaSave = document.getElementById('mediaOutput');
+        let mediaInput = document.getElementById('mediaInput');
         let mediaRecorder = new MediaRecorder(mediaStreamObj);
         let chunks = [];
 
@@ -76,23 +76,23 @@ navigator.mediaDevices.getUserMedia(constraintObj)
         })
         stop.addEventListener('click', (ev) => {
             mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
             video.srcObject = null
             console.log(mediaRecorder.state);
-            $(vidInput).hide()
+            $(mediaInput).hide()
             $(stop).hide()
-            $(vidSave).show()
-         
+            $(mediaSave).show()
+
         });
         close.addEventListener('click', (ev) => {
-            $('#myModalVideo .yellow').remove()
-            $('#myModalVideo').hide()
-            mediaRecorder.stop();
-            mediaStreamObj.getTracks().forEach(function(track) {
+            $('#myModalMedia .yellow').remove()
+            $('#myModalMedia').hide()
+            //mediaRecorder.stop();
+            mediaStreamObj.getTracks().forEach(function (track) {
                 track.stop();
-              });
+            });
         })
 
 
@@ -105,10 +105,10 @@ navigator.mediaDevices.getUserMedia(constraintObj)
             });
             chunks = [];
             let videoURL = window.URL.createObjectURL(blob);
-            vidSave.src = videoURL;     
-            console.log(videoURL)
-            $('#video-dl').attr("href", videoURL)
-            $('#video-dl').show()
+            mediaSave.src = videoURL;
+            // console.log(videoURL)
+            $('#media-dl').attr("href", videoURL)
+            $('#media-dl').show()
             window.URL.revokeObjectURL(objectURL);
         }
     })
