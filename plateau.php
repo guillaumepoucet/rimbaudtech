@@ -63,7 +63,7 @@
                     </div>
                 </div>
 
-                <?php for ($i = 1; $i <= 31; $i++) : ?>
+                <?php for ($i = 1; $i <= 108; $i++) : ?>
                     <div class="relative bis">
                         <span class="span">#<?= $i ?></span>
                         <img class="svgBubble" src="img/bubble.svg" alt="">
@@ -92,7 +92,7 @@
             <button id="myBtn">Afficher une question</button>
             <button id="myBtnVideo">Afficher la vidéo</button>
             <button id="myBtnAudio">Afficher l'audio</button>
-            <button id="myBtnDefis">Afficher un defis</button>
+            <button id="myBtnDefis">Afficher un defi</button>
         </div>
 
 
@@ -114,19 +114,22 @@
                 </div>
 
                 <div class="reponse">
-                    <div class="reponseInput"><input type="radio" name="list" value="1" id="">
-                        <p class="a"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="1" id="1">
+                        <label for="1" class="a"></label>
                     </div>
-                    <div class="reponseInput"><input type="radio" name="list" value="2" id="">
-                        <p class="b"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="2" id="2">
+                        <label for="2" class="b"></label>
                     </div>
-                    <div class="reponseInput"><input type="radio" name="list" value="3" id="">
-                        <p class="c"></p>
+                    <div class="reponseInput">
+                        <input type="radio" name="list" value="3" id="3">
+                        <label for="3" class="c"></label>
                     </div>
-
+<!-- 
                     <div id="time" style="display: none;">
                         <p>04:00</p>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -164,12 +167,6 @@
         }
     </script>
 
-    <!-- On bloque l input ENTRER -->
-    <script type="text/javascript">
-        noPressEnter(document.modal);
-        noPressEnter(document.myModal.modal)
-    </script>
-
     <!-- le nombre d'équipes est appelées et le nombre d'instances Team sont crées en conséquence -->
     <script src="js/Team.js"></script>
     <script src="js/init.js"></script>
@@ -178,7 +175,8 @@
     <script src="js/defis.js"></script>
     <script src="js/jeu.js"></script>
     <script src="js/lancerDe.js"></script>
-    <script src="js/modal.js"></script>
+    <script src="js/modalQuestion.js"></script>
+    <script src="js/modalDefi.js"></script>
 
     <script>
         $('#myBtnVideo').click(function() {
@@ -187,7 +185,7 @@
             script.src = "js/mediaCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalMedia').load("video.php");
+            $('#myModalMedia').load("include/video.php");
 
             $('#myModalMedia').show();
         })
@@ -199,7 +197,7 @@
             script.src = "js/audioCapture.js";
             document.getElementsByTagName("head")[0].appendChild(script);
 
-            $('#myModalMedia').load("audio.php");
+            $('#myModalMedia').load("include/audio.php");
 
             $('#myModalMedia').show();
         })

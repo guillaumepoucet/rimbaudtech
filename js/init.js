@@ -15,7 +15,7 @@ var caseRand = function () {
 
 var actionCases = function () {
     for (z = 0; z <= 18; z++) {
-        console.log(caseAction[z]);
+        // console.log(caseAction[z]);
         $('.wrap' + t + ' .case-count').eq(caseAction[z] - 1).addClass('action');
         $('.wrap' + t + ' .bis .span').eq(caseAction[z] - 1).hide();
         $('.wrap' + t + ' .bis .svgBubble').eq(caseAction[z] - 1).hide();
